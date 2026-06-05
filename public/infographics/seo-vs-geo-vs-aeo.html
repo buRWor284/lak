@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SEO vs AEO vs GEO — Lubna Ali Khan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #F8F6F3;
+  --navy: #4A5F7A;
+  --navy-deep: #3A4D66;
+  --slate: #8899AB;
+  --mist: #B8CDD8;
+  --mist-light: rgba(184,205,216,0.18);
+  --pearl: #D5D2CE;
+  --blush: #DDD0CB;
+  --blush-light: rgba(221,208,203,0.25);
+  --ink: #2D3A4A;
+  --sub: #7A8899;
+  --rule: rgba(74,95,122,0.14);
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Raleway", "Helvetica Neue", Arial, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #888;
+  display: flex; justify-content: center;
+  padding: 32px;
+  font-family: var(--sans);
+}
+::selection { background: var(--navy); color: var(--bg); }
+
+.canvas {
+  width: 1080px;
+  background: var(--bg);
+  position: relative;
+  color: var(--ink);
+}
+
+/* ─── dark header ────────────────────────────────────── */
+.ig-header {
+  background: var(--navy);
+  color: var(--bg);
+  padding: 56px 64px 48px;
+  text-align: center;
+}
+.header-pill {
+  display: inline-block;
+  padding: 8px 24px;
+  border: 1px solid rgba(248,246,243,0.25);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(248,246,243,0.70);
+  margin-bottom: 24px;
+}
+.header-kicker {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(248,246,243,0.55);
+  margin-bottom: 20px;
+}
+.header-titles {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 16px;
+}
+.header-abbr {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 88px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--bg);
+}
+.header-abbr.geo { color: var(--blush); }
+.header-vs {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--slate);
+  margin: 0 28px;
+}
+.header-subs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.header-sub {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--mist);
+  line-height: 1.4;
+}
+.header-rule {
+  width: 48px;
+  height: 2px;
+  background: var(--mist);
+  margin: 0 auto;
+}
+
+/* ─── comparison grid ────────────────────────────────── */
+.compare-section {
+  padding: 48px 48px 0;
+}
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+}
+.compare-card {
+  padding: 32px 28px 28px;
+  border-right: 1px solid var(--rule);
+}
+.compare-card:last-child { border-right: none; }
+
+.card-pill {
+  display: inline-block;
+  padding: 6px 16px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.pill-seo {
+  background: var(--navy);
+  color: var(--bg);
+}
+.pill-aeo {
+  background: var(--navy);
+  color: var(--bg);
+}
+.pill-geo {
+  background: var(--blush);
+  color: var(--navy);
+}
+.card-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.card-title span {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate);
+  display: block;
+  margin-top: 4px;
+}
+
+/* ─── mock interfaces ────────────────────────────────── */
+.mock-box {
+  margin-top: 20px;
+  border: 1px solid var(--rule);
+  background: var(--bg);
+  padding: 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+.mock-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--rule);
+  color: var(--sub);
+  font-size: 12px;
+}
+.mock-bar-label {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+}
+.mock-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  margin: 10px 14px;
+  border: 1px solid var(--pearl);
+  font-size: 12px;
+  color: var(--sub);
+}
+.mock-search-icon {
+  color: var(--slate);
+  font-size: 11px;
+}
+.mock-tabs {
+  display: flex;
+  gap: 16px;
+  padding: 0 14px 8px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--slate);
+}
+.mock-tabs span:first-child {
+  color: var(--navy);
+  font-weight: 600;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--navy);
+  margin-bottom: -9px;
+}
+.mock-result {
+  padding: 14px;
+  border-bottom: 1px solid var(--rule);
+}
+.mock-result:last-child { border-bottom: none; }
+.mock-url {
+  font-size: 10px;
+  color: var(--slate);
+  margin-bottom: 3px;
+  letter-spacing: 0.02em;
+}
+.mock-result-title {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 3px;
+}
+.mock-result-desc {
+  font-size: 11px;
+  color: var(--sub);
+  line-height: 1.4;
+}
+.mock-stars {
+  font-size: 10px;
+  color: var(--blush);
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+}
+
+/* AI overview mock */
+.mock-ai-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  margin: 14px;
+  background: var(--mist-light);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.mock-ai-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.15;
+  color: var(--navy);
+  padding: 0 14px;
+  margin-bottom: 12px;
+}
+.mock-ai-list {
+  padding: 0 14px 14px;
+  list-style: none;
+}
+.mock-ai-list li {
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--sub);
+  padding: 3px 0 3px 14px;
+  position: relative;
+}
+.mock-ai-list li::before {
+  content: "\b7";
+  position: absolute;
+  left: 2px;
+  color: var(--pearl);
+}
+.mock-ai-signals {
+  padding: 10px 14px 14px;
+  border-top: 1px solid var(--rule);
+}
+.mock-ai-signals p {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.mock-ai-signals li::before {
+  content: "\b7";
+  position: absolute;
+  left: 2px;
+  color: var(--pearl);
+}
+
+/* GEO mock */
+.mock-geo-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 11px;
+  color: var(--slate);
+}
+.mock-geo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--navy);
+}
+.mock-geo-prompt {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.mock-geo-response {
+  padding: 12px 14px;
+  font-size: 11.5px;
+  color: var(--sub);
+  line-height: 1.5;
+}
+.mock-geo-item {
+  padding: 8px 0;
+}
+.mock-geo-item strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+.mock-geo-item span {
+  font-size: 11px;
+  color: var(--sub);
+}
+.mock-geo-num {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--slate);
+  margin-right: 6px;
+}
+.mock-sources {
+  padding: 10px 14px 14px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.mock-sources-label {
+  font-size: 10px;
+  color: var(--slate);
+  margin-right: 4px;
+}
+.mock-source-tag {
+  padding: 4px 10px;
+  border: 1px solid var(--rule);
+  font-size: 10px;
+  color: var(--navy);
+  font-weight: 500;
+}
+
+/* ─── summary strip ──────────────────────────────────── */
+.summary-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+  margin: 0 48px;
+  margin-top: 28px;
+}
+.summary-item {
+  padding: 24px 22px;
+  border-right: 1px solid var(--rule);
+}
+.summary-item:last-child { border-right: none; }
+.summary-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.summary-dash {
+  width: 24px;
+  height: 2px;
+  background: var(--navy);
+}
+.summary-item:nth-child(3) .summary-dash { background: var(--blush); }
+.summary-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.summary-label .eq {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-left: 2px;
+}
+.summary-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--sub);
+}
+.summary-desc strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ─── quote block ────────────────────────────────────── */
+.quote-block {
+  margin: 28px 48px;
+  padding: 32px 36px;
+  background: var(--blush-light);
+  border-left: 3px solid var(--blush);
+}
+.quote-text {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.quote-text strong {
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* ─── footer ─────────────────────────────────────────── */
+.ig-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 48px 48px;
+  margin: 0 48px;
+  border-top: 1px solid var(--rule);
+}
+.ig-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.ig-logo {
+  width: 40px; height: 40px;
+  background: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--bg);
+  letter-spacing: 0.02em;
+}
+.ig-name-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ig-name {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+}
+.ig-links {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--slate);
+}
+.ig-links a {
+  color: var(--navy);
+  text-decoration: none;
+}
+.ig-links .link-dot {
+  color: var(--pearl);
+}
+.ig-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--slate);
+  letter-spacing: 0.02em;
+  justify-content: flex-end;
+}
+</style>
+</head>
+<body>
+
+<div class="canvas">
+
+  <!-- ═══ DARK HEADER ═══ -->
+  <div class="ig-header">
+    <span class="header-pill">Digital Visibility · 2026</span>
+    <p class="header-kicker">Know the Difference</p>
+    <div class="header-titles">
+      <span class="header-abbr">SEO</span>
+      <span class="header-vs">vs</span>
+      <span class="header-abbr">AEO</span>
+      <span class="header-vs">vs</span>
+      <span class="header-abbr geo">GEO</span>
+    </div>
+    <div class="header-subs">
+      <span class="header-sub">Search Engine<br>Optimization</span>
+      <span class="header-sub">Answer Engine<br>Optimization</span>
+      <span class="header-sub">Generative Engine<br>Optimization</span>
+    </div>
+    <div class="header-rule"></div>
+  </div>
+
+  <!-- ═══ THREE-COLUMN COMPARISON ═══ -->
+  <div class="compare-section">
+    <div class="compare-grid">
+
+      <!-- SEO CARD -->
+      <div class="compare-card">
+        <span class="card-pill pill-seo">SEO</span>
+        <p class="card-title">Search Engine<span>Optimization</span></p>
+        <div class="mock-box">
+          <div class="mock-bar">
+            <span class="mock-bar-label">Google</span>
+            <span>Search</span>
+          </div>
+          <div class="mock-search">
+            <span class="mock-search-icon">&#9906;</span>
+            <span>Best Content Strategist 2026</span>
+          </div>
+          <div class="mock-tabs">
+            <span>All</span>
+            <span>News</span>
+            <span>Images</span>
+          </div>
+          <div class="mock-result">
+            <p class="mock-url">lubnaalikhan.com &rsaquo; content-strategy</p>
+            <p class="mock-result-title">Top 10 Content Strategists to Follow in 2026 — Expert List</p>
+            <p class="mock-result-desc">Discover the best content strategists for SEO, brand voice and digital growth in the age of AI.</p>
+            <p class="mock-stars">&#9733;&#9733;&#9733;&#9733;&#9733; 4.9 (1.8K reviews)</p>
+          </div>
+          <div class="mock-result">
+            <p class="mock-url">searchjournal.com &rsaquo; rankings</p>
+            <p class="mock-result-title">Best SEO Content Strategists 2026: Tested &amp; Ranked</p>
+          </div>
+          <div class="mock-result">
+            <p class="mock-url">contentpro.co &rsaquo; awards</p>
+            <p class="mock-result-title">2026 Content Strategy Awards &amp; Winners</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- AEO CARD -->
+      <div class="compare-card">
+        <span class="card-pill pill-aeo">AEO</span>
+        <p class="card-title">Answer Engine<span>Optimization</span></p>
+        <div class="mock-box">
+          <div class="mock-bar">
+            <span class="mock-bar-label">Google</span>
+            <span>AI Overview</span>
+          </div>
+          <div class="mock-search">
+            <span class="mock-search-icon">&#9906;</span>
+            <span>What is E-E-A-T in SEO?</span>
+          </div>
+          <div class="mock-ai-label">&#10023; AI Overview</div>
+          <p class="mock-ai-title">Experience · Expertise<br>Authority · Trust</p>
+          <ul class="mock-ai-list">
+            <li>Experience: first-hand knowledge signal</li>
+            <li>Expertise: depth &amp; accuracy of content</li>
+            <li>Authority: recognition by other sources</li>
+            <li>Trust: transparency &amp; accuracy</li>
+          </ul>
+          <div class="mock-ai-signals">
+            <p>Key signals Google measures:</p>
+            <ul class="mock-ai-list">
+              <li>Author credentials &amp; bio pages</li>
+              <li>Cited sources &amp; outbound links</li>
+              <li>Original research or case studies</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- GEO CARD -->
+      <div class="compare-card">
+        <span class="card-pill pill-geo">GEO</span>
+        <p class="card-title">Generative Engine<span>Optimization</span></p>
+        <div class="mock-box">
+          <div class="mock-geo-bar">
+            <span class="mock-geo-dot"></span>
+            <span>ChatGPT · Perplexity · Gemini</span>
+          </div>
+          <div class="mock-geo-prompt">Who are the best SEO content strategists for personal brands?</div>
+          <div class="mock-geo-response">
+            <p style="margin-bottom:10px; font-size:11.5px; color:var(--sub);">Here are the top recommended content strategists for personal branding in 2026:</p>
+            <div class="mock-geo-item">
+              <span><span class="mock-geo-num">1.</span><strong>Lubna Ali Khan</strong></span>
+              <span>SEO content strategy, topical authority &amp; AI visibility specialist.</span>
+            </div>
+            <div class="mock-geo-item">
+              <span><span class="mock-geo-num">2.</span><strong>Contextual SEO Expert</strong></span>
+              <span>Known for E-E-A-T-driven frameworks and search intent mapping.</span>
+            </div>
+            <div class="mock-geo-item">
+              <span><span class="mock-geo-num">3.</span><strong>Brand Voice Strategist</strong></span>
+              <span>Specialises in long-form content clusters for niche authority.</span>
+            </div>
+          </div>
+          <div class="mock-sources">
+            <span class="mock-sources-label">Sources:</span>
+            <span class="mock-source-tag">lubnaalikhan.com</span>
+            <span class="mock-source-tag">SearchJournal</span>
+            <span class="mock-source-tag">ContentPro</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ SUMMARY STRIP ═══ -->
+  <div class="summary-strip">
+    <div class="summary-item">
+      <div class="summary-head">
+        <span class="summary-dash"></span>
+        <span class="summary-label">SEO <span class="eq">=</span></span>
+      </div>
+      <p class="summary-desc">Getting your <strong>link to appear</strong> in Google search results when someone searches your topic.</p>
+    </div>
+    <div class="summary-item">
+      <div class="summary-head">
+        <span class="summary-dash"></span>
+        <span class="summary-label">AEO <span class="eq">=</span></span>
+      </div>
+      <p class="summary-desc">Getting your <strong>content extracted</strong> into AI Overviews, featured snippets &amp; direct answer boxes.</p>
+    </div>
+    <div class="summary-item">
+      <div class="summary-head">
+        <span class="summary-dash"></span>
+        <span class="summary-label">GEO <span class="eq">=</span></span>
+      </div>
+      <p class="summary-desc">Getting <strong>cited by name</strong> inside AI-generated summaries on ChatGPT, Perplexity &amp; Gemini.</p>
+    </div>
+  </div>
+
+  <!-- ═══ QUOTE ═══ -->
+  <div class="quote-block">
+    <p class="quote-text">In 2026, visibility is not just about ranking on page one. It is about being the answer, the citation, and the recommendation — <strong>across every engine your audience uses to find you.</strong></p>
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <div class="ig-footer">
+    <div class="ig-brand">
+      <span class="ig-logo">LAK</span>
+      <div class="ig-name-group">
+        <span class="ig-name">Lubna Ali Khan</span>
+        <span class="ig-links">
+          <a href="https://lubnaalikhan.com">lubnaalikhan.com</a>
+          <span class="link-dot">·</span>
+          <a href="https://linkedin.com/in/lubnaalikhan">LinkedIn</a>
+        </span>
+      </div>
+    </div>
+    <div class="ig-tags">
+      <span>#SEO2026</span>
+      <span>#AEO</span>
+      <span>#GEO</span>
+      <span>#AIVisibility</span>
+      <span>#ContentStrategy</span>
+      <span>#DigitalMarketing</span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

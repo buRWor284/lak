@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SEO Has Evolved — Lubna Ali Khan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #F8F6F3;
+  --navy: #4A5F7A;
+  --navy-deep: #3A4D66;
+  --slate: #8899AB;
+  --mist: #B8CDD8;
+  --mist-light: rgba(184,205,216,0.18);
+  --pearl: #D5D2CE;
+  --blush: #DDD0CB;
+  --blush-light: rgba(221,208,203,0.25);
+  --ink: #2D3A4A;
+  --sub: #7A8899;
+  --rule: rgba(74,95,122,0.14);
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Raleway", "Helvetica Neue", Arial, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #888;
+  display: flex; justify-content: center;
+  padding: 32px;
+  font-family: var(--sans);
+}
+::selection { background: var(--navy); color: var(--bg); }
+
+.canvas {
+  width: 1080px;
+  background: var(--bg);
+  padding: 72px 64px 56px;
+  position: relative;
+  color: var(--ink);
+}
+
+/* ─── top pills ──────────────────────────────────────── */
+.top-pills {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+.top-pill {
+  padding: 8px 20px;
+  border: 1px solid var(--navy);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+/* ─── hero ────────────────────────────────────────────── */
+.ig-hero {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.ig-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+.ig-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--slate);
+}
+.ig-subtitle {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-style: italic;
+  color: var(--sub);
+  margin-bottom: 20px;
+}
+.ig-rule {
+  width: 56px;
+  height: 2px;
+  background: var(--mist);
+  margin: 0 auto;
+}
+
+/* ─── 4-force grid ───────────────────────────────────── */
+.force-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--rule);
+  margin-bottom: 40px;
+}
+.force {
+  padding: 40px 36px 36px;
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  position: relative;
+}
+.force:nth-child(2n) { border-right: none; }
+.force:nth-child(n+3) { border-bottom: none; }
+
+.force-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+.force-icon {
+  width: 40px; height: 40px;
+  background: var(--mist-light);
+  border: 1px solid var(--rule);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+.force-abbr {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  line-height: 1;
+}
+.force-full {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--slate);
+  margin-bottom: 14px;
+}
+.force-desc {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--sub);
+  margin-bottom: 18px;
+}
+.force-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.force-tag {
+  padding: 6px 14px;
+  background: var(--blush-light);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--navy);
+}
+
+/* alternating card accent */
+.force:nth-child(1) .force-tag { background: var(--mist-light); }
+.force:nth-child(2) .force-tag { background: var(--blush-light); }
+.force:nth-child(3) .force-tag { background: rgba(213,210,206,0.3); }
+.force:nth-child(4) .force-tag { background: var(--mist-light); }
+
+/* ─── insights strip ─────────────────────────────────── */
+.insights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+  margin-bottom: 40px;
+}
+.insight {
+  padding: 32px 28px;
+  border-right: 1px solid var(--rule);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.insight:last-child { border-right: none; }
+
+.insight-icon {
+  width: 36px; height: 36px;
+  background: var(--mist-light);
+  border: 1px solid var(--rule);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: 16px;
+  font-style: italic;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.insight-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+  line-height: 1.15;
+}
+.insight-desc {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--sub);
+  max-width: 28ch;
+}
+
+/* ─── success loop ───────────────────────────────────── */
+.loop-section {
+  padding: 36px 40px;
+  border: 1px solid var(--rule);
+  margin-bottom: 40px;
+}
+.loop-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 28px;
+}
+.loop-steps {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+.loop-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+.loop-num {
+  width: 44px; height: 44px;
+  border: 1px solid var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.loop-num.filled {
+  background: var(--navy);
+  color: var(--bg);
+}
+.loop-step-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+  line-height: 1.15;
+}
+.loop-step-sub {
+  font-size: 11px;
+  color: var(--slate);
+  letter-spacing: 0.02em;
+}
+.loop-arrow {
+  color: var(--pearl);
+  font-size: 18px;
+  margin-top: 16px;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* ─── footer ─────────────────────────────────────────── */
+.ig-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 28px;
+  border-top: 1px solid var(--rule);
+}
+.ig-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.ig-logo {
+  width: 40px; height: 40px;
+  background: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--bg);
+  letter-spacing: 0.02em;
+}
+.ig-name {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+}
+.ig-tags {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--slate);
+  letter-spacing: 0.02em;
+}
+.ig-name-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ig-links {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--slate);
+}
+.ig-links a {
+  color: var(--navy);
+  text-decoration: none;
+}
+.ig-links .link-dot {
+  color: var(--pearl);
+}
+</style>
+</head>
+<body>
+
+<div class="canvas">
+
+  <!-- TOP PILLS -->
+  <div class="top-pills">
+    <span class="top-pill">2026 Trends</span>
+    <span class="top-pill">AI Search</span>
+    <span class="top-pill">Next-Gen SEO</span>
+  </div>
+
+  <!-- HERO -->
+  <div class="ig-hero">
+    <h1 class="ig-title">SEO Has <em>Evolved.</em><br>Have You?</h1>
+    <p class="ig-subtitle">The 4 forces reshaping search visibility in the age of AI</p>
+    <div class="ig-rule"></div>
+  </div>
+
+  <!-- 4-FORCE GRID -->
+  <div class="force-grid">
+    <div class="force">
+      <div class="force-head">
+        <span class="force-icon">G</span>
+        <span class="force-abbr">GEO</span>
+      </div>
+      <p class="force-full">Generative Engine Optimization</p>
+      <p class="force-desc">Get cited inside ChatGPT, Perplexity &amp; Gemini. Optimize for AI answers, not just blue links.</p>
+      <div class="force-tags">
+        <span class="force-tag">AI Citations</span>
+        <span class="force-tag">Entity Signals</span>
+        <span class="force-tag">Prompt Clusters</span>
+        <span class="force-tag">Comparison Pages</span>
+      </div>
+    </div>
+
+    <div class="force">
+      <div class="force-head">
+        <span class="force-icon">A</span>
+        <span class="force-abbr">AEO</span>
+      </div>
+      <p class="force-full">Answer Engine Optimization</p>
+      <p class="force-desc">Win featured snippets &amp; voice search. Optimize for zero-click results that still build brand visibility.</p>
+      <div class="force-tags">
+        <span class="force-tag">FAQ Blocks</span>
+        <span class="force-tag">Structured Data</span>
+        <span class="force-tag">Voice Search</span>
+        <span class="force-tag">Snippet Win</span>
+      </div>
+    </div>
+
+    <div class="force">
+      <div class="force-head">
+        <span class="force-icon">Ai</span>
+        <span class="force-abbr">AIO</span>
+      </div>
+      <p class="force-full">AI Overviews Optimization</p>
+      <p class="force-desc">Appear in Google's AI Overviews. Use AI-assisted content pipelines to stay visible at scale.</p>
+      <div class="force-tags">
+        <span class="force-tag">Smart Repurposing</span>
+        <span class="force-tag">Content Automation</span>
+        <span class="force-tag">Programmatic Scale</span>
+        <span class="force-tag">LLM Templates</span>
+      </div>
+    </div>
+
+    <div class="force">
+      <div class="force-head">
+        <span class="force-icon">S</span>
+        <span class="force-abbr">SXO</span>
+      </div>
+      <p class="force-full">Search Experience Optimization</p>
+      <p class="force-desc">Rank AND convert. Merge UX, page speed &amp; search intent so visitors choose you over the competition.</p>
+      <div class="force-tags">
+        <span class="force-tag">Intent Match</span>
+        <span class="force-tag">Journey Flow</span>
+        <span class="force-tag">Core Web Vitals</span>
+        <span class="force-tag">UX Design</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSIGHTS STRIP -->
+  <div class="insights">
+    <div class="insight">
+      <span class="insight-icon">01</span>
+      <p class="insight-title">Zero-Click is Rising</p>
+      <p class="insight-desc">Over 60% of searches end without a click. Visibility now matters more than traffic alone.</p>
+    </div>
+    <div class="insight">
+      <span class="insight-icon">02</span>
+      <p class="insight-title">E-E-A-T is Non-Negotiable</p>
+      <p class="insight-desc">Google rewards real Experience, Expertise, Authority &amp; Trust signals in every piece.</p>
+    </div>
+    <div class="insight">
+      <span class="insight-icon">03</span>
+      <p class="insight-title">Semantic SEO Wins</p>
+      <p class="insight-desc">Topical authority over keyword stuffing. Cover topics deeply, not just target keywords.</p>
+    </div>
+  </div>
+
+  <!-- SUCCESS LOOP -->
+  <div class="loop-section">
+    <p class="loop-label">The 2026 SEO Success Loop</p>
+    <div class="loop-steps">
+      <div class="loop-step">
+        <span class="loop-num">1</span>
+        <p class="loop-step-title">Understand Intent</p>
+        <p class="loop-step-sub">Search + AI queries</p>
+      </div>
+      <span class="loop-arrow">→</span>
+      <div class="loop-step">
+        <span class="loop-num">2</span>
+        <p class="loop-step-title">Create with E-E-A-T</p>
+        <p class="loop-step-sub">Human + AI-assisted</p>
+      </div>
+      <span class="loop-arrow">→</span>
+      <div class="loop-step">
+        <span class="loop-num filled">3</span>
+        <p class="loop-step-title">Optimize for AI</p>
+        <p class="loop-step-sub">GEO + AEO + AIO</p>
+      </div>
+      <span class="loop-arrow">→</span>
+      <div class="loop-step">
+        <span class="loop-num">4</span>
+        <p class="loop-step-title">Elevate Experience</p>
+        <p class="loop-step-sub">SXO + Core Vitals</p>
+      </div>
+      <span class="loop-arrow">→</span>
+      <div class="loop-step">
+        <span class="loop-num">5</span>
+        <p class="loop-step-title">Measure &amp; Iterate</p>
+        <p class="loop-step-sub">Rank · Convert · Repeat</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="ig-footer">
+    <div class="ig-brand">
+      <span class="ig-logo">LAK</span>
+      <div class="ig-name-group">
+        <span class="ig-name">Lubna Ali Khan</span>
+        <span class="ig-links">
+          <a href="https://lubnaalikhan.com">lubnaalikhan.com</a>
+          <span class="link-dot">·</span>
+          <a href="https://linkedin.com/in/lubnaalikhan">LinkedIn</a>
+        </span>
+      </div>
+    </div>
+    <div class="ig-tags">
+      <span>#SEO2026</span>
+      <span>#GEO</span>
+      <span>#AEO</span>
+      <span>#AISearch</span>
+      <span>#ContentStrategy</span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
