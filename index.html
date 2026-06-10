@@ -1,19 +1,930 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lubna Ali Khan — Content Editor & SEO Professional</title>
-    <meta name="description" content="Lubna Ali Khan is a digital content editor and onsite SEO professional based in Peshawar, Pakistan, available for remote international roles." />
-    <meta property="og:title" content="Lubna Ali Khan — Content Editor & SEO Professional" />
-    <meta property="og:description" content="Digital content editor and onsite SEO professional. Available for remote content & SEO work." />
-    <meta property="og:type" content="website" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Lubna Ali Khan is a digital content editor and onsite SEO professional based in Pakistan, available for remote work." />
+<title>Lubna Ali Khan — Content Editor &amp; SEO Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F8F6F3;
+    --heading: #4A5F7A;
+    --body: #3F4A57;
+    --secondary: #505A66;
+    --quote: #66788A;
+    --border: #D5D2CE;
+    --accent-box: #DDD0CB;
+    --font-heading: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Raleway', sans-serif;
+    --max: 860px;
+    --gutter: clamp(1.5rem, 5vw, 3rem);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--body);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.75;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  nav {
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 0;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 100;
+  }
+  nav .inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--heading);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--heading); }
+
+  .hero {
+    padding: 5rem 0 4rem;
+  }
+  .hero-eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--quote);
+    margin-bottom: 1.5rem;
+  }
+  h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 300;
+    color: var(--heading);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.75rem;
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 300;
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--secondary);
+    max-width: 560px;
+    line-height: 1.85;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: var(--heading);
+    color: #F8F6F3;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.85rem 2rem;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: #3d5068; transform: translateY(-1px); }
+  .btn-outline {
+    display: inline-block;
+    border: 1px solid var(--border);
+    color: var(--secondary);
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.85rem 2rem;
+    transition: border-color 0.2s, color 0.2s, transform 0.15s;
+  }
+  .btn-outline:hover { border-color: var(--heading); color: var(--heading); transform: translateY(-1px); }
+
+  section { padding: 4rem 0; border-top: 1px solid var(--border); }
+
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--quote);
+    margin-bottom: 2.5rem;
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 400;
+    color: var(--heading);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+  }
+  h2 em { font-style: italic; }
+
+  h3 {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    font-weight: 500;
+    color: var(--heading);
+    line-height: 1.25;
+    margin-bottom: 0.6rem;
+  }
+
+  p { margin-bottom: 1rem; color: var(--body); }
+  p:last-child { margin-bottom: 0; }
+
+  /* About */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .about-accent {
+    background: var(--accent-box);
+    padding: 2rem 2.25rem;
+    border-left: 3px solid var(--heading);
+    margin-bottom: 2rem;
+  }
+  .about-accent blockquote {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--quote);
+    line-height: 1.55;
+    margin-bottom: 1rem;
+  }
+  .about-accent cite {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    font-style: normal;
+  }
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  .tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--heading);
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.85rem;
+    background: transparent;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  /* Hobbies */
+  .hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  .hobby-card {
+    padding: 1.5rem 1.5rem 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .hobby-icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  .hobby-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+  .hobby-card p {
+    font-size: 0.85rem;
+    color: var(--secondary);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* Services */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+  }
+  .service-item {
+    padding: 2rem 1.75rem;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .service-item:nth-child(3n) { border-right: none; }
+  .service-item:nth-last-child(-n+3) { border-bottom: none; }
+  .service-num {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--accent-box);
+    line-height: 1;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .service-item h3 { font-size: 1.15rem; margin-bottom: 0.65rem; }
+  .service-item p { font-size: 0.9rem; color: var(--secondary); line-height: 1.7; margin: 0; }
+
+  /* Work */
+  .work-list { display: flex; flex-direction: column; }
+  .work-item {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr auto;
+    gap: 2rem;
+    align-items: baseline;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .work-item:first-child { border-top: 1px solid var(--border); }
+  .work-meta { font-size: 0.78rem; letter-spacing: 0.06em; color: var(--quote); font-weight: 500; padding-top: 0.15rem; }
+  .work-title { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 400; color: var(--heading); }
+  .work-title span { display: block; font-family: var(--font-body); font-size: 0.85rem; color: var(--secondary); margin-top: 0.35rem; font-weight: 400; }
+  .work-link {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1px;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .work-link:hover { color: var(--heading); border-color: var(--heading); }
+  .work-org { display: block; font-family: var(--font-body); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--quote); margin-top: 0.5rem; }
+
+  /* Education */
+  .edu-card {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
+    align-items: center;
+    background: var(--accent-box);
+    padding: 2.5rem 2.75rem;
+  }
+  .edu-mark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    border: 1px solid var(--heading);
+    padding: 1.5rem 1rem;
+    font-family: var(--font-heading);
+    color: var(--heading);
+  }
+  .edu-mark span:first-child { font-size: 1.6rem; font-weight: 500; letter-spacing: 0.06em; }
+  .edu-mark span:last-child { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--secondary); font-family: var(--font-body); }
+  .edu-degree { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.6rem); font-weight: 400; color: var(--heading); line-height: 1.1; margin-bottom: 0.5rem; }
+  .edu-degree span { font-style: italic; }
+  .edu-school { font-size: 0.92rem; font-weight: 600; letter-spacing: 0.04em; color: var(--secondary); margin-bottom: 0.75rem; }
+  .edu-note { font-size: 0.9rem; color: var(--secondary); line-height: 1.7; margin: 0; }
+
+  /* Certifications */
+  .cert-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+    list-style: none;
+  }
+  .cert {
+    padding: 2rem 1.75rem;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .cert:nth-child(3n) { border-right: none; }
+  .cert:nth-last-child(-n+3) { border-bottom: none; }
+  .cert-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem; }
+  .cert-org { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 500; color: var(--heading); }
+  .cert-year { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; color: var(--quote); }
+  .cert-title { font-size: 0.95rem; color: var(--body); line-height: 1.5; margin-bottom: 0.4rem; }
+  .cert-kind { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--quote); margin: 0; }
+  .cert-soon { opacity: 0.55; }
+  .cert-badge { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--secondary); border: 1px solid var(--border); padding: 0.2rem 0.55rem; }
+
+  /* Tools */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+  .tool-category {
+    background: var(--bg);
+    padding: 2rem 1.75rem;
+  }
+  .tool-cat-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--quote);
+    margin-bottom: 1.1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .tool-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+  .tool-name {
+    font-size: 0.95rem;
+    color: var(--body);
+    line-height: 1.4;
+  }
+
+  /* Insights */
+  .insights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .insight-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding: 1.75rem 1.5rem 1.5rem;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.25s, border-color 0.25s, background 0.25s;
+  }
+  .insight-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--heading);
+    background: rgba(221,208,203,0.18);
+  }
+  .insight-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .insight-card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .insight-card-tag {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    border: 1px solid var(--border);
+    padding: 0.25rem 0.6rem;
+  }
+  .insight-card-num {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--quote);
+  }
+  .insight-card-title {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 1.35rem;
+    line-height: 1.15;
+    color: var(--heading);
+    margin: 0.25rem 0 0;
+  }
+  .insight-card-desc { font-size: 0.85rem; color: var(--secondary); line-height: 1.6; margin: 0; }
+  .insight-card-link {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--heading);
+    margin-top: auto;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Testimonials */
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .testimonial-card {
+    background: var(--accent-box);
+    padding: 2rem 2.25rem;
+  }
+  .testimonial-card blockquote {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--quote);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+  }
+  .testimonial-author { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--secondary); }
+  .testimonial-author span { display: block; font-weight: 400; text-transform: none; letter-spacing: 0; margin-top: 0.15rem; color: var(--quote); }
+
+  /* Contact */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .contact-details { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 0.5rem; }
+  .contact-row { display: flex; flex-direction: column; gap: 0.2rem; }
+  .contact-row .label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--quote); }
+  .contact-row a, .contact-row span { font-size: 0.95rem; color: var(--body); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s, color 0.2s; }
+  .contact-row a:hover { color: var(--heading); border-color: var(--heading); }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-field { display: flex; flex-direction: column; gap: 0.35rem; }
+  .form-field label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--secondary); }
+  .form-field input, .form-field textarea {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--body);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: vertical;
+  }
+  .form-field input:focus, .form-field textarea:focus { border-color: var(--heading); }
+  .form-field textarea { min-height: 120px; }
+
+  footer {
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+    margin-top: 4rem;
+  }
+  .footer-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-copy { font-size: 0.8rem; color: var(--quote); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; color: var(--secondary); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--heading); }
+
+  @media (max-width: 720px) {
+    .about-grid, .contact-grid, .testimonial-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .tools-grid { grid-template-columns: 1fr; }
+    .services-grid, .insights-grid { grid-template-columns: 1fr; }
+    .cert-list { grid-template-columns: 1fr; }
+    .cert { border-right: none !important; border-bottom: 1px solid var(--border) !important; }
+    .cert:last-child { border-bottom: none !important; }
+    .edu-card { grid-template-columns: 1fr; gap: 2rem; }
+    .hobbies-grid { grid-template-columns: 1fr 1fr; }
+    .service-item { border-right: none !important; border-bottom: 1px solid var(--border) !important; }
+    .service-item:last-child { border-bottom: none !important; }
+    .work-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    .work-link { align-self: flex-start; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a href="#" class="nav-logo">Lubna Ali Khan</a>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#insights">Insights</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <section class="hero" style="border-top: none; padding-top: 5rem;">
+    <p class="hero-eyebrow">Content Editor &amp; SEO Professional · Pakistan</p>
+    <h1>Words that work.<br /><em>Stories that stay.</em></h1>
+    <p class="hero-sub">I edit content and handle onsite SEO for publishers and brands who want their writing to actually reach people. I work remotely and I genuinely enjoy what I do.</p>
+    <div class="hero-actions">
+      <a href="#work" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+  </section>
+</div>
+
+<section id="about">
+  <div class="container">
+    <p class="section-label">About</p>
+    <div class="about-grid">
+      <div>
+        <h2>A little about <em>me</em></h2>
+        <p>I'm Lubna. I'm a content editor and SEO professional based in Pakistan, and I've spent the better part of the last six years helping writers say what they actually mean and helping websites show up for the people searching for them.</p>
+        <p>I came to this work through a genuine love of reading. Books have always been my thing, the kind you finish and sit with for a while. That habit of paying close attention to how a piece of writing is put together turned out to be pretty useful professionally.</p>
+        <p>Outside of work I'm usually in the garden, which is my favourite way to slow down. I also play badminton, go for long walks, and train regularly. My pets are a constant source of company and chaos. If something has soil on it or fur on it, I'm probably involved.</p>
+        <div class="tag-list">
+          <span class="tag">Content Editing</span>
+          <span class="tag">Onsite SEO</span>
+          <span class="tag">Editorial Strategy</span>
+          <span class="tag">Keyword Research</span>
+          <span class="tag">Long-Form Writing</span>
+          <span class="tag">Content Audits</span>
+        </div>
+      </div>
+      <div>
+        <div class="about-accent">
+          <blockquote>The best SEO is just good writing. Content that earns its ranking by being genuinely useful is the only kind worth making.</blockquote>
+          <cite>Lubna Ali Khan</cite>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="life">
+  <div class="container">
+    <p class="section-label">Life Outside Work</p>
+    <h2 style="margin-bottom: 2.5rem;">What keeps me <em>going</em></h2>
+    <div class="hobbies-grid">
+      <div class="hobby-card">
+        <span class="hobby-icon">🌿</span>
+        <h3>Gardening</h3>
+        <p>My garden is where I do my best thinking. There is something about tending to plants that resets everything. I grow whatever will survive me.</p>
+      </div>
+      <div class="hobby-card">
+        <span class="hobby-icon">📚</span>
+        <h3>Reading</h3>
+        <p>Always in the middle of at least two books. Reading is honestly what made me a better editor. You learn what good writing feels like by spending time with a lot of it.</p>
+      </div>
+      <div class="hobby-card">
+        <span class="hobby-icon">🐾</span>
+        <h3>Pet Lover</h3>
+        <p>My pets are a big part of my day. They are terrible at respecting deadlines but very good at everything else.</p>
+      </div>
+      <div class="hobby-card">
+        <span class="hobby-icon">🚶</span>
+        <h3>Walking</h3>
+        <p>Long walks are where I work through problems. Some of my best editing decisions have happened somewhere between the first and fourth kilometre.</p>
+      </div>
+      <div class="hobby-card">
+        <span class="hobby-icon">💪</span>
+        <h3>Weight Training</h3>
+        <p>I train regularly. It keeps me focused and honestly makes me a more patient person, which is useful in every part of life, editing included.</p>
+      </div>
+      <div class="hobby-card">
+        <span class="hobby-icon">🥋</span>
+        <h3>Taekwondo</h3>
+        <p>Taekwondo taught me discipline before anything else did. The practice of showing up, drilling the basics and respecting the process has shaped how I approach my work too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <p class="section-label">What I Do</p>
+    <h2 style="margin-bottom: 2.5rem;">Services</h2>
+    <div class="services-grid">
+      <div class="service-item">
+        <div class="service-num">01</div>
+        <h3>Content Editing</h3>
+        <p>I work through the structure, the flow and the individual sentences. The goal is always to make the piece clearer and more readable without making it sound like someone else wrote it.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-num">02</div>
+        <h3>Onsite SEO</h3>
+        <p>Titles, meta descriptions, heading structure, internal links and keyword placement. The unglamorous stuff that actually determines whether anyone finds your content in the first place.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-num">03</div>
+        <h3>Content Strategy</h3>
+        <p>Figuring out what to write, when to write it and why. I help teams build editorial systems that make sense for their audience and hold up over time.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-num">04</div>
+        <h3>Keyword Research</h3>
+        <p>Finding out what your readers are actually searching for and making sure your content answers those questions well. Volume matters less to me than intent.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-num">05</div>
+        <h3>Content Audits</h3>
+        <p>Going through existing content to work out what is pulling its weight, what needs updating and what should probably be retired. Honest assessments only.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-num">06</div>
+        <h3>Long-Form Writing</h3>
+        <p>Guides, features, explainers and evergreen pieces. Writing that takes a real position and gives readers something worth their time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="container">
+    <p class="section-label">Stack</p>
+    <h2 style="margin-bottom: 2.5rem;">What I <em>reach for</em></h2>
+    <div class="tools-grid">
+      <div class="tool-category">
+        <p class="tool-cat-label">CMS &amp; SEO</p>
+        <div class="tool-items">
+          <span class="tool-name">WordPress</span>
+          <span class="tool-name">Rank Math</span>
+          <span class="tool-name">Detailed SEO Extension</span>
+        </div>
+      </div>
+      <div class="tool-category">
+        <p class="tool-cat-label">AI</p>
+        <div class="tool-items">
+          <span class="tool-name">ChatGPT</span>
+          <span class="tool-name">Claude</span>
+          <span class="tool-name">Gemini</span>
+        </div>
+      </div>
+      <div class="tool-category">
+        <p class="tool-cat-label">Design</p>
+        <div class="tool-items">
+          <span class="tool-name">Photoshop</span>
+          <span class="tool-name">CorelDRAW</span>
+        </div>
+      </div>
+      <div class="tool-category">
+        <p class="tool-cat-label">Collaboration</p>
+        <div class="tool-items">
+          <span class="tool-name">Slack</span>
+          <span class="tool-name">Notion</span>
+        </div>
+      </div>
+      <div class="tool-category">
+        <p class="tool-cat-label">Deployment</p>
+        <div class="tool-items">
+          <span class="tool-name">Vercel</span>
+          <span class="tool-name">Netlify</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="container">
+    <p class="section-label">Experience</p>
+    <h2 style="margin-bottom: 2.5rem;">Where I <em>work</em></h2>
+    <div class="work-list">
+      <div class="work-item">
+        <div class="work-meta">Content Editing<br />Current</div>
+        <div class="work-title">
+          Content Editor
+          <span class="work-org">Faisal Khan LLC &nbsp;·&nbsp; Remote &nbsp;·&nbsp; United States</span>
+          <span>I work as a content editor on the team at Faisal Khan LLC, a US-based company. My work involves editing articles and written content for clarity, structure and accuracy, making sure the writing is tight and the information is sound before anything goes live.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <p class="section-label">Education</p>
+    <h2 style="margin-bottom: 2.5rem;">Where it <em>started</em></h2>
+    <div class="edu-card">
+      <div class="edu-mark">
+        <span>CECOS</span>
+        <span>University</span>
+      </div>
+      <div>
+        <p class="edu-degree">BBA <span>(Hons)</span></p>
+        <p class="edu-school">Cecos University</p>
+        <p class="edu-note">Bachelor of Business Administration — coursework spanning marketing, management and communications, the foundations I carry into every brief.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="container">
+    <p class="section-label">Credentials</p>
+    <h2 style="margin-bottom: 2.5rem;">Trained, certified, <em>kept current</em></h2>
+    <ul class="cert-list">
+      <li class="cert">
+        <div class="cert-top">
+          <span class="cert-org">UNICEF</span>
+          <span class="cert-year">2024 — 2026</span>
+        </div>
+        <p class="cert-title">CorelDRAW &amp; Photoshop Training</p>
+        <p class="cert-kind">Graphic Design</p>
+      </li>
+      <li class="cert">
+        <div class="cert-top">
+          <span class="cert-org">DigiSkills</span>
+          <span class="cert-year">2019</span>
+        </div>
+        <p class="cert-title">Graphic Design</p>
+        <p class="cert-kind">Training Program</p>
+      </li>
+      <li class="cert">
+        <div class="cert-top">
+          <span class="cert-org">DigiSkills</span>
+          <span class="cert-year">2019</span>
+        </div>
+        <p class="cert-title">Freelancing</p>
+        <p class="cert-kind">Training Program</p>
+      </li>
+      <li class="cert cert-soon">
+        <div class="cert-top">
+          <span class="cert-org">HubSpot</span>
+          <span class="cert-year cert-badge">Coming Soon</span>
+        </div>
+        <p class="cert-title">Content Marketing</p>
+        <p class="cert-kind">Certification</p>
+      </li>
+      <li class="cert cert-soon">
+        <div class="cert-top">
+          <span class="cert-org">Ahrefs</span>
+          <span class="cert-year cert-badge">Coming Soon</span>
+        </div>
+        <p class="cert-title">Technical SEO</p>
+        <p class="cert-kind">Certification</p>
+      </li>
+      <li class="cert cert-soon">
+        <div class="cert-top">
+          <span class="cert-org">SEMrush</span>
+          <span class="cert-year cert-badge">Coming Soon</span>
+        </div>
+        <p class="cert-title">SEO Crash Course</p>
+        <p class="cert-kind">Certification</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="insights">
+  <div class="container">
+    <p class="section-label">Insights</p>
+    <h2 style="margin-bottom: 2.5rem;">Thinking out <em>loud</em></h2>
+    <div class="insights-grid">
+      <a class="insight-card" href="infographics/seo-has-evolved.html" target="_blank" rel="noopener">
+        <div class="insight-card-top">
+          <div class="insight-card-tags">
+            <span class="insight-card-tag">2026 Trends</span>
+            <span class="insight-card-tag">AI Search</span>
+          </div>
+          <span class="insight-card-num">01</span>
+        </div>
+        <h3 class="insight-card-title">SEO Has Evolved. Have You?</h3>
+        <p class="insight-card-desc">The 4 forces reshaping search visibility in the age of AI — GEO, AEO, AIO, and SXO.</p>
+        <span class="insight-card-link">View infographic →</span>
+      </a>
+      <a class="insight-card" href="infographics/content-context-rankings.html" target="_blank" rel="noopener">
+        <div class="insight-card-top">
+          <div class="insight-card-tags">
+            <span class="insight-card-tag">SEO Fundamentals</span>
+            <span class="insight-card-tag">On-Page SEO</span>
+          </div>
+          <span class="insight-card-num">02</span>
+        </div>
+        <h3 class="insight-card-title">Content + Context = Rankings</h3>
+        <p class="insight-card-desc">Why both content and context are non-negotiable for SEO success in the age of AI.</p>
+        <span class="insight-card-link">View infographic →</span>
+      </a>
+      <a class="insight-card" href="infographics/seo-vs-geo-vs-aeo.html" target="_blank" rel="noopener">
+        <div class="insight-card-top">
+          <div class="insight-card-tags">
+            <span class="insight-card-tag">Digital Visibility</span>
+            <span class="insight-card-tag">2026</span>
+          </div>
+          <span class="insight-card-num">03</span>
+        </div>
+        <h3 class="insight-card-title">SEO vs AEO vs GEO</h3>
+        <p class="insight-card-desc">Know the difference — search visibility in 2026 spans traditional rankings, AI overviews, and generative citations.</p>
+        <span class="insight-card-link">View infographic →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Contact</p>
+    <div class="contact-grid">
+      <div>
+        <h2>Let's work <em>together</em></h2>
+        <p style="color: var(--secondary);">I take on remote editorial and SEO work year round. If you have a content problem you are trying to solve, I am happy to talk through it.</p>
+        <div class="contact-details">
+          <div class="contact-row">
+            <span class="label">Location</span>
+            <span>Pakistan. Remote worldwide.</span>
+          </div>
+          <div class="contact-row">
+            <span class="label">LinkedIn</span>
+            <a href="#">linkedin.com/in/lubnaalikhan</a>
+          </div>
+          <div class="contact-row">
+            <span class="label">Availability</span>
+            <span>Open to new projects</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="contact-form">
+          <div class="form-field">
+            <label for="name">Your name</label>
+            <input type="text" id="name" placeholder="What should I call you?" />
+          </div>
+          <div class="form-field">
+            <label for="email">Email address</label>
+            <input type="email" id="email" placeholder="your@email.com" />
+          </div>
+          <div class="form-field">
+            <label for="project">What are you working on?</label>
+            <textarea id="project" placeholder="Tell me a bit about the project and what you need."></textarea>
+          </div>
+          <a href="#" class="btn-primary" style="text-align:center; margin-top:0.5rem;">Send Message</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">© 2026 Lubna Ali Khan</p>
+    <div class="footer-links">
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#insights">Insights</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
 </html>
