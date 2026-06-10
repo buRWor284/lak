@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react'
 
 const SKILLS = [
   { name: "Content Editing", value: 4 },
-  { name: "Content Management Systems", value: 3 },
-  { name: "Onsite SEO", value: 3 },
+  { name: "Content Management Systems", value: 4 },
+  { name: "Onsite SEO", value: 4 },
   { name: "Tech SEO", value: 3 },
-  { name: "AI Prompt Engineering", value: 3 },
-  { name: "Communication", value: 4 },
+  { name: "AI Prompt Engineering", value: 4 },
+  { name: "Communication", value: 5 },
   { name: "Team Collaboration", value: 4 },
 ]
 
@@ -388,6 +388,25 @@ function LuxeInsights() {
 }
 
 function LuxeContact() {
+  const [status, setStatus] = useState("idle") // idle | sending | sent | error
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    setStatus("sending")
+    const { name, email, message } = Object.fromEntries(new FormData(e.target))
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, message }),
+    })
+    if (res.ok) {
+      setStatus("sent")
+      e.target.reset()
+    } else {
+      setStatus("error")
+    }
+  }
+
   return (
     <section className="contact" id="contact">
       <div className="contact-inner">
@@ -398,16 +417,48 @@ function LuxeContact() {
         <p className="contact-sub">
           Content editing &nbsp;·&nbsp; SEO optimization &nbsp;·&nbsp; Publishing workflows &nbsp;·&nbsp; AI-assisted writing &nbsp;·&nbsp; Digital strategy
         </p>
-        <a className="contact-cta" href="mailto:lubnairfan98@gmail.com">
-          <span>Start a conversation</span>
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M3 9 H15 M10 4 L15 9 L10 14" stroke="currentColor" strokeWidth="1.2" />
-          </svg>
-        </a>
+
+        {status === "sent" ? (
+          <p className="form-success">Message sent — I&apos;ll be in touch soon.</p>
+        ) : (
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <div className="form-row">
+              <input
+                className="form-input"
+                type="text"
+                name="name"
+                placeholder="Your name"
+                required
+              />
+              <input
+                className="form-input"
+                type="email"
+                name="email"
+                placeholder="Your email"
+                required
+              />
+            </div>
+            <textarea
+              className="form-input form-textarea"
+              name="message"
+              placeholder="What are you working on?"
+              rows={5}
+              required
+            />
+            {status === "error" && (
+              <p className="form-error">Something went wrong. Please try again.</p>
+            )}
+            <button className="contact-cta" type="submit" disabled={status === "sending"}>
+              <span>{status === "sending" ? "Sending…" : "Send message"}</span>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M3 9 H15 M10 4 L15 9 L10 14" stroke="currentColor" strokeWidth="1.2" />
+              </svg>
+            </button>
+          </form>
+        )}
+
         <div className="contact-foot">
-          <span>Reach out</span>
-          <a href="mailto:lubnairfan98@gmail.com">lubnairfan98@gmail.com</a>
-          <span className="dotmid">·</span>
+          <span>Find me on</span>
           <a href="https://linkedin.com/in/lubnaalikhan" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>

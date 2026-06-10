@@ -757,6 +757,36 @@ section {
 }
 .dotmid { color: rgba(248,246,243,0.3); }
 
+/* ─── contact form ────────────────────────────────────── */
+.contact-form { display: flex; flex-direction: column; gap: 16px; max-width: 560px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-input {
+  width: 100%;
+  background: rgba(248,246,243,0.08);
+  border: 1px solid rgba(248,246,243,0.18);
+  color: var(--bg);
+  font-family: var(--sans);
+  font-size: 14px;
+  padding: 14px 18px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.form-input::placeholder { color: rgba(248,246,243,0.4); }
+.form-input:focus { border-color: rgba(248,246,243,0.5); }
+.form-textarea { resize: vertical; min-height: 120px; }
+.form-success {
+  font-family: var(--display);
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-style: italic;
+  color: var(--blush);
+  margin: 8px 0 32px;
+}
+.form-error { font-size: 13px; color: var(--blush); margin: -4px 0; }
+.contact-cta:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+@media (max-width: 640px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+
 /* ─── footer ──────────────────────────────────────────── */
 .foot {
   padding: 28px var(--pad) 36px;
