@@ -22,8 +22,8 @@
     --accent-box: #DDD0CB;
     --font-heading: 'Cormorant Garamond', Georgia, serif;
     --font-body: 'Raleway', sans-serif;
-    --max: 860px;
-    --gutter: clamp(1.5rem, 5vw, 3rem);
+    --max: 1240px;
+    --gutter: clamp(1.5rem, 5vw, 4rem);
   }
 
   html { scroll-behavior: smooth; }
@@ -67,6 +67,7 @@
     color: var(--heading);
     text-decoration: none;
     letter-spacing: 0.02em;
+    white-space: nowrap;
   }
   .nav-links {
     display: flex;
@@ -199,7 +200,7 @@
     background: var(--accent-box);
     padding: 2rem 2.25rem;
     border-left: 3px solid var(--heading);
-    margin-bottom: 1.25rem;
+    margin-bottom: 2rem;
   }
   .about-accent blockquote {
     font-family: var(--font-heading);
@@ -239,10 +240,47 @@
   /* Hobbies */
   .hobbies-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
-    margin-top: 0.5rem;
+    margin-top: 2rem;
   }
+  .hobbies-details summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .hobbies-details summary::-webkit-details-marker { display: none; }
+  .hobbies-details summary h2 { margin-bottom: 0; }
+  .hobbies-hint {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--quote);
+    font-family: var(--font-heading);
+  }
+  .hobbies-toggle {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    transition: color 0.2s;
+  }
+  .hobbies-details summary:hover .hobbies-toggle { color: var(--heading); }
+  .hobbies-toggle .chev { transition: transform 0.25s; display: inline-block; }
+  .hobbies-details[open] .hobbies-toggle .chev { transform: rotate(180deg); }
+  .hobbies-details[open] .hobbies-toggle .open-label { display: none; }
+  .hobbies-toggle .closed-label { display: inline; }
+  .hobbies-details[open] .hobbies-toggle .closed-label { display: none; }
+  .hobbies-toggle .open-label { display: none; }
+  .hobbies-details[open] .hobbies-toggle .open-label { display: inline; }
   .hobby-card {
     padding: 1.5rem 1.5rem 1.25rem;
     border: 1px solid var(--border);
@@ -692,12 +730,7 @@
         <h2>A little about <em>me</em></h2>
         <p>I'm Lubna. I'm a content editor and SEO professional based in Pakistan, and I've spent the better part of the last six years helping writers say what they actually mean and helping websites show up for the people searching for them.</p>
         <p>I came to this work through a genuine love of reading. Books have always been my thing, the kind you finish and sit with for a while. That habit of paying close attention to how a piece of writing is put together turned out to be pretty useful professionally.</p>
-      </div>
-      <div>
-        <div class="about-accent">
-          <blockquote>The best SEO is just good writing. Content that earns its ranking by being genuinely useful is the only kind worth making.</blockquote>
-          <cite>Lubna Ali Khan</cite>
-        </div>
+        <p>Outside of work I'm usually in the garden, which is my favourite way to slow down. I go for long walks, train regularly, and spend quiet evenings with poetry and philosophy. My pets are a constant source of company and chaos. If something has soil on it or fur on it, I'm probably involved.</p>
         <div class="tag-list">
           <span class="tag">Content Editing</span>
           <span class="tag">Onsite SEO</span>
@@ -707,60 +740,12 @@
           <span class="tag">Content Audits</span>
         </div>
       </div>
-    </div>
-    <p style="margin-top: 2rem; color: var(--secondary); line-height: 1.85;">Outside of work I'm usually in the garden, which is my favourite way to slow down. I go for long walks, train regularly, and spend quiet evenings with poetry and philosophy. My pets are a constant source of company and chaos. If something has soil on it or fur on it, I'm probably involved.</p>
-  </div>
-</section>
+      <div>
+        <div class="about-accent">
+          <blockquote>The best SEO is just good writing. Content that earns its ranking by being genuinely useful is the only kind worth making.</blockquote>
+          <cite>Lubna Ali Khan</cite>
+        </div>
 
-<section id="life">
-  <div class="container">
-    <p class="section-label">Life Outside Work</p>
-    <h2 style="margin-bottom: 2.5rem;">What keeps me <em>going</em></h2>
-    <div class="hobbies-grid">
-      <div class="hobby-card">
-        <span class="hobby-icon">🌿</span>
-        <h3>Gardening</h3>
-        <p>My garden is where I do my best thinking. There is something about tending to plants that resets everything. I grow whatever will survive me.</p>
-      </div>
-      <div class="hobby-card">
-        <span class="hobby-icon">📚</span>
-        <h3>Reading</h3>
-        <p>Always in the middle of at least two books. Reading is honestly what made me a better editor. You learn what good writing feels like by spending time with a lot of it.</p>
-      </div>
-      <div class="hobby-card">
-        <span class="hobby-icon">🐾</span>
-        <h3>Pet Lover</h3>
-        <p>My pets are a big part of my day. They are terrible at respecting deadlines but very good at everything else.</p>
-      </div>
-      <div class="hobby-card">
-        <span class="hobby-icon">🚶</span>
-        <h3>Walking</h3>
-        <p>Long walks are where I work through problems. Some of my best editing decisions have happened somewhere between the first and fourth kilometre.</p>
-      </div>
-      <div class="hobby-card">
-        <span class="hobby-icon">💪</span>
-        <h3>Weight Training</h3>
-        <p>I train regularly. It keeps me focused and honestly makes me a more patient person, which is useful in every part of life, editing included.</p>
-      </div>
-      <div class="hobby-card">
-        <span class="hobby-icon">🥋</span>
-        <h3>Taekwondo</h3>
-        <p>Taekwondo taught me discipline before anything else did. The practice of showing up, drilling the basics and respecting the process has shaped how I approach my work too.</p>
-      </div>
-      <div class="hobby-card">
-        <span class="hobby-icon">✍️</span>
-        <h3>Poetry</h3>
-        <p>Writing poetry is how I process the things that don't fit neatly into an article. It keeps my relationship with language honest, precise where it needs to be, open where it doesn't.</p>
-      </div>
-      <div class="hobby-card">
-        <span class="hobby-icon">🔍</span>
-        <h3>Philosophy</h3>
-        <p>I read philosophy the way other people read thrillers. The questions interest me more than the answers. It has made me a better thinker and, I think, a more careful editor.</p>
-      </div>
-      <div class="hobby-card">
-        <span class="hobby-icon">🍳</span>
-        <h3>Cooking</h3>
-        <p>Cooking is where I experiment without consequences. I approach a recipe the way I approach a brief: understand it first, then decide what it actually needs. The kitchen is where I unwind.</p>
       </div>
     </div>
   </div>
@@ -988,6 +973,66 @@
   </div>
 </section>
 
+<section id="life">
+  <div class="container">
+    <p class="section-label">Life Outside Work</p>
+    <details class="hobbies-details">
+      <summary>
+        <h2>What keeps me <em>going</em></h2>
+        <span class="hobbies-hint">What I do in my off time…</span>
+        <span class="hobbies-toggle"><span class="closed-label">Take a look</span><span class="open-label">Close</span><span class="chev">↓</span></span>
+      </summary>
+      <div class="hobbies-grid">
+      <div class="hobby-card">
+        <span class="hobby-icon">🌿</span>
+        <h3>Gardening</h3>
+        <p>My garden is where I do my best thinking. There is something about tending to plants that resets everything. I grow whatever will survive me.</p>
+      </div>
+      <div class="hobby-card">
+        <span class="hobby-icon">📚</span>
+        <h3>Reading</h3>
+        <p>Always in the middle of at least two books. Reading is honestly what made me a better editor. You learn what good writing feels like by spending time with a lot of it.</p>
+      </div>
+      <div class="hobby-card">
+        <span class="hobby-icon">🐾</span>
+        <h3>Pet Lover</h3>
+        <p>My pets are a big part of my day. They are terrible at respecting deadlines but very good at everything else.</p>
+      </div>
+      <div class="hobby-card">
+        <span class="hobby-icon">🚶</span>
+        <h3>Walking</h3>
+        <p>Long walks are where I work through problems. Some of my best editing decisions have happened somewhere between the first and fourth kilometre.</p>
+      </div>
+      <div class="hobby-card">
+        <span class="hobby-icon">💪</span>
+        <h3>Weight Training</h3>
+        <p>I train regularly. It keeps me focused and honestly makes me a more patient person, which is useful in every part of life, editing included.</p>
+      </div>
+      <div class="hobby-card">
+        <span class="hobby-icon">🥋</span>
+        <h3>Taekwondo</h3>
+        <p>Taekwondo taught me discipline before anything else did. The practice of showing up, drilling the basics and respecting the process has shaped how I approach my work too.</p>
+      </div>
+      <div class="hobby-card">
+        <span class="hobby-icon">✍️</span>
+        <h3>Poetry</h3>
+        <p>Writing poetry is how I process the things that don't fit neatly into an article. It keeps my relationship with language honest, precise where it needs to be, open where it doesn't.</p>
+      </div>
+      <div class="hobby-card">
+        <span class="hobby-icon">🔍</span>
+        <h3>Philosophy</h3>
+        <p>I read philosophy the way other people read thrillers. The questions interest me more than the answers. It has made me a better thinker and, I think, a more careful editor.</p>
+      </div>
+      <div class="hobby-card">
+        <span class="hobby-icon">🍳</span>
+        <h3>Cooking</h3>
+        <p>Cooking is where I experiment without consequences. I approach a recipe the way I approach a brief: understand it first, then decide what it actually needs. The kitchen is where I unwind.</p>
+      </div>
+      </div>
+    </details>
+  </div>
+</section>
+
 <section id="contact">
   <div class="container">
     <p class="section-label">Contact</p>
@@ -1076,5 +1121,6 @@
     });
   })();
 </script>
+
 </body>
 </html>
