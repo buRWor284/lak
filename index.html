@@ -238,10 +238,8 @@
   }
 
   .about-photo {
-    width: 240px;
-    max-width: 100%;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
+    width: 60px;
+    height: auto;
     border: 1px solid var(--border);
     display: block;
     margin-bottom: 2rem;
@@ -479,6 +477,25 @@
     object-position: top center;
     border-bottom: 1px solid var(--border);
     display: block;
+  }
+  .insight-frame {
+    position: relative;
+    width: calc(100% + 3rem);
+    margin: -1.75rem -1.5rem 0.35rem;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+  }
+  .insight-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1144px;
+    height: 1000px;
+    border: 0;
+    pointer-events: none;
+    transform-origin: top left;
   }
   .insight-card-top {
     display: flex;
@@ -762,7 +779,7 @@
         </div>
       </div>
       <div>
-        <img class="about-photo" src="lubna-headshot.jpg" alt="Portrait of Lubna Ali Khan" width="240" height="320" loading="lazy" />
+        <img class="about-photo" src="lubna-headshot.jpg" alt="Portrait of Lubna Ali Khan" width="60" height="133" loading="lazy" />
         <div class="about-accent">
           <blockquote>The best SEO is just good writing. Content that earns its ranking by being genuinely useful is the only kind worth making.</blockquote>
           <cite>Lubna Ali Khan</cite>
@@ -962,6 +979,7 @@
     <h2 style="margin-bottom: 2.5rem;">Thinking out <em>loud</em></h2>
     <div class="insights-grid">
       <a class="insight-card" href="infographics/seo-has-evolved.html" target="_blank" rel="noopener">
+        <div class="insight-frame"><iframe src="infographics/seo-has-evolved.html" title="SEO Has Evolved infographic preview" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe></div>
         <div class="insight-card-top">
           <div class="insight-card-tags">
             <span class="insight-card-tag">2026 Trends</span>
@@ -974,6 +992,7 @@
         <span class="insight-card-link">View infographic →</span>
       </a>
       <a class="insight-card" href="infographics/content-context-rankings.html" target="_blank" rel="noopener">
+        <div class="insight-frame"><iframe src="infographics/content-context-rankings.html" title="Content + Context = Rankings infographic preview" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe></div>
         <div class="insight-card-top">
           <div class="insight-card-tags">
             <span class="insight-card-tag">SEO Fundamentals</span>
@@ -986,6 +1005,7 @@
         <span class="insight-card-link">View infographic →</span>
       </a>
       <a class="insight-card" href="infographics/seo-vs-geo-vs-aeo.html" target="_blank" rel="noopener">
+        <div class="insight-frame"><iframe src="infographics/seo-vs-geo-vs-aeo.html" title="SEO vs AEO vs GEO infographic preview" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe></div>
         <div class="insight-card-top">
           <div class="insight-card-tags">
             <span class="insight-card-tag">Digital Visibility</span>
@@ -1342,6 +1362,26 @@
         toggle.setAttribute('aria-expanded', 'false');
       }
     });
+  })();
+
+  // Scale live infographic previews to fit their card thumbnails
+  (function() {
+    var BASE = 1080;          // canvas width inside each infographic
+    var PAD  = 32;            // body padding (gray frame) to clip
+    function scaleFrames() {
+      document.querySelectorAll('.insight-frame > iframe').forEach(function(f) {
+        var w = f.parentElement.clientWidth;
+        if (!w) return;
+        var s = w / BASE;
+        f.style.transform = 'translate(' + (-PAD * s) + 'px,' + (-PAD * s) + 'px) scale(' + s + ')';
+      });
+    }
+    window.addEventListener('resize', scaleFrames);
+    window.addEventListener('load', scaleFrames);
+    document.querySelectorAll('.insight-frame > iframe').forEach(function(f) {
+      f.addEventListener('load', scaleFrames);
+    });
+    scaleFrames();
   })();
 </script>
 
