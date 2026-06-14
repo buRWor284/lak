@@ -4,7 +4,35 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="Lubna Ali Khan is a digital content editor and onsite SEO professional based in Pakistan, available for remote work." />
+<link rel="canonical" href="https://www.lubnaalikhan.com/" />
 <title>Lubna Ali Khan | Content Editor &amp; SEO Professional</title>
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.lubnaalikhan.com/" />
+<meta property="og:title" content="Lubna Ali Khan | Content Editor &amp; SEO Professional" />
+<meta property="og:description" content="Content editor and onsite SEO professional based in Pakistan. Available for remote editorial and SEO work worldwide." />
+<meta property="og:image" content="https://www.lubnaalikhan.com/lubna-headshot.jpg" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Lubna Ali Khan | Content Editor &amp; SEO Professional" />
+<meta name="twitter:description" content="Content editor and onsite SEO professional based in Pakistan. Available for remote work." />
+
+<!-- Person structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Lubna Ali Khan",
+  "url": "https://www.lubnaalikhan.com/",
+  "image": "https://www.lubnaalikhan.com/lubna-headshot.jpg",
+  "jobTitle": "Content Editor & SEO Professional",
+  "email": "mailto:lubnairfan98@gmail.com",
+  "worksFor": { "@type": "Organization", "name": "Faisal Khan LLC" },
+  "address": { "@type": "PostalAddress", "addressCountry": "PK" },
+  "knowsAbout": ["Content Editing", "Onsite SEO", "Editorial Strategy", "Keyword Research", "Content Audits", "Long-Form Writing"],
+  "sameAs": ["https://www.linkedin.com/in/lubnaalikhan/"]
+}
+</script>
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -744,6 +772,7 @@
       <li><a href="#services" class="nav-close-link">Services</a></li>
       <li><a href="#work" class="nav-close-link">Work</a></li>
       <li><a href="#insights" class="nav-close-link">Insights</a></li>
+      <li><a href="schema-markup-generator.html" class="nav-close-link">Tools</a></li>
       <li><a href="#contact" class="nav-close-link">Contact</a></li>
     </ul>
   </div>
@@ -988,7 +1017,7 @@
           <span class="insight-card-num">01</span>
         </div>
         <h3 class="insight-card-title">SEO Has Evolved. Have You?</h3>
-        <p class="insight-card-desc">The 4 forces reshaping search visibility in the age of AI: GEO, AEO, AIO, and SXO.</p>
+        <p class="insight-card-desc">The four acronyms everyone is arguing about: GEO, AEO, AIO and SXO, and what each one actually means for visibility.</p>
         <span class="insight-card-link">View infographic →</span>
       </a>
       <a class="insight-card" href="infographics/content-context-rankings.html" target="_blank" rel="noopener">
@@ -1001,7 +1030,7 @@
           <span class="insight-card-num">02</span>
         </div>
         <h3 class="insight-card-title">Content + Context = Rankings</h3>
-        <p class="insight-card-desc">Why both content and context are non-negotiable for SEO success in the age of AI.</p>
+        <p class="insight-card-desc">Why ranking now takes both: content that answers the question and context that proves you are the source to trust.</p>
         <span class="insight-card-link">View infographic →</span>
       </a>
       <a class="insight-card" href="infographics/seo-vs-geo-vs-aeo.html" target="_blank" rel="noopener">
@@ -1289,8 +1318,12 @@
             <span>Pakistan. Remote worldwide.</span>
           </div>
           <div class="contact-row">
+            <span class="label">Email</span>
+            <a href="mailto:lubnairfan98@gmail.com">lubnairfan98@gmail.com</a>
+          </div>
+          <div class="contact-row">
             <span class="label">LinkedIn</span>
-            <a href="#">linkedin.com/in/lubnaalikhan</a>
+            <a href="https://www.linkedin.com/in/lubnaalikhan/" target="_blank" rel="noopener">linkedin.com/in/lubnaalikhan</a>
           </div>
           <div class="contact-row">
             <span class="label">Availability</span>
@@ -1299,21 +1332,22 @@
         </div>
       </div>
       <div>
-        <div class="contact-form">
+        <form class="contact-form" id="contactForm" novalidate>
           <div class="form-field">
             <label for="name">Your name</label>
-            <input type="text" id="name" placeholder="What should I call you?" />
+            <input type="text" id="name" name="name" placeholder="What should I call you?" required />
           </div>
           <div class="form-field">
             <label for="email">Email address</label>
-            <input type="email" id="email" placeholder="your@email.com" />
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
           </div>
           <div class="form-field">
             <label for="project">What are you working on?</label>
-            <textarea id="project" placeholder="Tell me a bit about the project and what you need."></textarea>
+            <textarea id="project" name="project" placeholder="Tell me a bit about the project and what you need." required></textarea>
           </div>
-          <a href="#" class="btn-primary" style="text-align:center; margin-top:0.5rem;">Send Message</a>
-        </div>
+          <button type="submit" class="btn-primary" style="text-align:center; margin-top:0.5rem; width:auto; border:none; cursor:pointer;">Send Message</button>
+          <p id="formStatus" role="status" aria-live="polite" style="font-size:0.85rem; color:var(--secondary); margin-top:0.25rem;"></p>
+        </form>
       </div>
     </div>
   </div>
@@ -1328,6 +1362,7 @@
       <a href="#services">Services</a>
       <a href="#work">Work</a>
       <a href="#insights">Insights</a>
+      <a href="schema-markup-generator.html">Tools</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -1361,6 +1396,27 @@
         nav.classList.remove('nav-open');
         toggle.setAttribute('aria-expanded', 'false');
       }
+    });
+  })();
+
+  // Contact form → opens the visitor's email app with the message prefilled
+  (function() {
+    var form = document.getElementById('contactForm');
+    if (!form) return;
+    var status = document.getElementById('formStatus');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var name = document.getElementById('name').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var project = document.getElementById('project').value.trim();
+      if (!name || !email || !project) {
+        if (status) status.textContent = 'Please fill in every field before sending.';
+        return;
+      }
+      var subject = encodeURIComponent('Project enquiry from ' + name);
+      var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + project);
+      window.location.href = 'mailto:lubnairfan98@gmail.com?subject=' + subject + '&body=' + body;
+      if (status) status.textContent = 'Opening your email app… if nothing happens, email lubnairfan98@gmail.com directly.';
     });
   })();
 
