@@ -253,20 +253,22 @@
   }
   .tag-list {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    flex-wrap: nowrap;
+    gap: 0.4rem;
     margin-top: 1.5rem;
+    overflow-x: auto;
   }
   .tag {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--heading);
     border: 1px solid var(--border);
-    padding: 0.3rem 0.85rem;
+    padding: 0.3rem 0.65rem;
     background: transparent;
     transition: background 0.2s, border-color 0.2s;
+    white-space: nowrap;
   }
 
   .about-photo {
@@ -790,6 +792,14 @@
     <div class="hero-actions">
       <a href="#work" class="btn-primary">View My Work</a>
       <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+    <div class="tag-list" style="justify-content: center; margin-top: 2.5rem;">
+      <span class="tag">Content Editing</span>
+      <span class="tag">Onsite SEO</span>
+      <span class="tag">Editorial Strategy</span>
+      <span class="tag">Keyword Research</span>
+      <span class="tag">Long-Form Writing</span>
+      <span class="tag">Content Audits</span>
     </div>
   </section>
 </div>
