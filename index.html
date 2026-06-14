@@ -1332,7 +1332,7 @@
         </div>
       </div>
       <div>
-        <form class="contact-form" id="contactForm" novalidate>
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xbdeqgpd" method="POST">
           <div class="form-field">
             <label for="name">Your name</label>
             <input type="text" id="name" name="name" placeholder="What should I call you?" required />
@@ -1396,27 +1396,6 @@
         nav.classList.remove('nav-open');
         toggle.setAttribute('aria-expanded', 'false');
       }
-    });
-  })();
-
-  // Contact form → opens the visitor's email app with the message prefilled
-  (function() {
-    var form = document.getElementById('contactForm');
-    if (!form) return;
-    var status = document.getElementById('formStatus');
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var name = document.getElementById('name').value.trim();
-      var email = document.getElementById('email').value.trim();
-      var project = document.getElementById('project').value.trim();
-      if (!name || !email || !project) {
-        if (status) status.textContent = 'Please fill in every field before sending.';
-        return;
-      }
-      var subject = encodeURIComponent('Project enquiry from ' + name);
-      var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + project);
-      window.location.href = 'mailto:lubnairfan98@gmail.com?subject=' + subject + '&body=' + body;
-      if (status) status.textContent = 'Opening your email app… if nothing happens, email lubnairfan98@gmail.com directly.';
     });
   })();
 
