@@ -68,7 +68,7 @@
       "name": "Why does structured data matter for SEO?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Structured data makes your pages eligible for rich results in Google Search, such as review stars, FAQ accordions, article cards and business knowledge panels. These richer listings can improve visibility and click-through rates."
+        "text": "Structured data gives AI assistants like ChatGPT, Claude and Perplexity machine-readable facts about your page, so they can understand and cite it accurately. In Google Search it also makes pages eligible for rich results like review stars, article cards and business knowledge panels."
       }
     },
     {
@@ -468,7 +468,7 @@
       <!-- FAQ -->
       <section id="form-faq" role="tabpanel" aria-labelledby="tab-faq" data-form="faq" hidden>
         <h2 class="panel-title">FAQ</h2>
-        <p class="helper">A list of questions and answers. Place in <code>&lt;head&gt;</code> of the page where the same Q&amp;As are visible to users. <strong>Required:</strong> at least one question with an answer.</p>
+        <p class="helper">A list of questions and answers. Google retired FAQ rich results in May 2026, but FAQ schema still helps AI assistants and search engines understand your Q&amp;A. Place it in <code>&lt;head&gt;</code> of the page where the same Q&amp;As are visible to users, and add at least one question with an answer.</p>
         <div class="include-row">
           <input type="checkbox" id="inc-faq" data-include />
           <label for="inc-faq">Include FAQ in the output</label>
@@ -480,7 +480,7 @@
       <!-- Review -->
       <section id="form-review" role="tabpanel" aria-labelledby="tab-review" data-form="review" hidden>
         <h2 class="panel-title">Review</h2>
-        <p class="helper">A single review of an item (product, business, book, etc.). <strong>Required by Google:</strong> the item being reviewed, a rating, and the author.</p>
+        <p class="helper">A single review of an item (product, business, book, etc.). <strong>Required by Google:</strong> the item being reviewed, a rating, and the author. Review stars show for products and other eligible items, not for a business reviewing itself.</p>
         <div class="include-row">
           <input type="checkbox" id="inc-review" data-include />
           <label for="inc-review">Include Review in the output</label>
@@ -626,10 +626,11 @@
   <section class="content-section">
     <h2>About this schema markup generator</h2>
     <p>
-      Structured data is how you tell search engines what your content actually means &mdash;
-      not just the words on the page, but the entities behind them: your business, your articles,
-      your reviews, your frequently asked questions. Google reads this data in
-      <strong>JSON-LD</strong> format and can use it to show richer search results.
+      Structured data is how you tell search engines and AI assistants what your content actually
+      means: not just the words on the page, but the entities behind them, like your business, your
+      articles, your reviews and your frequently asked questions. Tools like ChatGPT, Claude and
+      Perplexity read this <strong>JSON-LD</strong> to understand and cite your pages accurately, and
+      Google can use it to show richer search results.
     </p>
     <p>
       This free tool builds that JSON-LD for you. There is no signup and nothing to install.
@@ -641,7 +642,7 @@
     <p>
       <strong>Organization</strong> describes your brand and feeds the knowledge panel.
       <strong>Article</strong> marks up blog posts and news.
-      <strong>FAQ</strong> can surface expandable questions directly in search.
+      <strong>FAQ</strong> gives AI assistants and search engines clean, machine-readable Q&amp;A about your page.
       <strong>Review</strong> adds star ratings to eligible results.
       <strong>LocalBusiness</strong> helps a physical location appear with its address, hours and map.
     </p>
@@ -658,7 +659,7 @@
       </details>
       <details class="faq-item">
         <summary>Why does structured data matter for SEO?</summary>
-        <p>Structured data makes your pages eligible for rich results in Google Search &mdash; review stars, FAQ accordions, article cards, business knowledge panels and more. These richer listings stand out and can improve click-through rates. It does not guarantee rich results, but it is a prerequisite for them.</p>
+        <p>Structured data gives AI assistants like ChatGPT, Claude and Perplexity machine-readable facts about your page, so they can understand and cite it accurately. In Google Search it also makes pages eligible for rich results like review stars, article cards and business knowledge panels. It does not guarantee those results, but it is a prerequisite for them.</p>
       </details>
       <details class="faq-item">
         <summary>Is this generator really free and private?</summary>
@@ -839,7 +840,7 @@
     ],
     faq: [
       { ok: function () { return buildFAQ().mainEntity && buildFAQ().mainEntity.length > 0; },
-        msg: "FAQ: Add at least one complete question and answer.", fields: [] }
+        msg: "FAQ: Add at least one complete question and answer so AI assistants and search engines can parse your Q&A.", fields: [] }
     ],
     review: [
       { ok: function () { return !!val("rev-item-name"); }, msg: "Review: The reviewed item's name is required.", fields: ["rev-item-name"] },
