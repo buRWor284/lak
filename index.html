@@ -432,7 +432,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0;
-    border: 1px solid var(--border);
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
     list-style: none;
   }
   .cert {
@@ -440,8 +441,6 @@
     border-right: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
   }
-  .cert:nth-child(3n) { border-right: none; }
-  .cert:nth-last-child(-n+3) { border-bottom: none; }
   .cert-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem; }
   .cert-org { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 500; color: var(--heading); }
   .cert-logo { height: 1.15rem; width: auto; vertical-align: middle; margin-right: 0.45rem; position: relative; top: -1px; }
@@ -714,8 +713,6 @@
     .hobbies-grid { grid-template-columns: 1fr 1fr; }
 
     /* Border fixes for single-column grids */
-    .cert { border-right: none !important; border-bottom: 1px solid var(--border) !important; }
-    .cert:last-child { border-bottom: none !important; }
     .service-item { border-right: none !important; border-bottom: 1px solid var(--border) !important; }
     .service-item:last-child { border-bottom: none !important; }
 
@@ -975,8 +972,18 @@
       </li>
       <li class="cert">
         <div class="cert-top">
+          <span class="cert-org">
+            <img class="cert-logo" src="https://www.semrush.com/favicon.ico" alt="SEMrush logo" onerror="this.style.display='none'">SEMrush
+          </span>
+          <span class="cert-year">2026</span>
+        </div>
+        <p class="cert-title">Content Toolkit Crash Course</p>
+        <p class="cert-kind">Certification</p>
+      </li>
+      <li class="cert">
+        <div class="cert-top">
           <span class="cert-org">UNICEF</span>
-          <span class="cert-year">2024 - 2026</span>
+          <span class="cert-year">2024 - 2025</span>
         </div>
         <p class="cert-title">CorelDRAW &amp; Photoshop Training</p>
         <p class="cert-kind">Graphic Design</p>
