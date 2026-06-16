@@ -224,24 +224,29 @@
   /* About */
   .about-grid {
     display: grid;
-    grid-template-columns: 1.7fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    grid-template-columns: 1fr;
   }
   .about-accent {
     background: var(--accent-box);
-    padding: 2rem 2.25rem;
+    padding: 2.25rem 2.75rem;
     border-left: 3px solid var(--heading);
-    margin-bottom: 2rem;
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem 2.5rem;
+    flex-wrap: wrap;
   }
   .about-accent blockquote {
     font-family: var(--font-heading);
-    font-size: 1.45rem;
+    font-size: 1.5rem;
     font-weight: 400;
     font-style: italic;
     color: var(--quote);
-    line-height: 1.55;
-    margin-bottom: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    flex: 1 1 60%;
+    min-width: 0;
   }
   .about-accent cite {
     font-size: 0.78rem;
@@ -250,6 +255,7 @@
     text-transform: uppercase;
     color: var(--secondary);
     font-style: normal;
+    white-space: nowrap;
   }
   .tag-list {
     display: flex;
@@ -446,6 +452,7 @@
   .cert-logo { height: 1.15rem; width: auto; vertical-align: middle; margin-right: 0.45rem; position: relative; top: -1px; }
   .cert-year { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; color: var(--quote); }
   .cert-title { font-size: 0.95rem; color: var(--body); line-height: 1.5; margin-bottom: 0.4rem; }
+  .cert-sub { font-size: 0.82rem; color: var(--secondary); line-height: 1.45; margin: 0 0 0.55rem; }
   .cert-kind { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--quote); margin: 0; }
   .cert-soon { opacity: 0.55; }
   .cert-badge { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--secondary); border: 1px solid var(--border); padding: 0.2rem 0.55rem; }
@@ -821,13 +828,10 @@
           <span class="tag">Content Audits</span>
         </div>
       </div>
-      <div>
-        <div class="about-accent">
-          <blockquote>The best SEO is just good writing. Content that earns its ranking by being genuinely useful is the only kind worth making.</blockquote>
-          <cite>Lubna Ali Khan</cite>
-        </div>
-
-      </div>
+    </div>
+    <div class="about-accent">
+      <blockquote>The best SEO is just good writing. Content that earns its ranking by being genuinely useful is the only kind worth making.</blockquote>
+      <cite>Lubna Ali Khan</cite>
     </div>
   </div>
 </section>
@@ -958,6 +962,17 @@
           <span class="cert-year">2026</span>
         </div>
         <p class="cert-title">SEO Crash Course with Brian Dean</p>
+        <p class="cert-kind">Certification</p>
+      </li>
+      <li class="cert">
+        <div class="cert-top">
+          <span class="cert-org">
+            <img class="cert-logo" src="https://ahrefs.com/favicon.ico" alt="Ahrefs logo" onerror="this.style.display='none'">Ahrefs
+          </span>
+          <span class="cert-year">2026</span>
+        </div>
+        <p class="cert-title">Ahrefs Certified</p>
+        <p class="cert-sub">Certified in Ahrefs&rsquo; Marketing Platform</p>
         <p class="cert-kind">Certification</p>
       </li>
       <li class="cert cert-soon">
