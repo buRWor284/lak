@@ -2,5 +2,15 @@
   "framework": null,
   "buildCommand": null,
   "outputDirectory": null,
-  "cleanUrls": true
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/infographics/(.*)-embed",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }]
+    },
+    {
+      "source": "/infographics/(.*)-embed.html",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }]
+    }
+  ]
 }
