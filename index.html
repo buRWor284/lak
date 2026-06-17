@@ -115,8 +115,9 @@
   .nav-links a:hover { color: var(--heading); }
 
   .hero {
-    padding: 6rem 0 5rem;
+    padding: 5rem 0 5rem;
     text-align: center;
+    border-top: none;
   }
   .hero-eyebrow {
     font-family: var(--font-body);
@@ -226,6 +227,8 @@
     display: grid;
     grid-template-columns: 1fr;
   }
+  /* Prevent grid/flex children from forcing the track wider than the viewport */
+  .about-grid > * { min-width: 0; }
   .about-accent {
     background: var(--accent-box);
     padding: 2.25rem 2.75rem;
@@ -259,10 +262,9 @@
   }
   .tag-list {
     display: flex;
-    flex-wrap: nowrap;
-    gap: 0.4rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     margin-top: 1.5rem;
-    overflow-x: auto;
   }
   .tag {
     font-size: 0.68rem;
@@ -668,8 +670,13 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    margin-right: -10px;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 5px;
     -webkit-tap-highlight-color: transparent;
   }
@@ -683,6 +690,11 @@
   nav.nav-open .nav-toggle-line:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
   nav.nav-open .nav-toggle-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
   nav.nav-open .nav-toggle-line:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* ── Tablet / small laptop (≤900px) ── */
+  @media (max-width: 900px) {
+    .insights-grid { grid-template-columns: repeat(2, 1fr); }
+  }
 
   /* ── 720px breakpoint ── */
   @media (max-width: 720px) {
@@ -711,6 +723,9 @@
     /* Spacing */
     .hero { padding: 2.75rem 0 2.25rem; }
     section { padding: 2.5rem 0; }
+
+    /* Rein in the display heading on large phones / small tablets */
+    h1 { font-size: clamp(2.6rem, 7.5vw, 3.9rem); }
 
     /* Grids → single column */
     .about-grid, .contact-grid, .testimonial-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -799,7 +814,7 @@
 </nav>
 
 <div class="container">
-  <section class="hero" style="border-top: none; padding-top: 5rem;">
+  <section class="hero">
     <p class="hero-eyebrow">Content Editor &amp; SEO Professional · Pakistan</p>
     <h1>Words that work. <em>Stories that stay.</em></h1>
     <p class="hero-sub">I edit content and handle onsite SEO for publishers and brands who want their writing to actually reach people — and keep them reading. I work remotely, I love what I do, and I bring genuine editorial care to every piece I touch.</p>

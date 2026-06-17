@@ -173,8 +173,13 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    margin-right: -10px;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 5px;
     -webkit-tap-highlight-color: transparent;
   }
@@ -208,6 +213,10 @@
     .nav-links li { border-bottom: 1px solid var(--border); }
     .nav-links li:last-child { border-bottom: none; }
     .nav-links a { display: block; padding: 0.9rem 0; font-size: 0.8rem; }
+    /* Thumb-friendly controls on mobile */
+    .btn { padding: 0.8rem 1.1rem; min-height: 44px; }
+    .tab { padding: 0.75rem 0.95rem; }
+    header.page-head { padding: 2.25rem 0 1rem; }
   }
 
   /* ── Footer links (matches home page) ── */
@@ -261,7 +270,12 @@
 
   /* ── Layout: form left, output right ── */
   .workspace { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem; align-items: start; }
-  @media (max-width: 900px) { .workspace { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) {
+    .workspace { grid-template-columns: 1fr; }
+    /* In one column the output sits below the form, so sticky just makes it
+       pin awkwardly while scrolling — let it flow normally instead. */
+    .output-panel { position: static; }
+  }
 
   .panel {
     background: var(--surface); border: 1px solid var(--border);
