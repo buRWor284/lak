@@ -3,6 +3,10 @@
   "buildCommand": null,
   "outputDirectory": null,
   "cleanUrls": true,
+  "rewrites": [
+    { "source": "/tools/verityflow", "destination": "https://verityflow.vercel.app/tools/verityflow" },
+    { "source": "/tools/verityflow/:path*", "destination": "https://verityflow.vercel.app/tools/verityflow/:path*" }
+  ],
   "headers": [
     {
       "source": "/infographics/(.*)-embed",
