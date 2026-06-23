@@ -1,0 +1,8 @@
+# robots.txt for lubnaalikhan.com
+# Embed pages (/infographics/*-embed) are intentionally left crawlable so search
+# engines can read their X-Robots-Tag: noindex header (set in vercel.json).
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.lubnaalikhan.com/sitemap.xml
