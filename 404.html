@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, follow" />
+<title>Page Not Found · Lubna Ali Khan</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--cr:#F6F0E7;--nv:#213A5C;--mr:#8B3A3A;--ig:#6B6F76;--gl:#C9A876;--ow:#FBF8F3;--tp:#D9CEBC;}
+html,body{height:100%;background:var(--cr);}
+.page{background:var(--cr);font-family:'Cormorant Garamond',Georgia,serif;border-top:2.5px solid var(--nv);display:flex;flex-direction:column;min-height:100vh;opacity:0;animation:fadein 1.6s ease .1s forwards;}
+@keyframes fadein{to{opacity:1;}}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:.9rem 2.8rem;border-bottom:1px solid var(--gl);}
+.brand{font-family:'Playfair Display',serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--nv);text-decoration:none;}
+.brand em{color:var(--mr);font-style:normal;}
+.tnav{display:flex;gap:2.2rem;list-style:none;}
+.tnav a{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--ig);text-decoration:none;transition:color .2s;}
+.tnav a:hover{color:var(--nv);}
+.main{flex:1;display:flex;}
+.left{flex:0 0 52%;border-right:1px solid var(--gl);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;position:relative;overflow:hidden;padding-bottom:2.8rem;min-height:440px;}
+.sky-bg{position:absolute;inset:0;background:linear-gradient(180deg,#C8C0B0 0%,#D4CBBB 28%,#DDD5C5 55%,#E8E0D0 80%,#EDE5D5 100%);}
+.sky-glow{position:absolute;bottom:80px;left:50%;transform:translateX(-50%);width:420px;height:130px;background:radial-gradient(ellipse at center,rgba(201,168,118,.28) 0%,transparent 70%);}
+.sky-scene{position:absolute;inset:0;}
+
+@keyframes soar{
+  0%  {left:-12%; transform:translateY(220px);}
+  12% {left:8%;   transform:translateY(168px);}
+  28% {left:24%;  transform:translateY(188px);}
+  45% {left:46%;  transform:translateY(150px);}
+  60% {left:66%;  transform:translateY(168px);}
+  78% {left:86%;  transform:translateY(142px);}
+  100%{left:106%; transform:translateY(158px);}
+}
+@keyframes wingup{0%,100%{transform:rotate(-20deg);}50%{transform:rotate(24deg);}}
+@keyframes wingdown{0%,100%{transform:rotate(20deg);}50%{transform:rotate(-24deg);}}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-4px);}}
+
+.bird{position:absolute;top:0;left:-12%;animation:soar 13s cubic-bezier(.45,.05,.55,.95) infinite;}
+.bird-body{animation:bob 2.4s ease-in-out infinite;}
+.wing-top{transform-origin:22px 18px;animation:wingup 1.9s ease-in-out infinite;}
+.wing-bot{transform-origin:22px 22px;animation:wingdown 1.9s ease-in-out infinite .12s;}
+
+.left-caption{position:relative;z-index:2;text-align:center;padding:0 2rem;}
+.left-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:30px;color:#213A5C;line-height:1.75;margin-bottom:1rem;text-shadow:0 1px 8px rgba(248,243,235,0.85);}
+.left-quote span{display:block;font-size:21px;font-style:italic;color:var(--ig);margin-top:.45rem;}
+.left-rule{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:.8rem;}
+.lr-line{width:40px;height:1px;background:var(--gl);}
+.lr-dot{width:4px;height:4px;background:var(--gl);transform:rotate(45deg);}
+.left-sig{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gl);opacity:.75;}
+
+.right{flex:1;display:flex;flex-direction:column;justify-content:center;padding:3rem;}
+.eyebrow{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--mr);margin-bottom:.9rem;}
+.headline{font-family:'Playfair Display',serif;font-size:28px;font-weight:400;color:var(--nv);line-height:1.3;margin-bottom:.6rem;}
+.subline{font-family:'Playfair Display',serif;font-style:italic;font-size:13.5px;color:var(--ig);line-height:1.85;margin-bottom:2rem;}
+.orn{display:flex;align-items:center;gap:9px;margin-bottom:1.8rem;}
+.orn-line{width:32px;height:1px;background:var(--gl);}
+.orn-dot{width:4px;height:4px;background:var(--gl);transform:rotate(45deg);}
+.nav-lbl{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--ig);opacity:.65;margin-bottom:.85rem;}
+.navgrid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2.2rem;}
+.btn{font-family:'Cormorant Garamond',serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--nv);border:1px solid var(--nv);padding:8px 18px;text-decoration:none;background:transparent;transition:all .22s;display:inline-block;}
+.btn:hover{background:var(--nv);color:var(--ow);}
+.btn.primary{background:var(--nv);color:var(--ow);}
+.btn.primary:hover{background:var(--mr);border-color:var(--mr);}
+.sub{border-top:1px solid var(--tp);padding-top:1.5rem;}
+.sub-lbl{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--ig);opacity:.6;margin-bottom:.35rem;}
+.sub-h{font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:var(--nv);margin-bottom:.3rem;}
+.sub-d{font-family:'Playfair Display',serif;font-style:italic;font-size:12.5px;color:var(--ig);line-height:1.65;margin-bottom:.9rem;}
+.sub-row{display:flex;max-width:320px;}
+.sub-in{flex:1;font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--nv);background:var(--ow);border:1px solid var(--tp);border-right:none;padding:8px 13px;outline:none;}
+.sub-in::placeholder{color:var(--gl);opacity:.5;}
+.sub-in:focus{border-color:var(--gl);}
+.sub-btn{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;background:var(--mr);color:var(--ow);border:1px solid var(--mr);padding:8px 16px;cursor:pointer;white-space:nowrap;transition:background .2s;}
+.sub-btn:hover{background:var(--nv);border-color:var(--nv);}
+.sub-note{font-size:11px;color:var(--gl);opacity:.6;margin-top:6px;font-style:italic;}
+.foot{border-top:1px solid var(--gl);padding:.8rem 2.8rem;display:flex;align-items:center;justify-content:center;gap:1rem;}
+.fd{width:4px;height:4px;background:var(--gl);transform:rotate(45deg);display:inline-block;}
+.ft{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--gl);opacity:.5;}
+@media(max-width:660px){.main{flex-direction:column;}.left{flex:none;min-height:320px;border-right:none;border-bottom:1px solid var(--gl);}.right{padding:2rem 1.5rem;}.tnav{display:none;}.headline{font-size:22px;}}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header class="topbar">
+    <a class="brand" href="/">Lubna <em>Ali</em> Khan</a>
+    <ul class="tnav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/infographics">Insights</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </header>
+
+  <div class="main">
+    <div class="left">
+      <div class="sky-bg"></div>
+      <div class="sky-glow"></div>
+
+      <svg class="sky-scene" viewBox="0 0 520 440" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 320 Q40 280 90 295 Q130 265 180 285 Q220 260 270 278 Q310 255 360 272 Q400 258 450 268 Q480 262 520 265 L520 440 L0 440Z" fill="#213A5C" opacity=".06"/>
+        <path d="M0 340 Q60 310 120 325 Q170 308 230 320 Q280 305 340 318 Q390 305 450 315 Q485 308 520 312 L520 440 L0 440Z" fill="#213A5C" opacity=".07"/>
+        <path d="M0 370 Q15 355 25 362 Q32 350 42 358 Q50 346 62 355 Q72 342 84 352 Q94 340 108 350 Q118 338 132 148 Q144 336 158 346 Q170 334 185 144 Q198 332 214 342 Q228 330 244 341 Q258 329 274 340 Q288 328 305 339 Q320 327 338 338 Q352 326 370 337 Q386 325 406 336 Q422 324 442 335 Q458 323 478 134 Q496 326 520 332 L520 440 L0 440Z" fill="#213A5C" opacity=".08"/>
+        <ellipse cx="80" cy="80" rx="55" ry="14" fill="#B8A888" opacity=".18"/>
+        <ellipse cx="100" cy="72" rx="38" ry="10" fill="#B8A888" opacity=".12"/>
+        <ellipse cx="58" cy="88" rx="28" ry="8" fill="#B8A888" opacity=".1"/>
+        <ellipse cx="370" cy="55" rx="62" ry="15" fill="#B8A888" opacity=".16"/>
+        <ellipse cx="395" cy="46" rx="42" ry="11" fill="#B8A888" opacity=".12"/>
+        <ellipse cx="345" cy="62" rx="30" ry="9" fill="#B8A888" opacity=".1"/>
+        <ellipse cx="240" cy="120" rx="44" ry="11" fill="#B8A888" opacity=".12"/>
+        <line x1="0" y1="340" x2="520" y2="338" stroke="#C9A876" stroke-width=".7" opacity=".2"/>
+        <path d="M-80 220 Q30 168 110 188 Q210 150 290 168 Q370 142 460 158" stroke="#C9A876" stroke-width=".6" stroke-dasharray="4,10" opacity=".2" fill="none"/>
+      </svg>
+
+      <div class="bird">
+        <svg class="bird-body" width="62" height="58" viewBox="0 0 62 58" fill="none">
+          <defs>
+            <radialGradient id="bG" cx="40%" cy="35%" r="65%"><stop offset="0%" stop-color="#5B9BD5"/><stop offset="100%" stop-color="#2E6DA4"/></radialGradient>
+            <radialGradient id="blG" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#F5E6D0"/><stop offset="100%" stop-color="#E8C9A8"/></radialGradient>
+            <radialGradient id="wG" cx="30%" cy="30%" r="70%"><stop offset="0%" stop-color="#4A8EC2"/><stop offset="100%" stop-color="#1C5A8A"/></radialGradient>
+            <radialGradient id="hG" cx="38%" cy="32%" r="62%"><stop offset="0%" stop-color="#6AAEE0"/><stop offset="100%" stop-color="#2E6DA4"/></radialGradient>
+          </defs>
+          <g class="wing-top">
+            <path d="M24 20 Q15 9 5 7 Q2 6 0 7 Q5 11 10 14 Q17 18 22 21Z" fill="url(#wG)" opacity=".9"/>
+            <path d="M22 21 Q13 15 4 13" stroke="#1C5A8A" stroke-width=".6" fill="none" opacity=".4"/>
+          </g>
+          <ellipse cx="30" cy="31" rx="18" ry="15" fill="url(#bG)"/>
+          <ellipse cx="33" cy="34" rx="10" ry="9" fill="url(#blG)" opacity=".9"/>
+          <g class="wing-bot">
+            <path d="M24 34 Q15 43 5 45 Q2 46 0 45 Q5 41 10 37 Q17 33 22 32Z" fill="url(#wG)" opacity=".75"/>
+            <path d="M22 32 Q13 36 4 38" stroke="#1C5A8A" stroke-width=".6" fill="none" opacity=".35"/>
+          </g>
+          <path d="M14 31 Q7 28 1 25" stroke="#2E6DA4" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+          <path d="M14 31 Q6 31 0 31" stroke="#2E6DA4" stroke-width="2" stroke-linecap="round" fill="none" opacity=".7"/>
+          <path d="M14 31 Q7 34 1 38" stroke="#2E6DA4" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".55"/>
+          <circle cx="41" cy="20" r="14" fill="url(#hG)"/>
+          <ellipse cx="37" cy="14" rx="4.5" ry="2.8" fill="#A8D4F5" opacity=".28" transform="rotate(-20 37 14)"/>
+          <ellipse cx="47" cy="23" rx="3.8" ry="2.8" fill="#E8A090" opacity=".32"/>
+          <circle cx="43" cy="18" r="5.5" fill="#1a1a2e" opacity=".9"/>
+          <circle cx="43" cy="18" r="4" fill="#2a2a3e"/>
+          <circle cx="41.2" cy="16.2" r="2" fill="white" opacity=".9"/>
+          <circle cx="44.5" cy="19.2" r=".9" fill="white" opacity=".6"/>
+          <path d="M53 19 L60 17 L53 21.5Z" fill="#C9A876"/>
+          <path d="M28 47 L26 53 M26 53 L23 55 M26 53 L26 56 M26 53 L29 55" stroke="#C9A876" stroke-width="1.1" stroke-linecap="round" fill="none" opacity=".65"/>
+          <path d="M35 47 L33 53 M33 53 L30 55 M33 53 L33 56 M33 53 L36 55" stroke="#C9A876" stroke-width="1.1" stroke-linecap="round" fill="none" opacity=".65"/>
+          <path d="M39 8 Q41 3 43 7 Q41 7 39 8Z" fill="#2E6DA4" opacity=".7"/>
+        </svg>
+      </div>
+
+      <div class="left-caption">
+        <p class="left-quote">
+          Not all who wander are lost.
+          <span>But this page is.</span>
+        </p>
+        <div class="left-rule"><div class="lr-line"></div><div class="lr-dot"></div><div class="lr-line"></div></div>
+        <span class="left-sig">404</span>
+      </div>
+    </div>
+
+    <div class="right">
+      <p class="eyebrow">Page not found</p>
+      <h1 class="headline">Some paths lead<br>somewhere better.</h1>
+      <p class="subline">Whatever you were searching for has quietly moved on. Perhaps that is its own kind of direction and yours is still ahead.</p>
+      <div class="orn"><div class="orn-line"></div><div class="orn-dot"></div><div class="orn-line"></div></div>
+      <p class="nav-lbl">Find your way back</p>
+      <nav class="navgrid">
+        <a class="btn primary" href="/">Home →</a>
+        <a class="btn" href="/#services">Services →</a>
+        <a class="btn" href="/infographics">Insights →</a>
+        <a class="btn" href="/#contact">Work with me →</a>
+      </nav>
+      <div class="sub">
+        <p class="sub-lbl">The Quiet Desk</p>
+        <h2 class="sub-h">Don't lose the thread.</h2>
+        <p class="sub-d">SEO thinking and content craft, once or twice a month. Considered. Never cluttered.</p>
+        <div class="sub-row">
+          <input class="sub-in" type="email" placeholder="you@yourcompany.com" aria-label="Email address"/>
+          <button class="sub-btn">Subscribe →</button>
+        </div>
+        <p class="sub-note">No noise · Unsubscribe anytime</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <span class="fd"></span>
+    <span class="ft">Lubna Ali Khan · Content Editor &amp; SEO Professional</span>
+    <span class="fd"></span>
+  </footer>
+</div>
+
+</body>
+</html>
