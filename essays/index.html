@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Essays | Lubna Ali Khan</title>
+<meta name="description" content="Essays by Lubna Ali Khan on SEO, content, and thinking well in the age of AI." />
+<link rel="canonical" href="https://www.lubnaalikhan.com/essays" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Lubna Ali Khan" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.lubnaalikhan.com/essays" />
+<meta property="og:title" content="Essays | Lubna Ali Khan" />
+<meta property="og:description" content="Essays by Lubna Ali Khan on SEO, content, and thinking well in the age of AI." />
+<meta property="og:site_name" content="Lubna Ali Khan" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #F8F6F3; --surface: #FFFFFF; --heading: #4A5F7A; --heading-dark: #3d5068;
+    --body: #3F4A57; --secondary: #505A66; --quote: #66788A; --border: #D5D2CE;
+    --accent-box: #DDD0CB; --font-heading: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Raleway', sans-serif; --max: 1240px; --gutter: clamp(1.5rem, 5vw, 4rem); --radius: 10px;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--body); font-family: var(--font-body); font-size: 16px; line-height: 1.75; -webkit-font-smoothing: antialiased; min-height: 100vh; display: flex; flex-direction: column; }
+  a { color: var(--heading); }
+  .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+  nav.site { border-bottom: 1px solid var(--border); padding: 1.25rem 0; position: sticky; top: 0; background: var(--bg); z-index: 100; }
+  nav.site .inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); display: flex; justify-content: space-between; align-items: center; }
+  .nav-logo { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 500; color: var(--heading); text-decoration: none; letter-spacing: 0.02em; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-family: var(--font-body); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--secondary); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--heading); }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; width: 44px; height: 44px; margin-right: -10px; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
+  .nav-toggle-line { display: block; width: 22px; height: 1.5px; background: var(--heading); transition: transform 0.22s ease, opacity 0.22s ease; }
+  nav.site.nav-open .nav-toggle-line:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  nav.site.nav-open .nav-toggle-line:nth-child(2) { opacity: 0; }
+  nav.site.nav-open .nav-toggle-line:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  main { flex: 1 0 auto; }
+  header.hero { padding: clamp(3rem, 8vw, 6rem) 0 2rem; max-width: 720px; }
+  .eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--quote); margin-bottom: 1rem; }
+  h1 { font-family: var(--font-heading); font-size: clamp(2.6rem, 7vw, 4.4rem); font-weight: 300; color: var(--heading); line-height: 1.05; margin-bottom: 1.2rem; }
+  header.hero p { font-size: 1.1rem; color: var(--secondary); line-height: 1.8; max-width: 56ch; }
+
+  .essay-list { padding: 1rem 0 4rem; display: grid; gap: 1.4rem; max-width: 900px; }
+  .essay-card { display: block; text-decoration: none; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); padding: clamp(1.6rem, 4vw, 2.4rem); transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+  .essay-card:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(74,95,122,0.10); border-color: var(--heading); }
+  .essay-card .ec-meta { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--quote); margin-bottom: 0.8rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; }
+  .essay-card h2 { font-family: var(--font-heading); font-weight: 400; font-size: clamp(1.7rem, 4vw, 2.4rem); color: var(--heading); line-height: 1.12; margin-bottom: 0.6rem; }
+  .essay-card p { color: var(--secondary); max-width: 60ch; margin-bottom: 1rem; }
+  .essay-card .ec-more { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--heading); display: inline-flex; align-items: center; gap: 0.4rem; }
+  .essay-card .ec-more .arrow { transition: transform 0.2s; }
+  .essay-card:hover .ec-more .arrow { transform: translateX(4px); }
+
+  footer { padding: 2.5rem 0; border-top: 1px solid var(--border); margin-top: auto; }
+  .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .footer-copy { font-size: 0.8rem; color: var(--quote); }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+  .footer-links a { font-size: 0.78rem; letter-spacing: 0.06em; color: var(--secondary); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--heading); }
+
+  @media (max-width: 720px) {
+    .nav-toggle { display: flex; }
+    .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border); flex-direction: column; padding: 0.25rem var(--gutter) 1rem; gap: 0; z-index: 99; }
+    .nav-links.open { display: flex; }
+    .nav-links li { border-bottom: 1px solid var(--border); }
+    .nav-links li:last-child { border-bottom: none; }
+    .nav-links a { display: block; padding: 0.9rem 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site">
+  <div class="inner">
+    <a href="/" class="nav-logo">Lubna Ali Khan</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="nav-toggle-line"></span><span class="nav-toggle-line"></span><span class="nav-toggle-line"></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/" class="nav-close-link">Home</a></li>
+      <li><a href="/#about" class="nav-close-link">About</a></li>
+      <li><a href="/#services" class="nav-close-link">Services</a></li>
+      <li><a href="/#work" class="nav-close-link">Work</a></li>
+      <li><a href="/infographics" class="nav-close-link">Insights</a></li>
+      <li><a href="/essays" class="nav-close-link" aria-current="page">Essays</a></li>
+      <li><a href="/tools" class="nav-close-link">Tools</a></li>
+      <li><a href="/#contact" class="nav-close-link">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="container">
+  <header class="hero">
+    <p class="eyebrow">Essays</p>
+    <h1>Writing on thinking well</h1>
+    <p>Longer reflections on SEO, content, and how we keep our judgment sharp in the age of AI.</p>
+  </header>
+
+  <div class="essay-list">
+    <a class="essay-card" href="/essays/some-questions-need-answers-from-within">
+      <div class="ec-meta"><span>Critical thinking</span><span>· 7 min read</span></div>
+      <h2>Some Questions Need Answers From Within</h2>
+      <p>Why critical thinking matters in the age of artificial intelligence — on curiosity, reflection, and the questions only you can answer. Includes an interactive companion.</p>
+      <span class="ec-more">Read the essay <span class="arrow">&rarr;</span></span>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 Lubna Ali Khan</p>
+    <div class="footer-links">
+      <a href="/">Home</a><a href="/#about">About</a><a href="/#services">Services</a>
+      <a href="/#work">Work</a><a href="/infographics">Insights</a><a href="/essays">Essays</a><a href="/tools">Tools</a><a href="/#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var toggle = document.getElementById('navToggle'); var nav = document.querySelector('nav.site'); var links = document.getElementById('navLinks');
+    if (!toggle || !nav || !links) return;
+    toggle.addEventListener('click', function () { var open = links.classList.toggle('open'); nav.classList.toggle('nav-open', open); toggle.setAttribute('aria-expanded', open); });
+    document.querySelectorAll('.nav-close-link').forEach(function (a) { a.addEventListener('click', function () { links.classList.remove('open'); nav.classList.remove('nav-open'); toggle.setAttribute('aria-expanded', 'false'); }); });
+  })();
+</script>
+
+</body>
+</html>
