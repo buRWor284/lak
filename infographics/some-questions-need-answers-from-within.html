@@ -708,6 +708,25 @@ footer.site-footer{
   .drawers{grid-template-columns:repeat(2,1fr);}
   section{padding:7vh 5vw;}
 }
+
+/* Insights dropdown (dark) */
+.nav-dd{position:relative;}
+.nav-dd-toggle{font-family:'Raleway',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:rgba(237,233,227,0.72);background:none;border:none;cursor:pointer;padding:0;display:inline-flex;align-items:center;gap:0.35rem;transition:color 0.2s;}
+.nav-dd-toggle:hover,.nav-dd:hover .nav-dd-toggle,.nav-dd-toggle.nav-dd-active{color:var(--gold-soft,#DDD0CB);}
+.nav-dd-caret{font-size:0.7em;transition:transform 0.2s;}
+.nav-dd:hover .nav-dd-caret,.nav-dd-toggle[aria-expanded="true"] .nav-dd-caret{transform:rotate(180deg);}
+.nav-dd-menu{list-style:none;position:absolute;top:100%;left:0;min-width:190px;background:#22303D;border:1px solid var(--line,rgba(237,233,227,0.16));border-radius:4px;box-shadow:0 16px 40px rgba(0,0,0,0.4);padding:0.35rem 0;margin:0.65rem 0 0;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity 0.18s ease,transform 0.18s ease,visibility 0.18s;z-index:200;}
+.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu,.nav-dd-menu.open{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dd-menu li{border:none;margin:0;}
+.nav-dd-menu a{display:block;padding:0.6rem 1.2rem;font-family:'Raleway',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(237,233,227,0.72);white-space:nowrap;transition:color 0.15s,background 0.15s;}
+.nav-dd-menu a:hover{color:var(--gold-soft,#DDD0CB);background:rgba(255,255,255,0.05);}
+@media (max-width:720px){
+  .nav-dd{width:100%;}
+  .nav-dd-toggle{width:100%;justify-content:space-between;padding:0.9rem 0;}
+  .nav-dd-menu{position:static;display:none;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;margin:0;padding:0 0 0.5rem 0;min-width:0;background:none;}
+  .nav-dd-menu.open{display:block;}
+  .nav-dd-menu a{padding:0.7rem 0 0.7rem 1rem;}
+}
 </style>
 </head>
 <body>
@@ -724,8 +743,7 @@ footer.site-footer{
       <li><a href="/#about">About</a></li>
       <li><a href="/#services">Services</a></li>
       <li><a href="/#work">Work</a></li>
-      <li><a href="/infographics" aria-current="page">Insights</a></li>
-      <li><a href="/essays">Essays</a></li>
+      <li class="nav-dd"><button type="button" class="nav-dd-toggle nav-dd-active" aria-current="true" aria-haspopup="true" aria-expanded="false">Insights<span class="nav-dd-caret" aria-hidden="true">&#9662;</span></button><ul class="nav-dd-menu"><li><a href="/infographics" class="nav-close-link">Infographics</a></li><li><a href="/essays" class="nav-close-link">Essays</a></li></ul></li>
       <li><a href="/tools">Tools</a></li>
       <li><a href="/#contact">Contact</a></li>
     </ul>
@@ -1108,6 +1126,26 @@ document.querySelectorAll('.tl-q[data-target]').forEach(q => {
   if(!t||!n||!l) return;
   t.addEventListener('click', function(){ var o=l.classList.toggle('open'); n.classList.toggle('open',o); t.setAttribute('aria-expanded',o); });
   l.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ l.classList.remove('open'); n.classList.remove('open'); t.setAttribute('aria-expanded','false'); }); });
+})();
+</script>
+
+<script>
+(function(){
+  var toggles=document.querySelectorAll('.nav-dd-toggle');
+  toggles.forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.preventDefault(); e.stopPropagation();
+      var dd=btn.closest('.nav-dd'); var menu=dd.querySelector('.nav-dd-menu');
+      var open=menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open?'true':'false');
+    });
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.nav-dd')){
+      document.querySelectorAll('.nav-dd-menu.open').forEach(function(m){m.classList.remove('open');});
+      document.querySelectorAll('.nav-dd-toggle[aria-expanded="true"]').forEach(function(b){b.setAttribute('aria-expanded','false');});
+    }
+  });
 })();
 </script>
 </body>

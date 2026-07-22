@@ -172,6 +172,25 @@
     .dc-form button { flex: 1 1 100%; }
     .interactive-cta .btn { width: 100%; justify-content: center; }
   }
+
+/* Insights dropdown */
+.nav-dd{position:relative;}
+.nav-dd-toggle{font-family:var(--font-body,'Raleway',sans-serif);font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--secondary,#505A66);background:none;border:none;cursor:pointer;padding:0;display:inline-flex;align-items:center;gap:0.35rem;transition:color 0.2s;line-height:inherit;}
+.nav-dd-toggle:hover,.nav-dd:hover .nav-dd-toggle,.nav-dd-toggle.nav-dd-active{color:var(--heading,#4A5F7A);}
+.nav-dd-caret{font-size:0.7em;transition:transform 0.2s;}
+.nav-dd:hover .nav-dd-caret,.nav-dd-toggle[aria-expanded="true"] .nav-dd-caret{transform:rotate(180deg);}
+.nav-dd-menu{list-style:none;position:absolute;top:100%;left:0;min-width:190px;background:var(--surface,#FFFFFF);border:1px solid var(--border,#D5D2CE);border-radius:8px;box-shadow:0 14px 34px rgba(74,95,122,0.14);padding:0.35rem 0;margin:0.65rem 0 0;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity 0.18s ease,transform 0.18s ease,visibility 0.18s;z-index:200;}
+.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu,.nav-dd-menu.open{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dd-menu li{border:none;margin:0;}
+.nav-dd-menu a{display:block;padding:0.6rem 1.2rem;font-family:var(--font-body,'Raleway',sans-serif);font-size:0.75rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--secondary,#505A66);white-space:nowrap;transition:color 0.15s,background 0.15s;}
+.nav-dd-menu a:hover{color:var(--heading,#4A5F7A);background:var(--bg,#F8F6F3);}
+@media (max-width:720px){
+  .nav-dd{width:100%;}
+  .nav-dd-toggle{width:100%;justify-content:space-between;padding:0.9rem 0;font-size:0.8rem;}
+  .nav-dd-menu{position:static;display:none;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;margin:0;padding:0 0 0.5rem 0;min-width:0;background:none;}
+  .nav-dd-menu.open{display:block;}
+  .nav-dd-menu a{padding:0.7rem 0 0.7rem 1rem;opacity:0.9;}
+}
 </style>
 </head>
 <body>
@@ -187,8 +206,7 @@
       <li><a href="/#about" class="nav-close-link">About</a></li>
       <li><a href="/#services" class="nav-close-link">Services</a></li>
       <li><a href="/#work" class="nav-close-link">Work</a></li>
-      <li><a href="/infographics" class="nav-close-link">Insights</a></li>
-      <li><a href="/essays" class="nav-close-link" aria-current="page">Essays</a></li>
+      <li class="nav-dd"><button type="button" class="nav-dd-toggle nav-dd-active" aria-current="true" aria-haspopup="true" aria-expanded="false">Insights<span class="nav-dd-caret" aria-hidden="true">&#9662;</span></button><ul class="nav-dd-menu"><li><a href="/infographics" class="nav-close-link">Infographics</a></li><li><a href="/essays" class="nav-close-link">Essays</a></li></ul></li>
       <li><a href="/tools" class="nav-close-link">Tools</a></li>
       <li><a href="/#contact" class="nav-close-link">Contact</a></li>
     </ul>
@@ -397,5 +415,25 @@
   })();
 </script>
 
+
+<script>
+(function(){
+  var toggles=document.querySelectorAll('.nav-dd-toggle');
+  toggles.forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.preventDefault(); e.stopPropagation();
+      var dd=btn.closest('.nav-dd'); var menu=dd.querySelector('.nav-dd-menu');
+      var open=menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open?'true':'false');
+    });
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.nav-dd')){
+      document.querySelectorAll('.nav-dd-menu.open').forEach(function(m){m.classList.remove('open');});
+      document.querySelectorAll('.nav-dd-toggle[aria-expanded="true"]').forEach(function(b){b.setAttribute('aria-expanded','false');});
+    }
+  });
+})();
+</script>
 </body>
 </html>
