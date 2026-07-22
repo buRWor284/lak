@@ -333,7 +333,7 @@
     <div class="srcs">
       <span><b>Live sources:</b></span>
       <span>Hacker News (Algolia API)</span>·
-      <span>Wikipedia OpenSearch + Pageviews</span>·
+      <span>Wikipedia Search + Pageviews</span>·
       <span>CoinGecko</span>
     </div>
     <p style="max-width:70ch;margin:.4rem 0 0;">All data is pulled live in your browser from free, keyless APIs — nothing is stored. A planned server route will add Google autocomplete keywords, SERP "People Also Ask", and RSS from Search Engine Land / Search Engine Journal / Google Search Central (these block direct browser calls). Styled in the lubnaalikhan.com design system.</p>
@@ -569,10 +569,11 @@ async function loadCrypto() {
 async function loadFintechFeed() {
   try {
     const p = new URLSearchParams({
-      query: "fintech OR payments OR stablecoin OR remittance OR neobank",
-      tags: "story", advancedSyntax: "true", hitsPerPage: "10"
+      query: "fintech payments stablecoin remittance neobank",
+      optionalWords: "fintech payments stablecoin remittance neobank",
+      tags: "story", numericFilters: "created_at_i>" + (nowSec() - 150 * 86400), hitsPerPage: "9"
     });
-    const data = await fetchJSON(HN + "search_by_date?" + p.toString());
+    const data = await fetchJSON(HN + "search?" + p.toString());
     const hits = (data.hits || []).filter(h => h.title).slice(0, 8);
     $("fintechFeed").innerHTML = hits.length ? hits.map(h => `
       <li><a class="t" href="${esc(h.url || ("https://news.ycombinator.com/item?id=" + h.objectID))}" target="_blank" rel="noopener">${esc(h.title)}</a>
@@ -595,14 +596,14 @@ async function explore(term) {
   $("trendSpark").innerHTML = "";
   $("trendLabel").textContent = "Attention trend";
 
-  // related topics (Wikipedia opensearch)
+  // related topics (Wikipedia full-text search — real topical matches)
   let canonical = term;
   try {
-    const p = new URLSearchParams({ action: "opensearch", search: term, limit: "12", namespace: "0", format: "json", origin: "*" });
-    const os = await fetchJSON(WIKI + "?" + p.toString());
-    const titles = (os && os[1]) || [];
+    const p = new URLSearchParams({ action: "query", list: "search", srsearch: term, srlimit: "12", format: "json", origin: "*" });
+    const res = await fetchJSON(WIKI + "?" + p.toString());
+    const titles = ((res.query && res.query.search) || []).map(s => s.title);
     if (titles.length) canonical = titles[0];
-    const rel = titles.slice(canonical === titles[0] ? 1 : 0, 11);
+    const rel = titles.slice(1, 11);
     $("related").innerHTML = rel.length
       ? rel.map(t => `<span class="chip" data-seed="${esc(t)}">${esc(t)}</span>`).join("")
       : `<span class="note">No related topics found.</span>`;
