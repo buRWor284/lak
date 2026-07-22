@@ -21,11 +21,35 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "The Fintech Visibility Radar",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any (web browser)",
+      "url": "https://www.lubnaalikhan.com/fintech-radar",
+      "description": "A live radar of how fintech content earns visibility across Google, AI Overviews and answer engines — tracking SEO, AEO, GEO and AIO alongside the topics moving the industry.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "creator": { "@type": "Person", "name": "Lubna Ali Khan" }
+    },
+    {
+      "@type": "Person",
+      "name": "Lubna Ali Khan",
+      "jobTitle": "Content & Search Editor",
+      "url": "https://www.lubnaalikhan.com",
+      "knowsAbout": ["SEO", "Answer Engine Optimization", "Generative Engine Optimization", "AI Optimization", "Fintech content", "Content strategy"]
+    }
+  ]
+}
+</script>
 <style>
   :root{
-    --bg:#F8F6F3; --heading:#4A5F7A; --body:#3F4A57; --secondary:#505A66;
-    --quote:#66788A; --border:#D5D2CE; --accent:#DDD0CB; --card:#FDFCFB;
-    --up:#5B8A72; --down:#B07F72;
+    --bg:#F8F6F3; --heading:#4A5F7A; --body:#3F4A57; --secondary:#4E5866;
+    --quote:#5C6B7A; --border:#D5D2CE; --accent:#DDD0CB; --card:#FDFCFB;
+    --up:#4F7D64; --down:#A96C5F;
     --font-heading:'Cormorant Garamond',Georgia,serif;
     --font-body:'Raleway',Arial,sans-serif;
     --max:1240px; --gutter:clamp(1.25rem,5vw,3.5rem);
@@ -44,12 +68,13 @@
   .eyebrow{font-family:var(--font-body);font-weight:700;font-size:.7rem;text-transform:uppercase;
     letter-spacing:.18em;color:var(--secondary);margin:0 0 .6rem;display:flex;align-items:center;gap:.5rem;}
   .live-dot{width:7px;height:7px;border-radius:50%;background:var(--up);display:inline-block;
-    box-shadow:0 0 0 0 rgba(91,138,114,.5);animation:pulse 2.4s infinite;}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(91,138,114,.45);}70%{box-shadow:0 0 0 8px rgba(91,138,114,0);}100%{box-shadow:0 0 0 0 rgba(91,138,114,0);}}
+    box-shadow:0 0 0 0 rgba(79,125,100,.5);animation:pulse 2.4s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(79,125,100,.45);}70%{box-shadow:0 0 0 8px rgba(79,125,100,0);}100%{box-shadow:0 0 0 0 rgba(79,125,100,0);}}
   h1.title{font-family:var(--font-heading);font-weight:300;color:var(--heading);
     font-size:clamp(2.5rem,6vw,4.2rem);line-height:1.02;margin:0;letter-spacing:.01em;}
   h1.title em{font-style:italic;font-weight:400;}
-  .tagline{color:var(--secondary);font-size:1.02rem;max-width:44ch;margin:.9rem 0 0;}
+  .tagline{color:var(--secondary);font-size:1.02rem;max-width:46ch;margin:.9rem 0 0;}
+  .byline{font-family:var(--font-body);font-size:.8rem;color:var(--secondary);letter-spacing:.02em;margin:.6rem 0 0;}
   .meta-row{display:flex;align-items:center;gap:1rem;margin-top:1.3rem;flex-wrap:wrap;}
   .updated{font-size:.78rem;color:var(--quote);letter-spacing:.02em;}
   button.refresh{font-family:var(--font-body);font-weight:600;text-transform:uppercase;
@@ -70,7 +95,14 @@
     letter-spacing:.18em;color:var(--secondary);margin:0 0 .35rem;}
   .panel-title{font-family:var(--font-heading);font-weight:400;color:var(--heading);
     font-size:clamp(1.7rem,3.5vw,2.4rem);margin:0;line-height:1.1;}
-  .panel-sub{color:var(--secondary);font-size:.92rem;margin:.5rem 0 0;max-width:60ch;}
+  .panel-sub{color:var(--secondary);font-size:.92rem;margin:.5rem 0 0;max-width:62ch;}
+
+  /* Insight ("so what") */
+  .insight{background:var(--accent);border:1px solid #CBBBB4;padding:.95rem 1.15rem;margin:0 0 1.7rem;
+    display:flex;gap:.75rem;align-items:flex-start;}
+  .insight .lbl{font-family:var(--font-body);font-weight:700;font-size:.62rem;text-transform:uppercase;
+    letter-spacing:.14em;color:var(--heading);white-space:nowrap;padding-top:.2rem;}
+  .insight p{margin:0;color:var(--body);font-size:.96rem;line-height:1.5;}
 
   .grid2{display:grid;grid-template-columns:minmax(0,0.92fr) minmax(0,1.08fr);gap:2rem;align-items:start;}
   @media(max-width:820px){.grid2{grid-template-columns:1fr;}}
@@ -79,7 +111,7 @@
 
   /* Radar */
   .radar-box{display:flex;flex-direction:column;align-items:center;}
-  .radar-svg{width:100%;max-width:360px;height:auto;}
+  .radar-svg{width:100%;max-width:400px;height:auto;overflow:visible;}
   .radar-caption{font-size:.76rem;color:var(--quote);text-align:center;margin-top:.7rem;max-width:34ch;line-height:1.5;}
   .legend{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-top:1rem;justify-content:center;}
   .legend span{font-size:.74rem;color:var(--secondary);display:flex;align-items:center;gap:.4rem;}
@@ -100,30 +132,33 @@
   .mom-row{display:grid;grid-template-columns:1fr auto;gap:.4rem .8rem;align-items:center;}
   .mom-name{font-weight:600;color:var(--body);font-size:.92rem;}
   .mom-name small{display:block;font-weight:400;color:var(--quote);font-size:.7rem;letter-spacing:.02em;margin-top:1px;}
-  .mom-bartrack{grid-column:1/2;height:8px;background:#EFEBE6;position:relative;overflow:hidden;}
+  .mom-bartrack{grid-column:1/2;height:8px;background:#EBE6E0;position:relative;overflow:hidden;}
   .mom-barfill{height:100%;background:var(--accent);}
   .badge{font-size:.72rem;font-weight:700;letter-spacing:.02em;white-space:nowrap;text-align:right;}
   .badge.up{color:var(--up);} .badge.down{color:var(--down);} .badge.flat{color:var(--quote);}
   .spark{grid-column:2/3;grid-row:1/2;}
   .mom-meta{grid-column:2/3;font-size:.68rem;color:var(--quote);text-align:right;}
 
-  /* Ticker */
+  /* Ticker / stablecoin watch */
   .ticker{display:flex;flex-direction:column;gap:.1rem;}
   .tick-row{display:flex;align-items:baseline;justify-content:space-between;padding:.55rem 0;border-bottom:1px dashed var(--border);}
   .tick-row:last-child{border-bottom:none;}
   .tick-name{font-weight:600;color:var(--body);}
   .tick-name small{color:var(--quote);font-weight:400;text-transform:uppercase;font-size:.68rem;letter-spacing:.06em;margin-left:.4rem;}
+  .peg{font-size:.66rem;font-weight:600;margin-left:.5rem;letter-spacing:.02em;}
   .tick-price{font-variant-numeric:tabular-nums;color:var(--body);}
   .tick-chg{font-size:.76rem;font-weight:600;margin-left:.7rem;font-variant-numeric:tabular-nums;}
+  .stale{font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--quote);
+    border:1px solid var(--border);padding:1px 6px;margin-left:.5rem;vertical-align:middle;}
   .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.4rem;}
   .chip{font-size:.74rem;background:var(--card);border:1px solid var(--border);color:var(--heading);
     padding:5px 11px;cursor:pointer;transition:background .15s,color .15s;}
   .chip:hover{background:var(--heading);color:var(--bg);}
-  .chip.trend{background:var(--accent);border-color:var(--accent);}
-  .chip.trend:hover{background:var(--heading);border-color:var(--heading);color:var(--bg);}
+  .chip.seedchip{background:var(--accent);border-color:#CBBBB4;}
+  .chip.seedchip:hover{background:var(--heading);border-color:var(--heading);color:var(--bg);}
 
   /* Explorer */
-  .explorer-input{display:flex;gap:.6rem;max-width:520px;margin-bottom:.4rem;}
+  .explorer-input{display:flex;gap:.6rem;max-width:520px;margin-bottom:.7rem;}
   .explorer-input input{flex:1;font-family:var(--font-body);font-size:.95rem;color:var(--body);
     background:var(--card);border:1px solid var(--border);padding:12px 14px;}
   .explorer-input input:focus{outline:none;border-color:var(--heading);}
@@ -136,19 +171,25 @@
   /* States */
   .note{font-size:.8rem;color:var(--quote);font-style:italic;padding:.6rem 0;}
   .loading{color:var(--quote);font-size:.85rem;letter-spacing:.02em;}
-  .shimmer{display:inline-block;height:.85em;width:60%;background:linear-gradient(90deg,#ece8e3 25%,#f5f2ee 37%,#ece8e3 63%);
-    background-size:400% 100%;animation:sh 1.4s ease infinite;}
-  @keyframes sh{0%{background-position:100% 0;}100%{background-position:-100% 0;}}
+
+  /* CTA */
+  .cta{border-bottom:1px solid var(--border);}
+  .cta-inner{display:flex;gap:2rem;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:2.6rem 0;}
+  .cta-inner .lead{max-width:62ch;}
+  .cta-inner h2{font-family:var(--font-heading);font-weight:400;color:var(--heading);
+    font-size:clamp(1.5rem,3vw,2.15rem);margin:.2rem 0 .55rem;line-height:1.12;}
+  .cta-inner p{margin:0;color:var(--secondary);font-size:.95rem;max-width:60ch;}
+  .cta-btn{font-family:var(--font-body);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.74rem;
+    background:var(--heading);color:var(--bg);border:none;padding:15px 30px;white-space:nowrap;display:inline-block;}
+  .cta-btn:hover{opacity:.85;text-decoration:none;}
 
   /* Footer */
   footer{padding:2.4rem 0 3rem;color:var(--quote);font-size:.8rem;}
-  footer .srcs{display:flex;flex-wrap:wrap;gap:.4rem .9rem;margin:.7rem 0;}
+  footer .srcs{display:flex;flex-wrap:wrap;gap:.4rem .9rem;margin:0 0 .7rem;}
   footer .srcs b{color:var(--secondary);}
-  .proto{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--secondary);border:1px solid var(--border);padding:3px 9px;}
 
   @media(prefers-reduced-motion:reduce){
-    .sweep{animation:none;} .live-dot{animation:none;} .shimmer{animation:none;}
+    .sweep{animation:none;} .live-dot{animation:none;}
   }
 </style>
 </head>
@@ -160,7 +201,7 @@
       <p class="eyebrow"><span class="live-dot"></span> Live · Curated by Lubna Ali Khan</p>
       <h1 class="title">The Fintech <em>Visibility</em> Radar</h1>
       <p class="tagline">A live read on how fintech content earns attention across Google, AI Overviews and answer engines — tracking SEO, AEO, GEO &amp; AIO alongside the topics moving the industry.</p>
-      <p style="font-family:var(--font-body);font-size:.8rem;color:var(--secondary);letter-spacing:.02em;margin:.6rem 0 0;">Lubna Ali Khan · Content &amp; Search Editor — SEO · AEO · GEO · AIO</p>
+      <p class="byline">Lubna Ali Khan · Content &amp; Search Editor — SEO · AEO · GEO · AIO</p>
       <div class="meta-row">
         <button class="refresh" id="refreshBtn">Refresh scan</button>
         <span class="updated" id="updated">Scanning…</span>
@@ -195,8 +236,9 @@
       <div class="panel-head">
         <p class="panel-label">01 · The search frontier</p>
         <h2 class="panel-title">Search Landscape Radar</h2>
-        <p class="panel-sub">How much the developer &amp; builder world is talking about each mode of search right now — classic <b>SEO</b>, <b>GEO</b> (generative engine optimization), <b>AEO</b> (answer engine optimization) and <b>AIO</b> (AI answer surfaces). Buzz is measured from Hacker News story volume over the last 120 days.</p>
+        <p class="panel-sub">How loudly the practitioner community is discussing each mode of search — classic <b>SEO</b>, <b>GEO</b> (generative engine optimization), <b>AEO</b> (answer engine optimization) and <b>AIO</b> (AI answer surfaces). Measured from Hacker News story volume over the last 120 days — an early-signal read on where the field is heading before it hits the marketing press.</p>
       </div>
+      <div class="insight" id="searchInsight" style="display:none;"><span class="lbl">Signal read</span><p></p></div>
       <div class="grid2">
         <div class="card radar-box">
           <div id="radarMount" style="width:100%;display:flex;justify-content:center;">
@@ -219,7 +261,7 @@
       <div class="panel-head">
         <p class="panel-label">02 · Her niche</p>
         <h2 class="panel-title">Fintech Pulse</h2>
-        <p class="panel-sub">Rising topics in payments, remittances and money movement — the content territory behind the fintech plan. Momentum is the last 7 days vs. the previous 7, from Wikipedia attention. Live stablecoin &amp; market context from CoinGecko.</p>
+        <p class="panel-sub">Rising topics in payments, remittances and money movement — the content territory behind the fintech plan. Momentum is the last 7 days vs. the previous 7, from Wikipedia attention. Live stablecoin peg data from CoinGecko.</p>
       </div>
       <div class="grid2">
         <div class="card">
@@ -227,11 +269,9 @@
           <div class="mom" id="momentum"><p class="loading">Measuring topic momentum…</p></div>
         </div>
         <div class="card">
-          <h3>Money-movement market</h3>
-          <div class="ticker" id="ticker"><p class="loading">Fetching stablecoin &amp; market data…</p></div>
-          <h3 style="margin-top:1.5rem;">Trending on CoinGecko</h3>
-          <div class="chips" id="trending"><span class="loading">Loading trending assets…</span></div>
-          <h3 style="margin-top:1.5rem;">Latest fintech headlines</h3>
+          <h3>Stablecoin watch <small style="font-weight:400;color:var(--quote);font-size:.7rem;">· the rails behind cross-border payments</small></h3>
+          <div class="ticker" id="ticker"><p class="loading">Fetching stablecoin data…</p></div>
+          <h3 style="margin-top:1.6rem;">Latest fintech headlines</h3>
           <ul class="feed" id="fintechFeed"><li class="loading">Loading headlines…</li></ul>
         </div>
       </div>
@@ -250,7 +290,14 @@
         <input id="seed" type="text" placeholder="e.g. stablecoin, remittance, generative engine optimization" value="stablecoin" />
         <button id="exploreBtn">Scan</button>
       </div>
-      <p class="explorer-hint">Tip: click any related-topic or trending chip anywhere on the page to re-scan around it.</p>
+      <div class="chips" id="seedChips" style="margin:0 0 1rem;">
+        <span class="chip seedchip" data-seed="stablecoin">stablecoin</span>
+        <span class="chip seedchip" data-seed="remittance">remittance</span>
+        <span class="chip seedchip" data-seed="cross-border payments">cross-border payments</span>
+        <span class="chip seedchip" data-seed="buy now pay later">BNPL</span>
+        <span class="chip seedchip" data-seed="generative engine optimization">GEO</span>
+      </div>
+      <p class="explorer-hint">Tip: click any chip anywhere on the page to re-scan around it. Discussion results are live Hacker News threads.</p>
       <div class="grid2">
         <div class="card">
           <h3>Related topics &amp; attention</h3>
@@ -270,16 +317,26 @@
   </section>
 </main>
 
+<section class="cta">
+  <div class="wrap cta-inner">
+    <div class="lead">
+      <p class="panel-label">About</p>
+      <h2>Content that earns its visibility — in Google and in AI answers.</h2>
+      <p>Lubna Ali Khan is a content editor and search strategist who helps fintech teams turn expertise into pages that rank, get cited, and convert — across SEO, AEO, GEO and AIO.</p>
+    </div>
+    <a class="cta-btn" href="/">Work with Lubna →</a>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
-    <span class="proto">Prototype</span>
     <div class="srcs">
       <span><b>Live sources:</b></span>
       <span>Hacker News (Algolia API)</span>·
       <span>Wikipedia OpenSearch + Pageviews</span>·
       <span>CoinGecko</span>
     </div>
-    <p style="max-width:70ch;margin:.4rem 0 0;">All data is pulled live in your browser from free, keyless APIs — nothing is stored. On the live site, a small server route would add Google autocomplete keywords, SERP "People Also Ask", and RSS from Search Engine Land / Search Engine Journal / Google Search Central (these block direct browser calls). Styled in the lubnaalikhan.com design system.</p>
+    <p style="max-width:70ch;margin:.4rem 0 0;">All data is pulled live in your browser from free, keyless APIs — nothing is stored. A planned server route will add Google autocomplete keywords, SERP "People Also Ask", and RSS from Search Engine Land / Search Engine Journal / Google Search Central (these block direct browser calls). Styled in the lubnaalikhan.com design system.</p>
   </div>
 </footer>
 
@@ -338,10 +395,34 @@ const CG = "https://api.coingecko.com/api/v3/";
 async function hnCount(mode, cutoff) {
   const p = new URLSearchParams({
     query: mode.q, tags: "story", advancedSyntax: "true",
-    hitsPerPage: "5", numericFilters: "created_at_i>" + cutoff
+    hitsPerPage: "6", numericFilters: "created_at_i>" + cutoff
   });
   const data = await fetchJSON(HN + "search?" + p.toString());
   return { mode, count: data.nbHits || 0, hits: data.hits || [] };
+}
+function buildSearchInsight(rows) {
+  const c = {}; rows.forEach(r => c[r.mode.key] = r.count || 0);
+  const seo = c.SEO || 0;
+  const news = [["AIO", c.AIO || 0], ["GEO", c.GEO || 0], ["AEO", c.AEO || 0]].sort((a, b) => b[1] - a[1]);
+  const lead = news[0];
+  const el = $("searchInsight"); if (!el) return;
+  let msg;
+  if (lead[1] === 0) {
+    msg = "SEO still owns the conversation while GEO, AEO and AIO barely register yet — the AI-search shift is early, which is exactly when a fintech brand can get ahead by structuring content for answer engines before competitors do.";
+  } else {
+    const names = { AIO: "AI Overviews (AIO)", GEO: "generative engine optimization (GEO)", AEO: "answer engine optimization (AEO)" };
+    const action = {
+      AIO: "fintech pages need answer-ready structure — crisp definitions, FAQs and schema — to keep visibility as AI Overviews expand.",
+      GEO: "fintech content should be written to be quoted by LLMs: sourced claims, clean headings and extractable answers.",
+      AEO: "lead with the answer — direct, structured responses that answer boxes and assistants can lift verbatim."
+    };
+    const ratio = (seo && lead[1]) ? Math.round(seo / lead[1]) : null;
+    msg = names[lead[0]] + " is the most-discussed of the emerging search modes right now"
+      + (ratio && ratio > 1 ? ", though classic SEO still out-chatters it about " + ratio + ":1" : "")
+      + ". Takeaway for fintech: " + action[lead[0]];
+  }
+  el.style.display = "";
+  el.querySelector("p").textContent = msg;
 }
 async function loadSearchLandscape() {
   const cutoff = nowSec() - 120 * 86400;
@@ -359,15 +440,16 @@ async function loadSearchLandscape() {
   $("radarLegend").innerHTML = scores.map(s =>
     `<span><b>${s.key}</b> ${s.count.toLocaleString()}</span>`).join("");
 
-  // per-mode headlines (top story by points from each mode)
+  // editorial takeaway
+  buildSearchInsight(rows);
+
+  // per-mode headlines (top 2 by points from each mode)
   const items = [];
   rows.forEach(r => {
-    const top = (r.hits || []).slice().sort((a, b) => (b.points || 0) - (a.points || 0))[0];
-    if (top && top.title) {
-      items.push({ mode: r.mode.key, title: top.title,
-        url: top.url || ("https://news.ycombinator.com/item?id=" + top.objectID),
-        points: top.points || 0, comments: top.num_comments || 0, when: top.created_at_i });
-    }
+    const tops = (r.hits || []).filter(h => h.title).slice().sort((a, b) => (b.points || 0) - (a.points || 0)).slice(0, 2);
+    tops.forEach(top => items.push({ mode: r.mode.key, title: top.title,
+      url: top.url || ("https://news.ycombinator.com/item?id=" + top.objectID),
+      points: top.points || 0, comments: top.num_comments || 0, when: top.created_at_i }));
   });
   const feed = $("modeFeed");
   if (!items.length) { feed.innerHTML = `<li class="note">Couldn't reach Hacker News just now — hit “Refresh scan”.</li>`; return; }
@@ -388,21 +470,21 @@ function drawRadar(scores) {
     const [x, y] = pt(i, R);
     return `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#D5D2CE" stroke-width="1"/>`;
   }).join("");
-  const dataPts = scores.map((s, i) => pt(i, R * clamp(s.norm, 0.04, 1)).map(n => n.toFixed(1)).join(",")).join(" ");
+  const dataPts = scores.map((s, i) => pt(i, R * clamp(s.norm, 0.05, 1)).map(n => n.toFixed(1)).join(",")).join(" ");
   const dots = scores.map((s, i) => {
-    const [x, y] = pt(i, R * clamp(s.norm, 0.04, 1));
+    const [x, y] = pt(i, R * clamp(s.norm, 0.05, 1));
     return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4" fill="#4A5F7A"/>`;
   }).join("");
   const labels = scores.map((s, i) => {
-    const [x, y] = pt(i, R + 22);
+    const [x, y] = pt(i, R + 24);
     const anchor = Math.abs(x - cx) < 5 ? "middle" : (x > cx ? "start" : "end");
     return `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" text-anchor="${anchor}" dominant-baseline="middle"
-      font-family="Raleway,sans-serif" font-weight="700" font-size="13" letter-spacing="0.08em" fill="#4A5F7A">${s.key}</text>
-      <text x="${x.toFixed(1)}" y="${(y + 15).toFixed(1)}" text-anchor="${anchor}" dominant-baseline="middle"
-      font-family="Raleway,sans-serif" font-weight="400" font-size="10" fill="#66788A">${s.count.toLocaleString()}</text>`;
+      font-family="Raleway,Arial,sans-serif" font-weight="700" font-size="14" letter-spacing="0.06em" fill="#4A5F7A">${s.key}</text>
+      <text x="${x.toFixed(1)}" y="${(y + 16).toFixed(1)}" text-anchor="${anchor}" dominant-baseline="middle"
+      font-family="Raleway,Arial,sans-serif" font-weight="400" font-size="10.5" fill="#5C6B7A">${s.count.toLocaleString()}</text>`;
   }).join("");
   $("radarMount").innerHTML = `
-    <svg class="radar-svg" viewBox="0 0 320 320" role="img" aria-label="Radar of search-mode buzz">
+    <svg class="radar-svg" viewBox="-62 -18 444 384" role="img" aria-label="Radar of search-mode buzz">
       ${rings}${axes}
       <polygon points="${dataPts}" fill="rgba(74,95,122,0.15)" stroke="#4A5F7A" stroke-width="2"/>
       ${dots}${labels}
@@ -434,7 +516,7 @@ function sparkline(views, w, h) {
     return x.toFixed(1) + "," + y.toFixed(1);
   }).join(" ");
   return `<svg class="spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true">
-    <polyline points="${pts}" fill="none" stroke="#66788A" stroke-width="1.5"/></svg>`;
+    <polyline points="${pts}" fill="none" stroke="#5C6B7A" stroke-width="1.5"/></svg>`;
 }
 async function loadFintechMomentum() {
   const results = await Promise.allSettled(FINTECH_TOPICS.map(async t => {
@@ -458,33 +540,30 @@ async function loadFintechMomentum() {
     </div>`;
   }).join("");
 }
+let cryptoCache = null;
+function renderStable(price, stale) {
+  const names = { tether: ["Tether", "USDT"], "usd-coin": ["USD Coin", "USDC"], dai: ["Dai", "DAI"] };
+  const order = ["tether", "usd-coin", "dai"];
+  const rows = order.filter(id => price[id]).map(id => {
+    const p = price[id], chg = p.usd_24h_change || 0;
+    const cls = chg > 0.02 ? "up" : (chg < -0.02 ? "down" : "flat");
+    const onPeg = Math.abs((p.usd || 0) - 1) <= 0.01;
+    return `<div class="tick-row">
+      <span class="tick-name">${names[id][0]}<small>${names[id][1]}</small><span class="peg" style="color:${onPeg ? "var(--up)" : "var(--down)"}">${onPeg ? "on peg" : "off peg"}</span></span>
+      <span><span class="tick-price">$${(p.usd != null ? p.usd : 0).toLocaleString(undefined, { minimumFractionDigits: 3, maximumFractionDigits: 4 })}</span><span class="tick-chg badge ${cls}">${chg >= 0 ? "+" : ""}${chg.toFixed(2)}%</span></span>
+    </div>`;
+  }).join("");
+  $("ticker").innerHTML = rows + (stale ? `<p class="note" style="padding-top:.5rem;">Showing last good values <span class="stale">cached</span></p>` : "");
+}
 async function loadCrypto() {
-  // stablecoins + majors
   try {
-    const ids = "tether,usd-coin,dai,bitcoin,ethereum";
-    const price = await fetchJSON(CG + "simple/price?ids=" + ids + "&vs_currencies=usd&include_24hr_change=true");
-    const names = { tether: ["Tether", "USDT"], "usd-coin": ["USD Coin", "USDC"], dai: ["Dai", "DAI"], bitcoin: ["Bitcoin", "BTC"], ethereum: ["Ethereum", "ETH"] };
-    const order = ["tether", "usd-coin", "dai", "bitcoin", "ethereum"];
-    $("ticker").innerHTML = order.filter(id => price[id]).map(id => {
-      const p = price[id], chg = p.usd_24h_change || 0;
-      const cls = chg > 0.05 ? "up" : (chg < -0.05 ? "down" : "flat");
-      const price$ = p.usd >= 100 ? p.usd.toLocaleString(undefined, { maximumFractionDigits: 0 }) : p.usd.toLocaleString(undefined, { maximumFractionDigits: p.usd < 2 ? 4 : 2 });
-      return `<div class="tick-row"><span class="tick-name">${names[id][0]}<small>${names[id][1]}</small></span>
-        <span><span class="tick-price">$${price$}</span><span class="tick-chg badge ${cls}">${chg >= 0 ? "+" : ""}${chg.toFixed(2)}%</span></span></div>`;
-    }).join("");
+    const price = await fetchJSON(CG + "simple/price?ids=tether,usd-coin,dai&vs_currencies=usd&include_24hr_change=true");
+    if (!["tether", "usd-coin", "dai"].some(id => price[id])) throw new Error("empty");
+    cryptoCache = price;
+    renderStable(price, false);
   } catch (e) {
-    $("ticker").innerHTML = `<p class="note">CoinGecko is rate-limited right now — try refresh shortly.</p>`;
-  }
-  try {
-    const tr = await fetchJSON(CG + "search/trending");
-    const coins = (tr.coins || []).slice(0, 7);
-    $("trending").innerHTML = coins.map(c => {
-      const it = c.item;
-      return `<span class="chip trend" data-seed="${esc(it.name)}">${esc(it.name)} <small style="color:var(--quote)">${esc(it.symbol)}</small></span>`;
-    }).join("") || `<span class="note">No trending data.</span>`;
-    wireChips();
-  } catch (e) {
-    $("trending").innerHTML = `<span class="note">Trending list unavailable right now.</span>`;
+    if (cryptoCache) renderStable(cryptoCache, true);
+    else $("ticker").innerHTML = `<p class="note">CoinGecko is rate-limited right now — hit “Refresh scan” shortly.</p>`;
   }
 }
 async function loadFintechFeed() {
@@ -572,7 +651,11 @@ function setUpdated() {
   const d = new Date();
   $("updated").textContent = "Last scan: " + d.toLocaleString([], { hour: "2-digit", minute: "2-digit", month: "short", day: "numeric" });
 }
+let lastRun = 0;
 async function runAll() {
+  const since = Date.now() - lastRun;
+  if (lastRun && since < 4000) return; // guard against rapid refetch / rate limits
+  lastRun = Date.now();
   const btn = $("refreshBtn");
   btn.disabled = true; btn.textContent = "Scanning…";
   await Promise.allSettled([
@@ -588,6 +671,7 @@ document.addEventListener("DOMContentLoaded", () => {
   $("refreshBtn").addEventListener("click", runAll);
   $("exploreBtn").addEventListener("click", () => explore($("seed").value));
   $("seed").addEventListener("keydown", e => { if (e.key === "Enter") explore($("seed").value); });
+  wireChips();
   runAll();
   explore("stablecoin");
 });
