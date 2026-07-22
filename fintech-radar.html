@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Fintech Visibility Radar — Lubna Ali Khan | SEO · AEO · GEO · AIO</title>
+<meta name="description" content="A live radar of how fintech content earns visibility across Google, AI Overviews and answer engines — tracking SEO, AEO, GEO and AIO alongside the topics moving the industry. By Lubna Ali Khan." />
+<link rel="canonical" href="https://www.lubnaalikhan.com/fintech-radar" />
+<meta name="robots" content="noindex, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.lubnaalikhan.com/fintech-radar" />
+<meta property="og:title" content="The Fintech Visibility Radar — Lubna Ali Khan" />
+<meta property="og:description" content="A live read on how fintech earns attention across Google, AI Overviews and answer engines — SEO · AEO · GEO · AIO." />
+<meta property="og:image" content="https://www.lubnaalikhan.com/lubna-avatar.jpg" />
+<meta property="og:site_name" content="Lubna Ali Khan" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="The Fintech Visibility Radar — Lubna Ali Khan" />
+<meta name="twitter:description" content="A live read on how fintech earns attention across Google, AI Overviews and answer engines — SEO · AEO · GEO · AIO." />
+<meta name="twitter:image" content="https://www.lubnaalikhan.com/lubna-avatar.jpg" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#F8F6F3; --heading:#4A5F7A; --body:#3F4A57; --secondary:#505A66;
+    --quote:#66788A; --border:#D5D2CE; --accent:#DDD0CB; --card:#FDFCFB;
+    --up:#5B8A72; --down:#B07F72;
+    --font-heading:'Cormorant Garamond',Georgia,serif;
+    --font-body:'Raleway',Arial,sans-serif;
+    --max:1240px; --gutter:clamp(1.25rem,5vw,3.5rem);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--bg);color:var(--body);font-family:var(--font-body);
+    font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  a{color:var(--heading);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter);}
+
+  /* Masthead */
+  .masthead{border-bottom:1px solid var(--border);padding:2.4rem 0 2rem;}
+  .masthead-inner{display:flex;gap:2rem;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+  .eyebrow{font-family:var(--font-body);font-weight:700;font-size:.7rem;text-transform:uppercase;
+    letter-spacing:.18em;color:var(--secondary);margin:0 0 .6rem;display:flex;align-items:center;gap:.5rem;}
+  .live-dot{width:7px;height:7px;border-radius:50%;background:var(--up);display:inline-block;
+    box-shadow:0 0 0 0 rgba(91,138,114,.5);animation:pulse 2.4s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(91,138,114,.45);}70%{box-shadow:0 0 0 8px rgba(91,138,114,0);}100%{box-shadow:0 0 0 0 rgba(91,138,114,0);}}
+  h1.title{font-family:var(--font-heading);font-weight:300;color:var(--heading);
+    font-size:clamp(2.5rem,6vw,4.2rem);line-height:1.02;margin:0;letter-spacing:.01em;}
+  h1.title em{font-style:italic;font-weight:400;}
+  .tagline{color:var(--secondary);font-size:1.02rem;max-width:44ch;margin:.9rem 0 0;}
+  .meta-row{display:flex;align-items:center;gap:1rem;margin-top:1.3rem;flex-wrap:wrap;}
+  .updated{font-size:.78rem;color:var(--quote);letter-spacing:.02em;}
+  button.refresh{font-family:var(--font-body);font-weight:600;text-transform:uppercase;
+    letter-spacing:.1em;font-size:.72rem;background:var(--heading);color:var(--bg);border:none;
+    padding:11px 22px;cursor:pointer;transition:opacity .2s;}
+  button.refresh:hover{opacity:.85;}
+  button.refresh:disabled{opacity:.5;cursor:progress;}
+
+  /* Header radar motif */
+  .motif{width:150px;height:150px;flex:0 0 auto;}
+  .sweep{transform-origin:160px 160px;animation:spin 5.5s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  /* Sections */
+  section.panel{padding:2.6rem 0;border-bottom:1px solid var(--border);}
+  .panel-head{margin-bottom:1.6rem;}
+  .panel-label{font-family:var(--font-body);font-weight:700;font-size:.7rem;text-transform:uppercase;
+    letter-spacing:.18em;color:var(--secondary);margin:0 0 .35rem;}
+  .panel-title{font-family:var(--font-heading);font-weight:400;color:var(--heading);
+    font-size:clamp(1.7rem,3.5vw,2.4rem);margin:0;line-height:1.1;}
+  .panel-sub{color:var(--secondary);font-size:.92rem;margin:.5rem 0 0;max-width:60ch;}
+
+  .grid2{display:grid;grid-template-columns:minmax(0,0.92fr) minmax(0,1.08fr);gap:2rem;align-items:start;}
+  @media(max-width:820px){.grid2{grid-template-columns:1fr;}}
+  .card{background:var(--card);border:1px solid var(--border);padding:1.5rem 1.5rem 1.6rem;}
+  .card h3{font-family:var(--font-heading);font-weight:500;color:var(--heading);font-size:1.25rem;margin:0 0 1rem;}
+
+  /* Radar */
+  .radar-box{display:flex;flex-direction:column;align-items:center;}
+  .radar-svg{width:100%;max-width:360px;height:auto;}
+  .radar-caption{font-size:.76rem;color:var(--quote);text-align:center;margin-top:.7rem;max-width:34ch;line-height:1.5;}
+  .legend{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-top:1rem;justify-content:center;}
+  .legend span{font-size:.74rem;color:var(--secondary);display:flex;align-items:center;gap:.4rem;}
+  .legend b{color:var(--heading);font-weight:600;}
+
+  /* Lists */
+  ul.feed{list-style:none;margin:0;padding:0;}
+  ul.feed li{padding:.7rem 0;border-bottom:1px dashed var(--border);}
+  ul.feed li:last-child{border-bottom:none;}
+  .feed a.t{font-weight:500;color:var(--body);line-height:1.4;display:block;}
+  .feed a.t:hover{color:var(--heading);}
+  .feed .sub{font-size:.72rem;color:var(--quote);margin-top:.25rem;letter-spacing:.02em;}
+  .mode-tag{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    background:var(--accent);color:var(--heading);padding:2px 7px;margin-right:.5rem;vertical-align:middle;}
+
+  /* Momentum bars */
+  .mom{display:flex;flex-direction:column;gap:.95rem;}
+  .mom-row{display:grid;grid-template-columns:1fr auto;gap:.4rem .8rem;align-items:center;}
+  .mom-name{font-weight:600;color:var(--body);font-size:.92rem;}
+  .mom-name small{display:block;font-weight:400;color:var(--quote);font-size:.7rem;letter-spacing:.02em;margin-top:1px;}
+  .mom-bartrack{grid-column:1/2;height:8px;background:#EFEBE6;position:relative;overflow:hidden;}
+  .mom-barfill{height:100%;background:var(--accent);}
+  .badge{font-size:.72rem;font-weight:700;letter-spacing:.02em;white-space:nowrap;text-align:right;}
+  .badge.up{color:var(--up);} .badge.down{color:var(--down);} .badge.flat{color:var(--quote);}
+  .spark{grid-column:2/3;grid-row:1/2;}
+  .mom-meta{grid-column:2/3;font-size:.68rem;color:var(--quote);text-align:right;}
+
+  /* Ticker */
+  .ticker{display:flex;flex-direction:column;gap:.1rem;}
+  .tick-row{display:flex;align-items:baseline;justify-content:space-between;padding:.55rem 0;border-bottom:1px dashed var(--border);}
+  .tick-row:last-child{border-bottom:none;}
+  .tick-name{font-weight:600;color:var(--body);}
+  .tick-name small{color:var(--quote);font-weight:400;text-transform:uppercase;font-size:.68rem;letter-spacing:.06em;margin-left:.4rem;}
+  .tick-price{font-variant-numeric:tabular-nums;color:var(--body);}
+  .tick-chg{font-size:.76rem;font-weight:600;margin-left:.7rem;font-variant-numeric:tabular-nums;}
+  .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.4rem;}
+  .chip{font-size:.74rem;background:var(--card);border:1px solid var(--border);color:var(--heading);
+    padding:5px 11px;cursor:pointer;transition:background .15s,color .15s;}
+  .chip:hover{background:var(--heading);color:var(--bg);}
+  .chip.trend{background:var(--accent);border-color:var(--accent);}
+  .chip.trend:hover{background:var(--heading);border-color:var(--heading);color:var(--bg);}
+
+  /* Explorer */
+  .explorer-input{display:flex;gap:.6rem;max-width:520px;margin-bottom:.4rem;}
+  .explorer-input input{flex:1;font-family:var(--font-body);font-size:.95rem;color:var(--body);
+    background:var(--card);border:1px solid var(--border);padding:12px 14px;}
+  .explorer-input input:focus{outline:none;border-color:var(--heading);}
+  .explorer-input button{font-family:var(--font-body);font-weight:600;text-transform:uppercase;
+    letter-spacing:.1em;font-size:.72rem;background:var(--heading);color:var(--bg);border:none;padding:0 22px;cursor:pointer;}
+  .explorer-hint{font-size:.74rem;color:var(--quote);margin:.2rem 0 1.4rem;}
+  .trend-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:.3rem;}
+  .trend-val{font-family:var(--font-heading);font-size:1.6rem;color:var(--heading);line-height:1;}
+
+  /* States */
+  .note{font-size:.8rem;color:var(--quote);font-style:italic;padding:.6rem 0;}
+  .loading{color:var(--quote);font-size:.85rem;letter-spacing:.02em;}
+  .shimmer{display:inline-block;height:.85em;width:60%;background:linear-gradient(90deg,#ece8e3 25%,#f5f2ee 37%,#ece8e3 63%);
+    background-size:400% 100%;animation:sh 1.4s ease infinite;}
+  @keyframes sh{0%{background-position:100% 0;}100%{background-position:-100% 0;}}
+
+  /* Footer */
+  footer{padding:2.4rem 0 3rem;color:var(--quote);font-size:.8rem;}
+  footer .srcs{display:flex;flex-wrap:wrap;gap:.4rem .9rem;margin:.7rem 0;}
+  footer .srcs b{color:var(--secondary);}
+  .proto{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--secondary);border:1px solid var(--border);padding:3px 9px;}
+
+  @media(prefers-reduced-motion:reduce){
+    .sweep{animation:none;} .live-dot{animation:none;} .shimmer{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <div>
+      <p class="eyebrow"><span class="live-dot"></span> Live · Curated by Lubna Ali Khan</p>
+      <h1 class="title">The Fintech <em>Visibility</em> Radar</h1>
+      <p class="tagline">A live read on how fintech content earns attention across Google, AI Overviews and answer engines — tracking SEO, AEO, GEO &amp; AIO alongside the topics moving the industry.</p>
+      <p style="font-family:var(--font-body);font-size:.8rem;color:var(--secondary);letter-spacing:.02em;margin:.6rem 0 0;">Lubna Ali Khan · Content &amp; Search Editor — SEO · AEO · GEO · AIO</p>
+      <div class="meta-row">
+        <button class="refresh" id="refreshBtn">Refresh scan</button>
+        <span class="updated" id="updated">Scanning…</span>
+      </div>
+    </div>
+    <svg class="motif" viewBox="0 0 320 320" aria-hidden="true">
+      <defs>
+        <radialGradient id="sweepGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#4A5F7A" stop-opacity="0.34"/>
+          <stop offset="100%" stop-color="#4A5F7A" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <circle cx="160" cy="160" r="118" fill="none" stroke="#D5D2CE" stroke-width="1"/>
+      <circle cx="160" cy="160" r="86" fill="none" stroke="#D5D2CE" stroke-width="1"/>
+      <circle cx="160" cy="160" r="52" fill="none" stroke="#D5D2CE" stroke-width="1"/>
+      <circle cx="160" cy="160" r="18" fill="none" stroke="#D5D2CE" stroke-width="1"/>
+      <line x1="160" y1="42" x2="160" y2="278" stroke="#D5D2CE" stroke-width="1"/>
+      <line x1="42" y1="160" x2="278" y2="160" stroke="#D5D2CE" stroke-width="1"/>
+      <g class="sweep">
+        <path d="M160 160 L160 42 A118 118 0 0 1 243 77 Z" fill="url(#sweepGrad)"/>
+        <line x1="160" y1="160" x2="160" y2="42" stroke="#4A5F7A" stroke-width="1.5" stroke-opacity="0.55"/>
+      </g>
+      <circle cx="160" cy="160" r="3" fill="#4A5F7A"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+  <!-- SECTION 1: SEARCH LANDSCAPE -->
+  <section class="panel">
+    <div class="wrap">
+      <div class="panel-head">
+        <p class="panel-label">01 · The search frontier</p>
+        <h2 class="panel-title">Search Landscape Radar</h2>
+        <p class="panel-sub">How much the developer &amp; builder world is talking about each mode of search right now — classic <b>SEO</b>, <b>GEO</b> (generative engine optimization), <b>AEO</b> (answer engine optimization) and <b>AIO</b> (AI answer surfaces). Buzz is measured from Hacker News story volume over the last 120 days.</p>
+      </div>
+      <div class="grid2">
+        <div class="card radar-box">
+          <div id="radarMount" style="width:100%;display:flex;justify-content:center;">
+            <p class="loading">Sweeping the search landscape…</p>
+          </div>
+          <div class="legend" id="radarLegend"></div>
+          <p class="radar-caption">Axis reach is log-scaled buzz (so the newer modes stay visible next to SEO). Raw story counts shown on each axis.</p>
+        </div>
+        <div class="card">
+          <h3>What's moving on each axis</h3>
+          <ul class="feed" id="modeFeed"><li class="loading">Loading recent signals…</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: FINTECH PULSE -->
+  <section class="panel">
+    <div class="wrap">
+      <div class="panel-head">
+        <p class="panel-label">02 · Her niche</p>
+        <h2 class="panel-title">Fintech Pulse</h2>
+        <p class="panel-sub">Rising topics in payments, remittances and money movement — the content territory behind the fintech plan. Momentum is the last 7 days vs. the previous 7, from Wikipedia attention. Live stablecoin &amp; market context from CoinGecko.</p>
+      </div>
+      <div class="grid2">
+        <div class="card">
+          <h3>Topic momentum <small style="font-weight:400;color:var(--quote);font-size:.7rem;">· 7d vs prior 7d</small></h3>
+          <div class="mom" id="momentum"><p class="loading">Measuring topic momentum…</p></div>
+        </div>
+        <div class="card">
+          <h3>Money-movement market</h3>
+          <div class="ticker" id="ticker"><p class="loading">Fetching stablecoin &amp; market data…</p></div>
+          <h3 style="margin-top:1.5rem;">Trending on CoinGecko</h3>
+          <div class="chips" id="trending"><span class="loading">Loading trending assets…</span></div>
+          <h3 style="margin-top:1.5rem;">Latest fintech headlines</h3>
+          <ul class="feed" id="fintechFeed"><li class="loading">Loading headlines…</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: TOPIC & QUESTION EXPLORER -->
+  <section class="panel">
+    <div class="wrap">
+      <div class="panel-head">
+        <p class="panel-label">03 · Content angles on demand</p>
+        <h2 class="panel-title">Topic &amp; Question Explorer</h2>
+        <p class="panel-sub">Type any topic to pull related entities (Wikipedia), its attention trend, and the real questions &amp; discussions people are having (Hacker News) — a fast way to find angles and headings worth writing.</p>
+      </div>
+      <div class="explorer-input">
+        <input id="seed" type="text" placeholder="e.g. stablecoin, remittance, generative engine optimization" value="stablecoin" />
+        <button id="exploreBtn">Scan</button>
+      </div>
+      <p class="explorer-hint">Tip: click any related-topic or trending chip anywhere on the page to re-scan around it.</p>
+      <div class="grid2">
+        <div class="card">
+          <h3>Related topics &amp; attention</h3>
+          <div class="trend-head">
+            <span style="font-size:.8rem;color:var(--secondary);" id="trendLabel">Attention trend</span>
+            <span class="trend-val" id="trendVal">—</span>
+          </div>
+          <div id="trendSpark" style="margin:.2rem 0 1rem;"></div>
+          <div class="chips" id="related"></div>
+        </div>
+        <div class="card">
+          <h3>Questions &amp; discussions</h3>
+          <ul class="feed" id="explorerFeed"><li class="loading">Enter a topic and hit scan…</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="proto">Prototype</span>
+    <div class="srcs">
+      <span><b>Live sources:</b></span>
+      <span>Hacker News (Algolia API)</span>·
+      <span>Wikipedia OpenSearch + Pageviews</span>·
+      <span>CoinGecko</span>
+    </div>
+    <p style="max-width:70ch;margin:.4rem 0 0;">All data is pulled live in your browser from free, keyless APIs — nothing is stored. On the live site, a small server route would add Google autocomplete keywords, SERP "People Also Ask", and RSS from Search Engine Land / Search Engine Journal / Google Search Central (these block direct browser calls). Styled in the lubnaalikhan.com design system.</p>
+  </div>
+</footer>
+
+<script>
+"use strict";
+/* ---------- tiny helpers ---------- */
+const $ = (id) => document.getElementById(id);
+const enc = encodeURIComponent;
+const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, c => (
+  {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const nowSec = () => Math.floor(Date.now() / 1000);
+const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
+
+async function fetchJSON(url, { timeout = 12000 } = {}) {
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), timeout);
+  try {
+    const r = await fetch(url, { signal: ctrl.signal, headers: { "Accept": "application/json" } });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    return await r.json();
+  } finally { clearTimeout(t); }
+}
+function timeAgo(unixSec) {
+  const d = nowSec() - unixSec;
+  if (d < 3600) return Math.max(1, Math.round(d / 60)) + "m ago";
+  if (d < 86400) return Math.round(d / 3600) + "h ago";
+  return Math.round(d / 86400) + "d ago";
+}
+function ymd(date) {
+  return date.getFullYear() + String(date.getMonth() + 1).padStart(2, "0") + String(date.getDate()).padStart(2, "0");
+}
+
+/* ---------- config ---------- */
+const SEARCH_MODES = [
+  { key: "SEO", q: "SEO", label: "SEO" },
+  { key: "GEO", q: '"generative engine optimization"', label: "GEO" },
+  { key: "AEO", q: '"answer engine optimization"', label: "AEO" },
+  { key: "AIO", q: '"AI Overviews"', label: "AIO" }
+];
+const FINTECH_TOPICS = [
+  { title: "Stablecoin", note: "digital dollars" },
+  { title: "Remittance", note: "cross-border money" },
+  { title: "Central bank digital currency", note: "CBDCs" },
+  { title: "Digital wallet", note: "wallets" },
+  { title: "Neobank", note: "digital banks" },
+  { title: "Buy now, pay later", note: "BNPL" },
+  { title: "Open banking", note: "data sharing" },
+  { title: "Financial technology", note: "fintech" }
+];
+const HN = "https://hn.algolia.com/api/v1/";
+const WIKI = "https://en.wikipedia.org/w/api.php";
+const PV = "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/all-agents/";
+const CG = "https://api.coingecko.com/api/v3/";
+
+/* ---------- SECTION 1: search landscape ---------- */
+async function hnCount(mode, cutoff) {
+  const p = new URLSearchParams({
+    query: mode.q, tags: "story", advancedSyntax: "true",
+    hitsPerPage: "5", numericFilters: "created_at_i>" + cutoff
+  });
+  const data = await fetchJSON(HN + "search?" + p.toString());
+  return { mode, count: data.nbHits || 0, hits: data.hits || [] };
+}
+async function loadSearchLandscape() {
+  const cutoff = nowSec() - 120 * 86400;
+  const results = await Promise.allSettled(SEARCH_MODES.map(m => hnCount(m, cutoff)));
+  const rows = results.map((r, i) =>
+    r.status === "fulfilled" ? r.value : { mode: SEARCH_MODES[i], count: 0, hits: [], failed: true });
+
+  // radar (log-scaled)
+  const logs = rows.map(r => Math.log(1 + r.count));
+  const maxLog = Math.max(...logs, 0.0001);
+  const scores = rows.map((r, i) => ({ key: r.mode.key, norm: logs[i] / maxLog, count: r.count }));
+  drawRadar(scores);
+
+  // legend
+  $("radarLegend").innerHTML = scores.map(s =>
+    `<span><b>${s.key}</b> ${s.count.toLocaleString()}</span>`).join("");
+
+  // per-mode headlines (top story by points from each mode)
+  const items = [];
+  rows.forEach(r => {
+    const top = (r.hits || []).slice().sort((a, b) => (b.points || 0) - (a.points || 0))[0];
+    if (top && top.title) {
+      items.push({ mode: r.mode.key, title: top.title,
+        url: top.url || ("https://news.ycombinator.com/item?id=" + top.objectID),
+        points: top.points || 0, comments: top.num_comments || 0, when: top.created_at_i });
+    }
+  });
+  const feed = $("modeFeed");
+  if (!items.length) { feed.innerHTML = `<li class="note">Couldn't reach Hacker News just now — hit “Refresh scan”.</li>`; return; }
+  feed.innerHTML = items.map(it => `
+    <li><a class="t" href="${esc(it.url)}" target="_blank" rel="noopener"><span class="mode-tag">${it.mode}</span>${esc(it.title)}</a>
+      <div class="sub">▲ ${it.points} · ${it.comments} comments · ${it.when ? timeAgo(it.when) : ""}</div></li>`).join("");
+}
+
+function drawRadar(scores) {
+  const R = 118, cx = 160, cy = 160;
+  const ang = i => (-90 + i * (360 / scores.length)) * Math.PI / 180;
+  const pt = (i, rad) => [cx + Math.cos(ang(i)) * rad, cy + Math.sin(ang(i)) * rad];
+  const rings = [0.25, 0.5, 0.75, 1].map(f => {
+    const pts = scores.map((_, i) => pt(i, R * f).map(n => n.toFixed(1)).join(",")).join(" ");
+    return `<polygon points="${pts}" fill="none" stroke="#D5D2CE" stroke-width="1"/>`;
+  }).join("");
+  const axes = scores.map((_, i) => {
+    const [x, y] = pt(i, R);
+    return `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#D5D2CE" stroke-width="1"/>`;
+  }).join("");
+  const dataPts = scores.map((s, i) => pt(i, R * clamp(s.norm, 0.04, 1)).map(n => n.toFixed(1)).join(",")).join(" ");
+  const dots = scores.map((s, i) => {
+    const [x, y] = pt(i, R * clamp(s.norm, 0.04, 1));
+    return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4" fill="#4A5F7A"/>`;
+  }).join("");
+  const labels = scores.map((s, i) => {
+    const [x, y] = pt(i, R + 22);
+    const anchor = Math.abs(x - cx) < 5 ? "middle" : (x > cx ? "start" : "end");
+    return `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" text-anchor="${anchor}" dominant-baseline="middle"
+      font-family="Raleway,sans-serif" font-weight="700" font-size="13" letter-spacing="0.08em" fill="#4A5F7A">${s.key}</text>
+      <text x="${x.toFixed(1)}" y="${(y + 15).toFixed(1)}" text-anchor="${anchor}" dominant-baseline="middle"
+      font-family="Raleway,sans-serif" font-weight="400" font-size="10" fill="#66788A">${s.count.toLocaleString()}</text>`;
+  }).join("");
+  $("radarMount").innerHTML = `
+    <svg class="radar-svg" viewBox="0 0 320 320" role="img" aria-label="Radar of search-mode buzz">
+      ${rings}${axes}
+      <polygon points="${dataPts}" fill="rgba(74,95,122,0.15)" stroke="#4A5F7A" stroke-width="2"/>
+      ${dots}${labels}
+      <circle cx="${cx}" cy="${cy}" r="2.5" fill="#4A5F7A"/>
+    </svg>`;
+}
+
+/* ---------- SECTION 2: fintech pulse ---------- */
+async function pageviews(title, days) {
+  const end = new Date(Date.now() - 2 * 86400000);
+  const start = new Date(end.getTime() - (days - 1) * 86400000);
+  const url = PV + enc(title.replace(/ /g, "_")) + "/daily/" + ymd(start) + "/" + ymd(end);
+  const data = await fetchJSON(url);
+  return (data.items || []).map(i => i.views);
+}
+function momentum(views) {
+  if (!views || views.length < 8) return { pct: 0, recent: views ? views.reduce((a, b) => a + b, 0) : 0 };
+  const last7 = views.slice(-7).reduce((a, b) => a + b, 0);
+  const prev7 = views.slice(-14, -7).reduce((a, b) => a + b, 0);
+  const pct = prev7 > 0 ? ((last7 - prev7) / prev7) * 100 : 0;
+  return { pct, recent: last7 };
+}
+function sparkline(views, w, h) {
+  if (!views || views.length < 2) return "";
+  const min = Math.min(...views), max = Math.max(...views), span = max - min || 1;
+  const pts = views.map((v, i) => {
+    const x = (i / (views.length - 1)) * (w - 2) + 1;
+    const y = h - 2 - ((v - min) / span) * (h - 4);
+    return x.toFixed(1) + "," + y.toFixed(1);
+  }).join(" ");
+  return `<svg class="spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true">
+    <polyline points="${pts}" fill="none" stroke="#66788A" stroke-width="1.5"/></svg>`;
+}
+async function loadFintechMomentum() {
+  const results = await Promise.allSettled(FINTECH_TOPICS.map(async t => {
+    const views = await pageviews(t.title, 28);
+    return { t, views, m: momentum(views) };
+  }));
+  const ok = results.filter(r => r.status === "fulfilled" && r.value.views.length).map(r => r.value);
+  if (!ok.length) { $("momentum").innerHTML = `<p class="note">Wikipedia pageviews didn't load — hit refresh in a moment.</p>`; return; }
+  ok.sort((a, b) => b.m.pct - a.m.pct);
+  const maxRecent = Math.max(...ok.map(o => o.m.recent), 1);
+  $("momentum").innerHTML = ok.map(o => {
+    const up = o.m.pct > 1, down = o.m.pct < -1;
+    const cls = up ? "up" : (down ? "down" : "flat");
+    const arrow = up ? "▲" : (down ? "▼" : "—");
+    const w = Math.max(4, Math.round((o.m.recent / maxRecent) * 100));
+    return `<div class="mom-row">
+      <div class="mom-name">${esc(o.t.title)}<small>${esc(o.t.note)}</small></div>
+      <div class="badge ${cls}">${arrow} ${Math.abs(o.m.pct).toFixed(0)}%</div>
+      <div class="mom-bartrack"><div class="mom-barfill" style="width:${w}%"></div></div>
+      <div class="mom-meta">${o.m.recent.toLocaleString()} views / 7d</div>
+    </div>`;
+  }).join("");
+}
+async function loadCrypto() {
+  // stablecoins + majors
+  try {
+    const ids = "tether,usd-coin,dai,bitcoin,ethereum";
+    const price = await fetchJSON(CG + "simple/price?ids=" + ids + "&vs_currencies=usd&include_24hr_change=true");
+    const names = { tether: ["Tether", "USDT"], "usd-coin": ["USD Coin", "USDC"], dai: ["Dai", "DAI"], bitcoin: ["Bitcoin", "BTC"], ethereum: ["Ethereum", "ETH"] };
+    const order = ["tether", "usd-coin", "dai", "bitcoin", "ethereum"];
+    $("ticker").innerHTML = order.filter(id => price[id]).map(id => {
+      const p = price[id], chg = p.usd_24h_change || 0;
+      const cls = chg > 0.05 ? "up" : (chg < -0.05 ? "down" : "flat");
+      const price$ = p.usd >= 100 ? p.usd.toLocaleString(undefined, { maximumFractionDigits: 0 }) : p.usd.toLocaleString(undefined, { maximumFractionDigits: p.usd < 2 ? 4 : 2 });
+      return `<div class="tick-row"><span class="tick-name">${names[id][0]}<small>${names[id][1]}</small></span>
+        <span><span class="tick-price">$${price$}</span><span class="tick-chg badge ${cls}">${chg >= 0 ? "+" : ""}${chg.toFixed(2)}%</span></span></div>`;
+    }).join("");
+  } catch (e) {
+    $("ticker").innerHTML = `<p class="note">CoinGecko is rate-limited right now — try refresh shortly.</p>`;
+  }
+  try {
+    const tr = await fetchJSON(CG + "search/trending");
+    const coins = (tr.coins || []).slice(0, 7);
+    $("trending").innerHTML = coins.map(c => {
+      const it = c.item;
+      return `<span class="chip trend" data-seed="${esc(it.name)}">${esc(it.name)} <small style="color:var(--quote)">${esc(it.symbol)}</small></span>`;
+    }).join("") || `<span class="note">No trending data.</span>`;
+    wireChips();
+  } catch (e) {
+    $("trending").innerHTML = `<span class="note">Trending list unavailable right now.</span>`;
+  }
+}
+async function loadFintechFeed() {
+  try {
+    const p = new URLSearchParams({
+      query: "fintech OR payments OR stablecoin OR remittance OR neobank",
+      tags: "story", advancedSyntax: "true", hitsPerPage: "10"
+    });
+    const data = await fetchJSON(HN + "search_by_date?" + p.toString());
+    const hits = (data.hits || []).filter(h => h.title).slice(0, 8);
+    $("fintechFeed").innerHTML = hits.length ? hits.map(h => `
+      <li><a class="t" href="${esc(h.url || ("https://news.ycombinator.com/item?id=" + h.objectID))}" target="_blank" rel="noopener">${esc(h.title)}</a>
+      <div class="sub">▲ ${h.points || 0} · ${h.num_comments || 0} comments · ${h.created_at_i ? timeAgo(h.created_at_i) : ""}</div></li>`).join("")
+      : `<li class="note">No recent fintech stories found.</li>`;
+  } catch (e) {
+    $("fintechFeed").innerHTML = `<li class="note">Couldn't load headlines — hit refresh.</li>`;
+  }
+}
+
+/* ---------- SECTION 3: explorer ---------- */
+const QWORDS = /^(how|what|why|when|where|which|who|is|are|should|can|could|does|do|will|would|has|have)\b/i;
+async function explore(term) {
+  term = (term || "").trim();
+  if (!term) return;
+  $("seed").value = term;
+  $("related").innerHTML = `<span class="loading">Finding related topics…</span>`;
+  $("explorerFeed").innerHTML = `<li class="loading">Scanning discussions for “${esc(term)}”…</li>`;
+  $("trendVal").textContent = "—";
+  $("trendSpark").innerHTML = "";
+  $("trendLabel").textContent = "Attention trend";
+
+  // related topics (Wikipedia opensearch)
+  let canonical = term;
+  try {
+    const p = new URLSearchParams({ action: "opensearch", search: term, limit: "12", namespace: "0", format: "json", origin: "*" });
+    const os = await fetchJSON(WIKI + "?" + p.toString());
+    const titles = (os && os[1]) || [];
+    if (titles.length) canonical = titles[0];
+    const rel = titles.slice(canonical === titles[0] ? 1 : 0, 11);
+    $("related").innerHTML = rel.length
+      ? rel.map(t => `<span class="chip" data-seed="${esc(t)}">${esc(t)}</span>`).join("")
+      : `<span class="note">No related topics found.</span>`;
+    wireChips();
+  } catch (e) {
+    $("related").innerHTML = `<span class="note">Related-topic lookup unavailable.</span>`;
+  }
+
+  // attention trend (pageviews on canonical)
+  try {
+    const views = await pageviews(canonical, 30);
+    if (views.length) {
+      const m = momentum(views);
+      const up = m.pct > 1, down = m.pct < -1;
+      $("trendLabel").textContent = canonical + " · Wikipedia views";
+      $("trendVal").innerHTML = `${views.slice(-7).reduce((a, b) => a + b, 0).toLocaleString()} <span class="badge ${up ? "up" : (down ? "down" : "flat")}" style="font-size:.8rem;">${up ? "▲" : (down ? "▼" : "—")} ${Math.abs(m.pct).toFixed(0)}%</span>`;
+      $("trendSpark").innerHTML = sparkline(views, 260, 46).replace('class="spark"', 'class="spark" style="width:100%;height:46px;"');
+    }
+  } catch (e) { /* leave dash */ }
+
+  // questions & discussions (HN)
+  try {
+    const p = new URLSearchParams({ query: term, tags: "story", hitsPerPage: "30" });
+    const data = await fetchJSON(HN + "search?" + p.toString());
+    const hits = (data.hits || []).filter(h => h.title);
+    const questions = hits.filter(h => /\?/.test(h.title) || QWORDS.test(h.title));
+    const chosen = (questions.length >= 3 ? questions : hits).slice(0, 9);
+    $("explorerFeed").innerHTML = chosen.length ? chosen.map(h => {
+      const isQ = /\?/.test(h.title) || QWORDS.test(h.title);
+      return `<li><a class="t" href="${esc(h.url || ("https://news.ycombinator.com/item?id=" + h.objectID))}" target="_blank" rel="noopener">${isQ ? '<span class="mode-tag">Q</span>' : ""}${esc(h.title)}</a>
+        <div class="sub">▲ ${h.points || 0} · ${h.num_comments || 0} comments · ${h.created_at_i ? timeAgo(h.created_at_i) : ""}</div></li>`;
+    }).join("") : `<li class="note">No discussions found for “${esc(term)}”. Try a broader term.</li>`;
+  } catch (e) {
+    $("explorerFeed").innerHTML = `<li class="note">Discussion search unavailable — try again.</li>`;
+  }
+}
+function wireChips() {
+  document.querySelectorAll(".chip[data-seed]").forEach(c => {
+    if (c._wired) return; c._wired = true;
+    c.addEventListener("click", () => explore(c.getAttribute("data-seed")));
+  });
+}
+
+/* ---------- orchestration ---------- */
+function setUpdated() {
+  const d = new Date();
+  $("updated").textContent = "Last scan: " + d.toLocaleString([], { hour: "2-digit", minute: "2-digit", month: "short", day: "numeric" });
+}
+async function runAll() {
+  const btn = $("refreshBtn");
+  btn.disabled = true; btn.textContent = "Scanning…";
+  await Promise.allSettled([
+    loadSearchLandscape(),
+    loadFintechMomentum(),
+    loadCrypto(),
+    loadFintechFeed()
+  ]);
+  setUpdated();
+  btn.disabled = false; btn.textContent = "Refresh scan";
+}
+document.addEventListener("DOMContentLoaded", () => {
+  $("refreshBtn").addEventListener("click", runAll);
+  $("exploreBtn").addEventListener("click", () => explore($("seed").value));
+  $("seed").addEventListener("keydown", e => { if (e.key === "Enter") explore($("seed").value); });
+  runAll();
+  explore("stablecoin");
+});
+</script>
+</body>
+</html>
