@@ -13,12 +13,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.lubnaalikhan.com/essays/some-questions-need-answers-from-within" />
 <meta property="og:title" content="Some Questions Need Answers From Within" />
-<meta property="og:description" content="Why critical thinking matters in the age of artificial intelligence — an essay by Lubna Ali Khan." />
+<meta property="og:description" content="An essay by Lubna Ali Khan on why critical thinking matters in the age of artificial intelligence." />
 <meta property="og:image" content="https://www.lubnaalikhan.com/essays/images/some-questions-need-answers-from-within.jpg" />
 <meta property="og:site_name" content="Lubna Ali Khan" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Some Questions Need Answers From Within" />
-<meta name="twitter:description" content="Why critical thinking matters in the age of artificial intelligence — an essay by Lubna Ali Khan." />
+<meta name="twitter:description" content="An essay by Lubna Ali Khan on why critical thinking matters in the age of artificial intelligence." />
 <meta name="twitter:image" content="https://www.lubnaalikhan.com/essays/images/some-questions-need-answers-from-within.jpg" />
 
 <script type="application/ld+json">
@@ -232,7 +232,7 @@
     <div class="ic-text">
       <div class="ic-eyebrow">Interactive companion</div>
       <h2>Rather explore this than read it?</h2>
-      <p>The same ideas as an interactive experience — a timeline you can open, a question-sorting exercise, and a reflection checklist.</p>
+      <p>The same ideas as an interactive experience: a timeline you can open, a question-sorting exercise, and a reflection checklist.</p>
     </div>
     <a class="btn btn-primary" href="/infographics/some-questions-need-answers-from-within">Try the interactive version <span class="arrow">&rarr;</span></a>
   </aside>
@@ -284,7 +284,7 @@
       <p>What kind of life do I want?</p>
       <p>Should I forgive?</p>
       <p>Am I living according to my values?</p>
-      <p>What does success mean to me — not to society, but to me?</p>
+      <p>What does success mean to me, not to society, but to me?</p>
     </div>
 
     <p>No language model should answer those questions for you. Not because it lacks intelligence. Because those answers are formed through experience, conscience, failure, love, grief, hope, and reflection.</p>
@@ -334,7 +334,7 @@
     <p>There is an old habit that deserves preserving: the habit of sitting with a difficult question. Not because answers are unimportant, but because the journey toward an answer often changes the person asking it.</p>
     <p>Artificial intelligence can illuminate the path, but it cannot walk it for you. It can explain philosophy, but it cannot choose your principles. It can generate thousands of questions. Only you can recognize which one is worth building your life around.</p>
     <p>In an age overflowing with information, wisdom may become humanity's rarest resource. And wisdom has never belonged to those who found answers the fastest. It has belonged to those who possessed the courage to ask difficult questions, the humility to admit they did not yet know, and the patience to discover answers through reflection.</p>
-    <p>Artificial intelligence may change how we work, how we learn, and even how we create. But it should never change our willingness to pause, reflect, question, and wonder. Because intelligence is not merely the ability to retrieve information — wisdom is knowing which questions deserve your own.</p>
+    <p>Artificial intelligence may change how we work, how we learn, and even how we create. But it should never change our willingness to pause, reflect, question, and wonder. Because intelligence is not merely the ability to retrieve information. Wisdom is knowing which questions deserve your own.</p>
 
     <div class="mini-refrain">
       <p>Some questions need answers from Google.</p>
@@ -350,11 +350,11 @@
   <section class="download-card" id="download">
     <p class="eyebrow">Free download</p>
     <h2>Get the essay as a PDF</h2>
-    <p class="dc-sub">Want this as a clean PDF to save, print, or share? Add your email to join Lubna's newsletter — occasional, practical notes on SEO, content, and thinking well — and your download unlocks right away.</p>
+    <p class="dc-sub">Want this as a clean PDF to save, print, or share? Add your email to join Lubna's newsletter (occasional, practical notes on SEO, content, and thinking well) and your download unlocks right away.</p>
     <form class="dc-form" id="subscribeForm" novalidate>
       <input type="text" name="_gotcha" class="dc-hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
       <input type="hidden" name="source" value="Essay download: Some Questions Need Answers From Within" />
-      <input type="hidden" name="_subject" value="New subscriber — Answers From Within (essay PDF)" />
+      <input type="hidden" name="_subject" value="New subscriber: Answers From Within (essay PDF)" />
       <label for="dc-email" class="dc-hp">Email address</label>
       <input type="email" id="dc-email" name="email" placeholder="your@email.com" required autocomplete="email" />
       <button type="submit" id="subscribeBtn">Subscribe &amp; unlock PDF</button>
@@ -398,7 +398,7 @@
       var a = document.createElement('a'); a.href = CFG.pdf; a.setAttribute('download',''); a.rel = 'noopener';
       document.body.appendChild(a); a.click(); a.remove();
     }
-    var NEWSLETTER_ENDPOINT = 'https://formspree.io/f/xbdeqgpd'; /* same endpoint as infographics — swap later if needed */
+    var NEWSLETTER_ENDPOINT = 'https://formspree.io/f/xbdeqgpd'; /* same endpoint as infographics; swap later if needed */
     var form = document.getElementById('subscribeForm'); if (!form) return;
     var btn = document.getElementById('subscribeBtn'), success = document.getElementById('dcSuccess'), errEl = document.getElementById('dcError'), dlBtn = document.getElementById('downloadBtn');
     if (dlBtn) dlBtn.addEventListener('click', function(e){ e.preventDefault(); downloadAsset(); });
@@ -410,7 +410,7 @@
       fetch(NEWSLETTER_ENDPOINT, { method:'POST', headers:{'Accept':'application/json'}, body:new FormData(form) })
         .then(function(res){ if (res.ok) { form.style.display='none'; success.classList.add('show'); success.scrollIntoView({behavior:'smooth',block:'center'}); setTimeout(downloadAsset, 400); }
           else { return res.json().then(function(d){ throw new Error('fail'); }); } })
-        .catch(function(){ btn.disabled=false; btn.textContent=original; errEl.textContent='Something went wrong — please try again, or email lubnairfan98@gmail.com and I’ll send it over.'; errEl.classList.add('show'); });
+        .catch(function(){ btn.disabled=false; btn.textContent=original; errEl.textContent='Something went wrong. Please try again, or email lubnairfan98@gmail.com and I’ll send it over.'; errEl.classList.add('show'); });
     });
   })();
 </script>
