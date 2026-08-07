@@ -33,7 +33,13 @@
   "publisher": { "@type": "Person", "name": "Lubna Ali Khan" },
   "mainEntityOfPage": "https://www.lubnaalikhan.com/essays/some-questions-need-answers-from-within",
   "keywords": ["Critical Thinking", "Artificial Intelligence", "Curiosity", "Reflection"],
-  "isAccessibleForFree": true
+  "isAccessibleForFree": true,
+  "articleSection": "Critical Thinking and AI, Part I",
+  "isPartOf": {
+    "@type": "CreativeWorkSeries",
+    "name": "Critical Thinking & AI",
+    "url": "https://www.lubnaalikhan.com/essays"
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -104,6 +110,9 @@
   .interactive-cta p { font-size: 0.95rem; color: var(--body); max-width: 46ch; }
   .btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-body); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 1.6rem; border-radius: 999px; text-decoration: none; cursor: pointer; border: 1px solid var(--heading); transition: transform 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s; white-space: nowrap; }
   .btn-primary { background: var(--heading); color: #fff; }
+  .btn-outline { background: transparent; color: var(--heading); }
+  .btn-outline:hover { background: var(--heading); color: #fff; transform: translateY(-2px); }
+  .interactive-cta.outline { background: transparent; border: 1px solid var(--border); }
   .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(74,95,122,0.18); }
   .btn .arrow { transition: transform 0.2s; }
   .btn:hover .arrow { transform: translateX(3px); }
@@ -220,11 +229,11 @@
   </nav>
 
   <header class="page-head">
-    <p class="eyebrow">Essay · Critical thinking</p>
+    <p class="eyebrow">Essay &middot; Critical Thinking &amp; AI &middot; Part I: Philosophy</p>
     <div class="tag-row"><span class="tag-pill">Artificial Intelligence</span><span class="tag-pill">Critical Thinking</span><span class="tag-pill">Reflection</span></div>
     <h1>Some Questions Need Answers From Within</h1>
     <p class="subtitle">Why critical thinking matters in the age of artificial intelligence</p>
-    <div class="byline"><span>By Lubna Ali Khan</span><span class="dot">·</span><span>7 min read</span></div>
+    <div class="byline"><span>By Lubna Ali Khan</span><span class="dot">&middot;</span><span>7 min read</span><span class="dot">&middot;</span><span>Part I of II</span></div>
   </header>
 
   <!-- Interactive companion CTA (top) -->
@@ -345,6 +354,16 @@
 
     <p>Perhaps the best way to use artificial intelligence is not to let it think instead of us, but to help us think more deeply than we would have on our own.</p>
   </article>
+
+  <!-- Part II CTA (end of article) -->
+  <aside class="interactive-cta">
+    <div class="ic-text">
+      <div class="ic-eyebrow">Part II of this series</div>
+      <h2>Thinking Beyond the Prompt</h2>
+      <p>From philosophy to practice: what critical thinking actually looks like inside a prompt, a paragraph, a content calendar, and a search result. Covers prompting, content, SEO, AEO and GEO.</p>
+    </div>
+    <a class="btn btn-primary" href="/essays/thinking-beyond-the-prompt">Read Part II <span class="arrow">&rarr;</span></a>
+  </aside>
 
   <!-- Gated PDF download -->
   <section class="download-card" id="download">
