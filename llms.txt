@@ -1,0 +1,48 @@
+# Lubna Ali Khan
+
+> Digital content editor and onsite SEO professional based in Pakistan, available for remote work. Publishes essays on thinking well in the age of AI, a free library of SEO and content-marketing infographics, and free browser-based SEO tools.
+
+Site owner: Lubna Ali Khan. Focus areas: onsite SEO, content editing, content strategy, and the shift from classic SEO to AEO, GEO and AIO. Every infographic page includes a free PDF download. All tools run entirely in the browser with no signup.
+
+## Main pages
+
+- [Home](https://www.lubnaalikhan.com/): Profile, services, credentials and contact for Lubna Ali Khan, content editor and onsite SEO professional.
+- [Essays](https://www.lubnaalikhan.com/essays): Index of long-form essays on SEO, content and critical thinking, including the two-part Critical Thinking & AI series.
+- [Infographics](https://www.lubnaalikhan.com/infographics): Library of free SEO and content-marketing infographics, each with a downloadable PDF.
+- [Tools](https://www.lubnaalikhan.com/tools): Free browser-based SEO and content tools, no signup required.
+
+## Essays
+
+- [Some Questions Need Answers From Within](https://www.lubnaalikhan.com/essays/some-questions-need-answers-from-within): Part I of Critical Thinking & AI — why curiosity and reflection matter more, not less, as AI writes more of our words.
+- [Thinking Beyond the Prompt](https://www.lubnaalikhan.com/essays/thinking-beyond-the-prompt): Part II of Critical Thinking & AI — how critical thinking shapes prompting, writing, design, SEO, AEO and GEO. Think first, generate second.
+
+## Tools
+
+- [Schema Markup Generator](https://www.lubnaalikhan.com/schema-markup-generator): Generates valid JSON-LD structured data for Organization, Article, FAQ, Review and LocalBusiness. Runs entirely in the browser.
+
+## Infographics
+
+- [SEO Has Evolved. Have You?](https://www.lubnaalikhan.com/infographics/seo-has-evolved): What GEO, AEO, AIO and SXO each mean for search visibility in the age of AI.
+- [SEO vs AEO vs GEO](https://www.lubnaalikhan.com/infographics/seo-vs-geo-vs-aeo): How search rankings, answer engines and generative AI each surface content, and why the three are not interchangeable.
+- [Modern SEO: SEO, AEO, GEO & AIO](https://www.lubnaalikhan.com/infographics/modern-seo): The four pillars of visibility in modern search, side by side.
+- [Content + Context = Rankings](https://www.lubnaalikhan.com/infographics/content-context-rankings): Why great content alone will not rank, and how context completes the equation.
+- [Featured Snippets](https://www.lubnaalikhan.com/infographics/featured-snippets): What it takes to win position zero above the organic rankings.
+- [Seed Keywords](https://www.lubnaalikhan.com/infographics/seed-keywords): Where every SEO strategy begins — finding the seed keywords content grows from.
+- [Start Small, Build Authority, Grow Big](https://www.lubnaalikhan.com/infographics/start-small-grow-big): A step-by-step roadmap for building topical authority until search engines trust the site.
+- [SEO Is Farming](https://www.lubnaalikhan.com/infographics/seo-is-farming): Why SEO compounds slowly — you plant, you nurture, then results arrive.
+- [SEO Is Dead?](https://www.lubnaalikhan.com/infographics/seo-is-dead): The claim has been made every year since 2003. Why SEO keeps evolving instead of dying.
+- [People, Not Search Engines](https://www.lubnaalikhan.com/infographics/people-not-search-engines): Search engines are not the customer — write for the people behind the queries.
+- [Why, How & Who](https://www.lubnaalikhan.com/infographics/content-marketing-why-how-who): The three questions every content marketing strategy has to answer.
+- [Your Two Publishing Choices](https://www.lubnaalikhan.com/infographics/content-marketing-two-choices): The fork in the road every content team reaches, and how to choose.
+- [Educate First, Convert Second](https://www.lubnaalikhan.com/infographics/educate-first): Why teaching an audience earns the trust that conversions are built on.
+- [Connections & Relationships](https://www.lubnaalikhan.com/infographics/connections-relationships): Content marketing built on real relationships rather than clicks.
+- [Storytelling in Content Marketing](https://www.lubnaalikhan.com/infographics/storytelling-content-marketing): How narrative turns ordinary content into something people remember and share.
+- [Content Fatigue](https://www.lubnaalikhan.com/infographics/content-fatigue): The warning signs an audience is tuning out, and what to do first.
+- [Ideas Are Combinations](https://www.lubnaalikhan.com/infographics/ideas-combinations): An idea is a new combination of old elements — where content ideas actually come from.
+- [The Ideation Process](https://www.lubnaalikhan.com/infographics/the-ideation-process): A framework for turning a blank page into ideas worth writing.
+- [Some Questions Need Answers From Within (Interactive)](https://www.lubnaalikhan.com/infographics/some-questions-need-answers-from-within): Interactive visual companion to the Part I essay of the same name.
+
+## Optional
+
+- [Sitemap](https://www.lubnaalikhan.com/sitemap.xml): Full XML sitemap of all indexable pages.
+- [Robots](https://www.lubnaalikhan.com/robots.txt): Crawler rules. All crawlers, including AI crawlers, are allowed.
