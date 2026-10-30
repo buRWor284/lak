@@ -166,6 +166,92 @@
   .byline .dot { color: var(--border); }
 
 
+  /* The scale: hero animation. Base styles = final frame; keyframes animate into it. */
+  .scale-fig { max-width: 780px; margin: 2.2rem 0 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(0.75rem, 3vw, 1.5rem) clamp(0.75rem, 3vw, 1.5rem) 1.1rem; box-shadow: 0 14px 40px rgba(74,95,122,0.08); }
+  .scale-svg { display: block; width: 100%; height: auto; }
+  .scale-fig figcaption { font-family: var(--font-heading); font-style: italic; font-size: clamp(1rem, 2.2vw, 1.15rem); color: var(--quote); text-align: center; margin-top: 0.4rem; line-height: 1.45; }
+  .sc-ink { fill: var(--heading); }
+  .sc-pivot { fill: var(--accent-box); stroke: var(--heading); stroke-width: 2; }
+  .sc-status { font-family: var(--font-heading); font-style: italic; font-size: 26px; fill: var(--quote); }
+  .sc-s1 { opacity: 0; }
+  .sc-block rect { fill: var(--bg); stroke: var(--border); stroke-width: 1.2; }
+  .sc-block text { font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: 0.03em; fill: var(--secondary); text-anchor: middle; }
+  .sc-card rect { fill: var(--accent-box); stroke: var(--heading); stroke-width: 1.2; }
+  .sc-card line { stroke: var(--quote); stroke-width: 0.8; }
+  .sc-card text { font-family: var(--font-heading); font-style: italic; font-size: 15px; fill: var(--heading-dark); text-anchor: middle; }
+  .sc-sig { fill: none; stroke: var(--heading-dark); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 140; stroke-dashoffset: 0; }
+  .sc-beam { transform-box: view-box; transform-origin: 320px 220px; transform: rotate(7deg); }
+  .sc-pan-l { transform: translateY(-23px); }
+  .sc-pan-r { transform: translateY(23px); }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .scale-svg .sc-beam, .scale-svg .sc-pan, .scale-svg .sc-block, .scale-svg .sc-card, .scale-svg .sc-sig, .scale-svg .sc-status { animation-duration: 13s; animation-iteration-count: infinite; animation-fill-mode: both; animation-timing-function: ease-in-out; }
+    .sc-beam  { animation-name: sc-beam; }
+    .sc-pan-l { animation-name: sc-pan-l; }
+    .sc-pan-r { animation-name: sc-pan-r; }
+    .sc-b1 { animation-name: sc-b1; } .sc-b2 { animation-name: sc-b2; } .sc-b3 { animation-name: sc-b3; } .sc-b4 { animation-name: sc-b4; }
+    .scale-svg .sc-block, .scale-svg .sc-card { animation-timing-function: cubic-bezier(.3,.0,.4,1.25); }
+    .sc-card  { animation-name: sc-card; }
+    .sc-sig   { animation-name: sc-sig; }
+    .sc-s1    { animation-name: sc-s1; }
+    .sc-s2    { animation-name: sc-s2; }
+  }
+  @keyframes sc-beam  { 0%, 54% { transform: rotate(0deg); } 63%, 90% { transform: rotate(7deg); } 97%, 100% { transform: rotate(0deg); } }
+  @keyframes sc-pan-l { 0%, 54% { transform: translateY(0); } 63%, 90% { transform: translateY(-23px); } 97%, 100% { transform: translateY(0); } }
+  @keyframes sc-pan-r { 0%, 54% { transform: translateY(0); } 63%, 90% { transform: translateY(23px); } 97%, 100% { transform: translateY(0); } }
+  @keyframes sc-b1 { 0%, 4%  { transform: translateY(-170px); opacity: 0; } 10%, 90% { transform: translateY(0); opacity: 1; } 96%, 100% { transform: translateY(0); opacity: 0; } }
+  @keyframes sc-b2 { 0%, 12% { transform: translateY(-170px); opacity: 0; } 18%, 90% { transform: translateY(0); opacity: 1; } 96%, 100% { transform: translateY(0); opacity: 0; } }
+  @keyframes sc-b3 { 0%, 20% { transform: translateY(-170px); opacity: 0; } 26%, 90% { transform: translateY(0); opacity: 1; } 96%, 100% { transform: translateY(0); opacity: 0; } }
+  @keyframes sc-b4 { 0%, 28% { transform: translateY(-170px); opacity: 0; } 34%, 90% { transform: translateY(0); opacity: 1; } 96%, 100% { transform: translateY(0); opacity: 0; } }
+  @keyframes sc-card { 0%, 40% { transform: translateY(-170px); opacity: 0; } 46%, 90% { transform: translateY(0); opacity: 1; } 96%, 100% { transform: translateY(0); opacity: 0; } }
+  @keyframes sc-sig  { 0%, 46% { stroke-dashoffset: 140; } 53%, 100% { stroke-dashoffset: 0; } }
+  @keyframes sc-s1 { 0%, 2% { opacity: 0; } 6%, 38% { opacity: 1; } 42%, 100% { opacity: 0; } }
+  @keyframes sc-s2 { 0%, 50% { opacity: 0; } 56%, 88% { opacity: 1; } 94%, 100% { opacity: 0; } }
+
+  /* Who signs? interactive */
+  .ws { margin: 2.6rem 0 2.8rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(1.4rem, 4vw, 2.2rem); box-shadow: 0 14px 40px rgba(74,95,122,0.08); }
+  .ws-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--quote); margin-bottom: 0.3rem; }
+  .ws h3 { font-family: var(--font-heading); font-weight: 400; font-size: clamp(1.6rem, 4vw, 2.1rem); color: var(--heading); line-height: 1.1; margin-bottom: 0.4rem; }
+  .ws-intro { font-size: 0.95rem; color: var(--secondary); margin-bottom: 1.2rem !important; }
+  .ws-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.4rem; }
+  .ws-tab { font-family: var(--font-body); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.6rem 1.1rem; border-radius: 999px; border: 1px solid var(--border); background: var(--bg); color: var(--secondary); cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+  .ws-tab:hover { border-color: var(--heading); color: var(--heading); }
+  .ws-tab[aria-selected="true"] { background: var(--heading); border-color: var(--heading); color: #fff; }
+  .ws-tab:focus-visible, .ws .btn:focus-visible { outline: 2px solid var(--heading); outline-offset: 3px; }
+  .ws-step { border-top: 1px solid var(--border); padding-top: 1.1rem; margin-top: 1.1rem; }
+  .ws-step1 { border-top: none; padding-top: 0; margin-top: 0; }
+  .ws-step:not([hidden]) { animation: ws-in 0.45s ease both; }
+  @keyframes ws-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  .ws-label { font-size: 0.7rem !important; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--heading-dark) !important; margin-bottom: 0.8rem !important; display: flex; align-items: center; gap: 0.55rem; }
+  .ws-num { display: inline-flex; width: 1.5rem; height: 1.5rem; border-radius: 999px; background: var(--accent-box); color: var(--heading-dark); align-items: center; justify-content: center; font-size: 0.72rem; letter-spacing: 0; }
+  .ws-output { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.2rem; margin-bottom: 1rem; }
+  .ws-out-src { font-size: 0.7rem !important; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--quote) !important; margin-bottom: 0.35rem !important; }
+  .ws-out-verdict { font-family: var(--font-heading); font-size: clamp(1.35rem, 3.4vw, 1.7rem); color: var(--heading); line-height: 1.2; margin-bottom: 0.7rem !important; }
+  .ws-meter { height: 6px; background: var(--border); border-radius: 999px; overflow: hidden; }
+  .ws-meter span { display: block; height: 100%; width: 94%; background: var(--heading); border-radius: 999px; }
+  .ws-out-note { font-size: 0.78rem !important; color: var(--quote) !important; margin: 0.5rem 0 0 !important; }
+  .ws-blind { list-style: none; margin: 0 0 1.1rem; padding: 0; display: grid; gap: 0.55rem; }
+  .ws-blind li { position: relative; padding: 0.7rem 0.9rem 0.7rem 2.3rem; background: var(--bg); border-radius: 8px; border-left: 3px solid var(--accent-box); font-family: var(--font-heading); font-style: italic; font-size: 1.08rem; line-height: 1.45; color: var(--body); }
+  .ws-blind li::before { content: ""; position: absolute; left: 0.85rem; top: 1.05rem; width: 0.7rem; height: 0.7rem; border-radius: 999px; border: 1.5px solid var(--quote); }
+  .ws-ask { font-weight: 600; color: var(--heading-dark) !important; margin-bottom: 0.7rem !important; }
+  .ws-choices { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .ws-result { border-radius: 8px; padding: 1.2rem 1.3rem; }
+  .ws-result.is-tool { background: var(--bg); border: 1px dashed var(--quote); }
+  .ws-result.is-person { background: var(--accent-box); }
+  .ws-result p { margin-bottom: 0.8rem !important; }
+  .ws-result .ws-big { font-family: var(--font-heading); font-size: clamp(1.3rem, 3.2vw, 1.6rem); color: var(--heading); line-height: 1.3; }
+  .ws-sign { display: flex; align-items: flex-end; gap: 0.9rem; margin: 0.4rem 0 1rem; }
+  .ws-sign svg { width: 150px; height: 46px; flex: 0 0 auto; }
+  .ws-sign path { fill: none; stroke: var(--heading-dark); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 160; stroke-dashoffset: 0; }
+  .ws-sign span { font-family: var(--font-heading); font-style: italic; color: var(--heading-dark); font-size: 1.1rem; border-top: 1px solid var(--quote); padding-top: 0.2rem; }
+  @media (prefers-reduced-motion: no-preference) {
+    .ws-result.is-person .ws-sign path { animation: ws-draw 1.1s 0.2s ease forwards; stroke-dashoffset: 160; }
+  }
+  @media (prefers-reduced-motion: reduce) { .ws-step:not([hidden]) { animation: none; } }
+  @keyframes ws-draw { to { stroke-dashoffset: 0; } }
+  .ws-again { background: none; border: none; padding: 0; font-family: var(--font-body); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--heading); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 720px) { .ws-choices .btn, .ws .ws-next { width: 100%; justify-content: center; } }
+
   /* Series / companion CTA */
   .interactive-cta { max-width: 780px; margin: 2.5rem 0; background: var(--accent-box); border-radius: var(--radius); padding: clamp(1.6rem, 4vw, 2.4rem); display: flex; flex-wrap: wrap; align-items: center; gap: 1.4rem 2rem; justify-content: space-between; }
   .interactive-cta .ic-text { flex: 1 1 320px; }
@@ -300,6 +386,54 @@
     <div class="byline"><span>By Lubna Ali Khan</span><span class="dot">&middot;</span><span>10 min read</span><span class="dot">&middot;</span><span>Part III of III</span></div>
   </header>
 
+  <!-- ============================================================
+       THE SCALE: hero animation (pure SVG + CSS, no JS, no GIF).
+       Data drops onto the left platform and the beam does not move.
+       A signed card lands on the right and the beam tips.
+       Reduced-motion users see the final frame only.
+       ============================================================ -->
+  <figure class="scale-fig" aria-labelledby="scaleCap">
+    <svg class="scale-svg" viewBox="40 20 560 345" role="img" aria-label="A balance scale. Four blocks of data, a forecast, a risk score, a flagged scan and a fraud alert, drop onto the left side and the scale stays level. Then a card signed 'This decision is mine' lands on the right side, and the scale tips.">
+      <!-- status line -->
+      <text class="sc-status sc-s1" x="320" y="44" text-anchor="middle">The data piles up&#8230;</text>
+      <text class="sc-status sc-s2" x="320" y="44" text-anchor="middle">&#8230;until someone signs.</text>
+
+      <!-- stand -->
+      <path class="sc-ink" d="M250 352 L390 352 L370 336 L270 336 Z" />
+      <rect class="sc-ink" x="315" y="226" width="10" height="112" rx="2" />
+      <path class="sc-ink" d="M306 230 L320 206 L334 230 Z" />
+
+      <!-- beam (rotates around the pivot) -->
+      <g class="sc-beam">
+        <rect class="sc-ink" x="126" y="216" width="388" height="8" rx="4" />
+        <circle class="sc-pivot" cx="320" cy="220" r="6" />
+      </g>
+
+      <!-- left platform: the data -->
+      <g class="sc-pan sc-pan-l">
+        <rect class="sc-ink" x="127" y="196" width="6" height="22" />
+        <rect class="sc-ink" x="58" y="190" width="144" height="7" rx="3.5" />
+        <g class="sc-block sc-b1"><rect x="64" y="160" width="132" height="28" rx="4" /><text x="130" y="179">Forecast: 80% rain</text></g>
+        <g class="sc-block sc-b2"><rect x="64" y="130" width="132" height="28" rx="4" /><text x="130" y="149">Risk score: high</text></g>
+        <g class="sc-block sc-b3"><rect x="64" y="100" width="132" height="28" rx="4" /><text x="130" y="119">Scan: flagged</text></g>
+        <g class="sc-block sc-b4"><rect x="64" y="70" width="132" height="28" rx="4" /><text x="130" y="89">Fraud alert</text></g>
+      </g>
+
+      <!-- right platform: the signature -->
+      <g class="sc-pan sc-pan-r">
+        <rect class="sc-ink" x="507" y="196" width="6" height="22" />
+        <rect class="sc-ink" x="438" y="190" width="144" height="7" rx="3.5" />
+        <g class="sc-card">
+          <rect x="442" y="122" width="136" height="66" rx="5" />
+          <path class="sc-sig" d="M466 162 C472 146 478 146 480 158 C482 170 488 150 494 152 C500 154 498 166 506 160 C514 154 518 150 524 156 C530 162 538 158 552 152" />
+          <line x1="456" y1="166" x2="564" y2="166" />
+          <text x="510" y="181">This decision is mine.</text>
+        </g>
+      </g>
+    </svg>
+    <figcaption id="scaleCap">&ldquo;Data narrows the range of reasonable decisions. It rarely makes the decision itself.&rdquo;</figcaption>
+  </figure>
+
   <p class="standfirst">Part I argued that some questions need answers from within. Part II looked at what that means in daily practice, from prompting to SEO. This third essay moves somewhere heavier: the moment a decision stops being a draft and becomes real.</p>
 
   <!-- Series CTA (top) -->
@@ -336,6 +470,53 @@
     <p>Or a physician looking at a scan alongside a tool that has flagged a pattern worth investigating. The tool did something valuable, something that might have taken a human eye far longer to notice on its own. But somewhere down the hall, a physician still has to sit across from a patient and say, in their own voice, "here is what I think we should do," and be the one who answers for it if the recommendation turns out to be wrong.</p>
     <p>Or a bank's fraud system, quietly comparing a transaction against millions of others and flagging it as suspicious within milliseconds. Genuinely impressive work, the kind no human team could match at that speed. But someone still has to decide whether to actually freeze the account, knowing that if they're wrong, a family loses access to their own money in the middle of an ordinary Tuesday, and someone has to answer for that too.</p>
     <blockquote class="pull">The tool informs. The person still has to decide, and then live inside the consequences of having decided.</blockquote>
+
+    <!-- ============================================================
+         WHO SIGNS? interactive. Three cases from the essay. Step 1 shows
+         the tool's confident answer, step 2 what it cannot see, step 3
+         asks the reader who signs. All copy comes from the essay text.
+         ============================================================ -->
+    <section class="ws" id="whoSigns" aria-labelledby="wsTitle">
+      <div class="ws-head">
+        <p class="ws-eyebrow">Try it</p>
+        <h3 id="wsTitle">Who signs?</h3>
+        <p class="ws-intro">Pick a case. See what the tool says, then what it can&#39;t see. Then decide who answers for it.</p>
+      </div>
+
+      <div class="ws-tabs" role="tablist" aria-label="Choose a case">
+        <button type="button" role="tab" class="ws-tab" id="ws-tab-loan" aria-controls="ws-panel" aria-selected="true" data-case="loan">The loan</button>
+        <button type="button" role="tab" class="ws-tab" id="ws-tab-scan" aria-controls="ws-panel" aria-selected="false" data-case="scan" tabindex="-1">The scan</button>
+        <button type="button" role="tab" class="ws-tab" id="ws-tab-fraud" aria-controls="ws-panel" aria-selected="false" data-case="fraud" tabindex="-1">The fraud flag</button>
+      </div>
+
+      <div class="ws-panel" id="ws-panel" role="tabpanel" aria-labelledby="ws-tab-loan">
+        <div class="ws-step ws-step1">
+          <p class="ws-label"><span class="ws-num">1</span> What the tool says</p>
+          <div class="ws-output">
+            <p class="ws-out-src" id="wsSrc"></p>
+            <p class="ws-out-verdict" id="wsVerdict"></p>
+            <div class="ws-meter" aria-hidden="true"><span></span></div>
+            <p class="ws-out-note">Confidence: very high. Tone: certain.</p>
+          </div>
+          <button type="button" class="btn btn-outline ws-next" id="wsReveal">What can&#39;t it see? <span class="arrow">&darr;</span></button>
+        </div>
+
+        <div class="ws-step ws-step2" id="wsStep2" hidden>
+          <p class="ws-label"><span class="ws-num">2</span> What it can&#39;t see</p>
+          <ul class="ws-blind" id="wsBlind"></ul>
+          <p class="ws-ask">So, who signs off on this?</p>
+          <div class="ws-choices">
+            <button type="button" class="btn btn-outline" data-pick="tool">The system</button>
+            <button type="button" class="btn btn-primary" data-pick="person">A person</button>
+          </div>
+        </div>
+
+        <div class="ws-step ws-step3" id="wsStep3" hidden aria-live="polite">
+          <p class="ws-label"><span class="ws-num">3</span> The answer</p>
+          <div class="ws-result" id="wsResult"></div>
+        </div>
+      </div>
+    </section>
     <h2>Confidence Is Not Wisdom</h2>
     <p>There is something worth sitting with here, and it isn't really about machines at all. It's about how persuasive confidence is, regardless of where it comes from.</p>
     <p>Wise people have been remarkably comfortable saying "I don't know" when they meant it. A tool built to produce an answer will produce one, because producing an answer is what it exists to do, and it will do so in a tone that sounds exactly as sure of a hard question as an easy one. That evenness of tone is not the same thing as being right, though it is very easy to mistake for it when you're tired, behind schedule, and looking for permission to stop deliberating.</p>
@@ -479,6 +660,113 @@
       document.querySelectorAll('.nav-dd-toggle[aria-expanded="true"]').forEach(function(b){b.setAttribute('aria-expanded','false');});
     }
   });
+})();
+</script>
+
+<script>
+/* Who signs? interactive. Copy is taken from the essay itself. */
+(function () {
+  var root = document.getElementById('whoSigns');
+  if (!root) return;
+  var CASES = {
+    loan: {
+      src: 'Credit risk model',
+      verdict: 'Loan application: high risk. Decline.',
+      blind: [
+        'Whether declining it is fair.',
+        'Fairness isn’t a pattern in historical data.',
+        'It’s a judgment about a person, made by another person, who then has to live with having made it.'
+      ]
+    },
+    scan: {
+      src: 'Medical imaging tool',
+      verdict: 'Scan: pattern flagged. Worth investigating.',
+      blind: [
+        'The patient sitting across from the physician.',
+        'Someone still has to say, in their own voice, “here is what I think we should do.”',
+        'And be the one who answers for it if the recommendation turns out to be wrong.'
+      ]
+    },
+    fraud: {
+      src: 'Bank fraud system',
+      verdict: 'Transaction: suspicious. Flagged in milliseconds.',
+      blind: [
+        'Whether to actually freeze the account.',
+        'If that’s wrong, a family loses access to their own money in the middle of an ordinary Tuesday.',
+        'Someone has to answer for that too.'
+      ]
+    }
+  };
+  var tabs = root.querySelectorAll('.ws-tab');
+  var panel = document.getElementById('ws-panel');
+  var src = document.getElementById('wsSrc'), verdict = document.getElementById('wsVerdict');
+  var blind = document.getElementById('wsBlind'), step2 = document.getElementById('wsStep2');
+  var step3 = document.getElementById('wsStep3'), result = document.getElementById('wsResult');
+  var reveal = document.getElementById('wsReveal');
+  var current = 'loan';
+
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; }
+
+  function load(key, focusTab) {
+    current = key;
+    var c = CASES[key];
+    tabs.forEach(function (t) {
+      var on = t.getAttribute('data-case') === key;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      if (on) { panel.setAttribute('aria-labelledby', t.id); if (focusTab) t.focus(); }
+    });
+    src.textContent = c.src;
+    verdict.textContent = c.verdict;
+    blind.innerHTML = '';
+    c.blind.forEach(function (b) { blind.appendChild(el('li', '', b)); });
+    step2.hidden = true; step3.hidden = true; result.innerHTML = '';
+    reveal.hidden = false;
+  }
+
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { load(t.getAttribute('data-case')); });
+    t.addEventListener('keydown', function (e) {
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      e.preventDefault();
+      var n = tabs[(i + d + tabs.length) % tabs.length];
+      load(n.getAttribute('data-case'), true);
+    });
+  });
+
+  reveal.addEventListener('click', function () {
+    step2.hidden = false; reveal.hidden = true;
+    var first = step2.querySelector('button'); if (first) first.focus({ preventScroll: true });
+  });
+
+  root.querySelectorAll('[data-pick]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var pick = b.getAttribute('data-pick');
+      result.innerHTML = '';
+      result.className = 'ws-result ' + (pick === 'person' ? 'is-person' : 'is-tool');
+      if (pick === 'tool') {
+        result.appendChild(el('p', 'ws-big', 'Nobody says “the tool told me to.”'));
+        result.appendChild(el('p', '', 'Try explaining that decision using only “the system recommended it” as your reason. It doesn’t hold. Responsibility has never actually lived in the tool. It lives in whoever chose to act on what the tool said.'));
+        var again = el('button', 'ws-again', 'Choose again'); again.type = 'button';
+        again.addEventListener('click', function () { step3.hidden = true; var p = step2.querySelector('[data-pick="person"]'); if (p) p.focus(); });
+        result.appendChild(again);
+      } else {
+        result.appendChild(el('p', 'ws-big', 'The tool informs. The person still has to decide, and then live inside the consequences of having decided.'));
+        var sign = el('div', 'ws-sign');
+        sign.innerHTML = '<svg viewBox="0 0 150 46" aria-hidden="true"><path d="M6 34 C14 10 22 10 24 28 C26 44 34 14 42 18 C50 22 46 36 58 30 C70 24 74 16 82 24 C90 32 100 26 118 18 C126 15 134 16 144 14" /></svg>';
+        sign.appendChild(el('span', '', 'This decision is mine.'));
+        result.appendChild(sign);
+        var keys = Object.keys(CASES), next = keys[(keys.indexOf(current) + 1) % keys.length];
+        var more = el('button', 'ws-again', 'Try another case'); more.type = 'button';
+        more.addEventListener('click', function () { load(next, true); });
+        result.appendChild(more);
+      }
+      step3.hidden = false;
+    });
+  });
+
+  load('loan');
 })();
 </script>
 </body>
