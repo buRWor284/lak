@@ -7,7 +7,7 @@ Site owner: Lubna Ali Khan. Focus areas: onsite SEO, content editing, content st
 ## Main pages
 
 - [Home](https://www.lubnaalikhan.com/): Profile, services, credentials and contact for Lubna Ali Khan, content editor and onsite SEO professional.
-- [Essays](https://www.lubnaalikhan.com/essays): Index of long-form essays on SEO, content and critical thinking, including the two-part Critical Thinking & AI series.
+- [Essays](https://www.lubnaalikhan.com/essays): Index of long-form essays on SEO, content and critical thinking, including the three-part Critical Thinking & AI series.
 - [Infographics](https://www.lubnaalikhan.com/infographics): Library of free SEO and content-marketing infographics, each with a downloadable PDF.
 - [Tools](https://www.lubnaalikhan.com/tools): Free browser-based SEO and content tools, no signup required.
 
@@ -15,6 +15,7 @@ Site owner: Lubna Ali Khan. Focus areas: onsite SEO, content editing, content st
 
 - [Some Questions Need Answers From Within](https://www.lubnaalikhan.com/essays/some-questions-need-answers-from-within): Part I of Critical Thinking & AI — why curiosity and reflection matter more, not less, as AI writes more of our words.
 - [Thinking Beyond the Prompt](https://www.lubnaalikhan.com/essays/thinking-beyond-the-prompt): Part II of Critical Thinking & AI — how critical thinking shapes prompting, writing, design, SEO, AEO and GEO. Think first, generate second.
+- [The Weight AI Can't Carry](https://www.lubnaalikhan.com/essays/the-weight-ai-cant-carry): Part III of Critical Thinking & AI — why data and AI can inform a decision, but only a person can own what happens next. Includes a video version.
 
 ## Tools
 
