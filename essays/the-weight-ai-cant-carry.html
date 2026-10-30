@@ -14,12 +14,12 @@
 <meta property="og:url" content="https://www.lubnaalikhan.com/essays/the-weight-ai-cant-carry" />
 <meta property="og:title" content="The Weight AI Can&#39;t Carry" />
 <meta property="og:description" content="Part III: judgment. Data can inform a decision, but only people can own what happens next." />
-<meta property="og:image" content="https://i.ytimg.com/vi/iZ3QqDK_BYU/maxresdefault.jpg" />
+<meta property="og:image" content="https://www.lubnaalikhan.com/lubna-headshot.jpg" />
 <meta property="og:site_name" content="Lubna Ali Khan" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="The Weight AI Can&#39;t Carry" />
 <meta name="twitter:description" content="Part III: judgment. Data can inform a decision, but only people can own what happens next." />
-<meta name="twitter:image" content="https://i.ytimg.com/vi/iZ3QqDK_BYU/maxresdefault.jpg" />
+<meta name="twitter:image" content="https://www.lubnaalikhan.com/lubna-headshot.jpg" />
 
 <script type="application/ld+json">
 {
@@ -165,18 +165,6 @@
   .byline { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--secondary); display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: center; padding-top: 0.4rem; border-top: 1px solid var(--border); margin-top: 0.4rem; }
   .byline .dot { color: var(--border); }
 
-  /* Hero video (renders only when a YouTube ID is set below) */
-  .hero-video { max-width: 900px; margin: 2.5rem 0 0; }
-  .hero-video[hidden] { display: none; }
-  .hv-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; background: var(--accent-box); border-radius: var(--radius); overflow: hidden; box-shadow: 0 18px 46px rgba(74,95,122,0.14); }
-  .hv-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-  .hv-facade { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; cursor: pointer; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; }
-  .hv-facade::after { content: ""; position: absolute; inset: 0; background: rgba(61,80,104,0.28); transition: background 0.25s; }
-  .hv-facade:hover::after { background: rgba(61,80,104,0.16); }
-  .hv-play { position: relative; z-index: 2; width: 76px; height: 76px; border-radius: 999px; background: rgba(248,246,243,0.94); display: flex; align-items: center; justify-content: center; transition: transform 0.25s, box-shadow 0.25s; box-shadow: 0 10px 28px rgba(0,0,0,0.22); }
-  .hv-facade:hover .hv-play { transform: scale(1.07); box-shadow: 0 14px 34px rgba(0,0,0,0.28); }
-  .hv-play::before { content: ""; width: 0; height: 0; margin-left: 5px; border-style: solid; border-width: 13px 0 13px 21px; border-color: transparent transparent transparent var(--heading); }
-  .hv-caption { font-size: 0.8rem; color: var(--quote); margin-top: 0.85rem; font-style: italic; }
 
   /* Series / companion CTA */
   .interactive-cta { max-width: 780px; margin: 2.5rem 0; background: var(--accent-box); border-radius: var(--radius); padding: clamp(1.6rem, 4vw, 2.4rem); display: flex; flex-wrap: wrap; align-items: center; gap: 1.4rem 2rem; justify-content: space-between; }
@@ -256,7 +244,6 @@
     header.page-head { padding: 1.25rem 0 0.25rem; }
     .dc-form button { flex: 1 1 100%; }
     .interactive-cta .btn { width: 100%; justify-content: center; }
-    .hv-play { width: 60px; height: 60px; }
   }
 
 /* Insights dropdown */
@@ -312,16 +299,6 @@
     <p class="subtitle">Why data can inform a decision, but only people can own what happens next</p>
     <div class="byline"><span>By Lubna Ali Khan</span><span class="dot">&middot;</span><span>10 min read</span><span class="dot">&middot;</span><span>Part III of III</span></div>
   </header>
-
-  <!-- ============================================================
-       HERO VIDEO
-       The YouTube ID lives in window.__VIDEO near the bottom of
-       this file. Empty ID = section stays hidden.
-       ============================================================ -->
-  <section class="hero-video" id="heroVideo" hidden aria-label="Watch the video version of this essay">
-    <div class="hv-frame" id="hvFrame"></div>
-    <p class="hv-caption" id="hvCaption"></p>
-  </section>
 
   <p class="standfirst">Part I argued that some questions need answers from within. Part II looked at what that means in daily practice, from prompting to SEO. This third essay moves somewhere heavier: the moment a decision stops being a draft and becomes real.</p>
 
@@ -450,19 +427,6 @@
 
 <script>window.__DL = { pdf: "downloads/the-weight-ai-cant-carry.pdf" };</script>
 
-<!-- ============================================================
-     VIDEO: paste the YouTube video ID between the quotes below.
-     Example: for https://www.youtube.com/watch?v=dQw4w9WgXcQ
-     use  youtubeId: "dQw4w9WgXcQ"
-     Leave it empty and the video section stays hidden.
-     ============================================================ -->
-<script>
-  window.__VIDEO = {
-    youtubeId: "iZ3QqDK_BYU",
-    title: "The Weight AI Can't Carry",
-    caption: "Watch the video version of this essay."
-  };
-</script>
 
 <script>
   (function () {
@@ -473,50 +437,6 @@
     }
   })();
 
-  /* Hero video: lazy facade, loads YouTube only on click */
-  (function () {
-    var V = window.__VIDEO || {};
-    var id = (V.youtubeId || '').trim();
-    if (!id) return;
-    var section = document.getElementById('heroVideo');
-    var frame = document.getElementById('hvFrame');
-    var caption = document.getElementById('hvCaption');
-    if (!section || !frame) return;
-
-    var btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'hv-facade';
-    btn.setAttribute('aria-label', 'Play video: ' + (V.title || 'video'));
-    btn.style.backgroundImage = 'url(https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg)';
-    btn.innerHTML = '<span class="hv-play" aria-hidden="true"></span>';
-    btn.addEventListener('click', function () {
-      var iframe = document.createElement('iframe');
-      iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1';
-      iframe.title = V.title || 'Video';
-      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-      iframe.allowFullscreen = true;
-      frame.innerHTML = '';
-      frame.appendChild(iframe);
-    });
-    frame.appendChild(btn);
-    if (caption && V.caption) caption.textContent = V.caption;
-    section.hidden = false;
-
-    /* VideoObject schema, added only when a real video exists */
-    var ld = document.createElement('script');
-    ld.type = 'application/ld+json';
-    ld.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "VideoObject",
-      "name": V.title || "The Weight AI Can't Carry",
-      "description": V.caption || "Critical thinking and AI, part III.",
-      "thumbnailUrl": "https://i.ytimg.com/vi/" + id + "/maxresdefault.jpg",
-      "embedUrl": "https://www.youtube.com/embed/" + id,
-      "contentUrl": "https://www.youtube.com/watch?v=" + id,
-      "uploadDate": "2026-10-30"
-    });
-    document.head.appendChild(ld);
-  })();
 
   (function () {
     var CFG = window.__DL || {};
